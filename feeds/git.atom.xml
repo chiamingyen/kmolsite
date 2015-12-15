@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>kmolsite</title><link href="http://chiamingyen.github.io/kmolsite/" rel="alternate"></link><link href="http://chiamingyen.github.io/kmolsite/feeds/git.atom.xml" rel="self"></link><id>http://chiamingyen.github.io/kmolsite/</id><updated>2015-12-14T22:35:36+08:00</updated><entry><title>Remove local and remote branch</title><link href="http://chiamingyen.github.io/kmolsite/remove-local-and-remote-branch.html" rel="alternate"></link><updated>2015-12-14T22:35:36+08:00</updated><author><name>kmol</name></author><id>tag:chiamingyen.github.io,2015-12-14:kmolsite/remove-local-and-remote-branch.html</id><summary type="html">&lt;p&gt;刪除近端與遠端的 Git 分支&lt;/p&gt;
+
+
+&lt;p&gt;To delete a local branch&lt;/p&gt;
+&lt;p&gt;git branch -D the_local_branch&lt;/p&gt;
+&lt;p&gt;To remove a remote branch&lt;/p&gt;
+&lt;p&gt;git push origin :the_remote_branch&lt;/p&gt;
+&lt;p&gt;or &lt;/p&gt;
+&lt;p&gt;git push origin --delete the_remote_branch&lt;/p&gt;</summary><category term="Git 指令"></category></entry></feed>
