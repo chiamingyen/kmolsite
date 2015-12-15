@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>kmolsite</title><link href="http://chiamingyen.github.io/kmolsite/" rel="alternate"></link><link href="http://chiamingyen.github.io/kmolsite/feeds/pelican.atom.xml" rel="self"></link><id>http://chiamingyen.github.io/kmolsite/</id><updated>2015-12-15T14:07:04+08:00</updated><entry><title>Pelican 近端與遠端的設定</title><link href="http://chiamingyen.github.io/kmolsite/pelican-jin-duan-yu-yuan-duan-de-she-ding.html" rel="alternate"></link><updated>2015-12-15T14:07:04+08:00</updated><author><name>kmol</name></author><id>tag:chiamingyen.github.io,2015-12-15:kmolsite/pelican-jin-duan-yu-yuan-duan-de-she-ding.html</id><summary type="html">&lt;p&gt;Pelican 近端與遠端的設定&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>kmolsite</title><link href="http://chiamingyen.github.io/kmolsite/" rel="alternate"></link><link href="http://chiamingyen.github.io/kmolsite/feeds/pelican.atom.xml" rel="self"></link><id>http://chiamingyen.github.io/kmolsite/</id><updated>2015-12-15T17:25:21+08:00</updated><entry><title>Tipue Site Search for Pelican</title><link href="http://chiamingyen.github.io/kmolsite/tipue-site-search-for-pelican.html" rel="alternate"></link><updated>2015-12-15T17:25:21+08:00</updated><author><name>kmol</name></author><id>tag:chiamingyen.github.io,2015-12-15:kmolsite/tipue-site-search-for-pelican.html</id><summary type="html">&lt;p&gt;Pelican 靜態網站關鍵字搜尋&lt;/p&gt;
 
 
-&lt;p&gt;為了讓 Pelican 在近端產生靜態網頁後, 可以直接在近端瀏覽器中查驗, 因此必須在第一時間, 以近端設定, 若查驗無誤, 再轉換設定為遠端絕對目錄的設定, 重新再建立一次網頁內容.&lt;/p&gt;
-&lt;p&gt;這樣的配置雖然不方便, 但是為了讓 disqus 留言系統可以正常運作, 必須要採取此一設定流程.&lt;/p&gt;</summary><category term="Pelican 設定"></category></entry><entry><title>Tipue Site Search for Pelican</title><link href="http://chiamingyen.github.io/kmolsite/tipue-site-search-for-pelican.html" rel="alternate"></link><updated>2015-12-15T14:07:04+08:00</updated><author><name>kmol</name></author><id>tag:chiamingyen.github.io,2015-12-15:kmolsite/tipue-site-search-for-pelican.html</id><summary type="html">&lt;p&gt;Pelican 靜態網站關鍵字搜尋&lt;/p&gt;
-
-
+&lt;p&gt;在這個網站中, 我們使用 Tipue Search 來搜尋內容.&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://github.com/getpelican/pelican-plugins/tree/master/tipue_search"&gt;https://github.com/getpelican/pelican-plugins/tree/master/tipue_search&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Tipue Search requires BeautifulSoup.&lt;/p&gt;
-&lt;p&gt;pip install beautifulsoup4&lt;/p&gt;</summary><category term="Pelican Search"></category></entry></feed>
+&lt;p&gt;利用 pip 安裝 beautifulsoup4 模組.&lt;/p&gt;
+&lt;p&gt;pip install beautifulsoup4&lt;/p&gt;</summary><category term="Pelican Search"></category></entry><entry><title>Pelican 近端與遠端的設定</title><link href="http://chiamingyen.github.io/kmolsite/pelican-jin-duan-yu-yuan-duan-de-she-ding.html" rel="alternate"></link><updated>2015-12-15T17:23:42+08:00</updated><author><name>kmol</name></author><id>tag:chiamingyen.github.io,2015-12-15:kmolsite/pelican-jin-duan-yu-yuan-duan-de-she-ding.html</id><summary type="html">&lt;p&gt;Pelican 近端與遠端的設定&lt;/p&gt;
+
+
+&lt;p&gt;基本的概念是, 在近端時, 靜態網頁使用相對目錄, SITEURL 設為 "./", 而在 Github pages 時, 則採用制式的符號名稱加上 repository 名稱作為 SITEURL.&lt;/p&gt;
+&lt;p&gt;另外一個近端與遠端的差異為 Tipue search, 近端時, 利用 static 模組, 將所有網頁內容存為 tipuesearch_content.js, 而在 Github pages 時, 則使用 json 模組, 網頁內容存為 tipuesearch_content.json 格式.&lt;/p&gt;
+&lt;p&gt;其中為了在網誌內容編寫與功能開發過程中, 能夠完全在近端測試 Github pages 端的所有功能, 利用 Leo Editor 的 @buttton 與 @edit, 分別針對兩端所需要的不同設定加以區分, 就連 theme 中有關 Tipue search 的啟動與設定, 也是分為近端與遠端兩套.&lt;/p&gt;
+&lt;p&gt;在 &lt;a href="http://chiamingyen.github.io/kmolsite"&gt;kmolsite&lt;/a&gt; 的專案中, 我們可以發現, &lt;a href="http://leoeditor.com/"&gt;Leo Editor&lt;/a&gt; 在面對這些不同環境, 不同設定, 而必須以不同指令產生不同內容的情況下, 可以說應付自如.&lt;/p&gt;</summary><category term="Pelican 設定"></category></entry></feed>

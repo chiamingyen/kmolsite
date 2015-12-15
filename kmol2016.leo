@@ -14,7 +14,7 @@
 <v t="leo.20151212173315.2"><vh>@data qt-gui-plugin-style-sheet</vh></v>
 <v t="leo.20151212173315.3"><vh>@string initial_split_orientation = horizontal</vh></v>
 </v>
-<v t="leo.20151213230723.1"><vh>Pelican 設定</vh>
+<v t="leo.20151213230723.1" a="E"><vh>Pelican 設定</vh>
 <v t="leo.20151213230957.1"><vh>文章 Date 設定</vh></v>
 <v t="leo.20151213230729.1"><vh>使用 summary plugin</vh></v>
 </v>
@@ -24,18 +24,20 @@
 <v t="leo.20151213173830.1" a="E"><vh>假如要在近端檢視, 使用下列按鈕</vh>
 <v t="leo.20151213085727.1"><vh>@button local pelican</vh></v>
 </v>
+<v t="amd.20151215170117.1"><vh>以下 pellicanconf.py 為近端與遠端的共同設定</vh></v>
 <v t="leo.20151212173725.1"><vh>@edit pelicanconf.py</vh></v>
+<v t="amd.20151215170142.1"><vh>以下 publishconf.py 為遠端所使用的設定</vh></v>
 <v t="leo.20151212173803.1"><vh>@edit publishconf.py</vh></v>
+<v t="amd.20151215170221.1"><vh>以下 local_publishconf.py 為近端所使用的設定</vh></v>
 <v t="leo.20151213085752.1"><vh>@edit local_publishconf.py</vh></v>
-<v t="leo.20151212173309.2"><vh>@path content</vh>
-<v t="leo.20151212173407.1"><vh>@edit 20151212.md</vh></v>
-<v t="leo.20151212204009.1"><vh>@edit 20151212-1.md</vh></v>
-<v t="leo.20151212233655.1"><vh>@edit 20151213.md</vh></v>
-<v t="leo.20151213090329.1"><vh>@edit 20151213-1.md</vh></v>
-<v t="leo.20151213173154.1"><vh>@edit 20151213-2.md</vh></v>
+<v t="amd.20151215121740.1"><vh>@path theme</vh>
+<v t="amd.20151215164330.1" a="E"><vh>Tipue Search 程式碼</vh>
+<v t="amd.20151215164348.1" a="E"><vh>@path tipuesearch</vh>
+<v t="amd.20151215164443.1"><vh>@edit tipuesearch_set.js</vh></v>
+<v t="amd.20151215164405.1"><vh>@edit tipuesearch.js</vh></v>
+<v t="amd.20151215165242.1"><vh>@edit tipuesearch.min.js</vh></v>
 </v>
-<v t="amd.20151214223609.1"><vh>有關 Tipue Search</vh></v>
-<v t="amd.20151215121740.1" a="E"><vh>@path theme</vh>
+</v>
 <v t="amd.20151215121758.1" a="E"><vh>@path pelican-bootstrap3</vh>
 <v t="amd.20151215121816.1" a="E"><vh>@path templates</vh>
 <v t="amd.20151215121827.1"><vh>@edit base.html</vh></v>
@@ -47,61 +49,32 @@
 <v t="amd.20151215154950.2" a="E"><vh>@path templates</vh>
 <v t="amd.20151215154950.3"><vh>@edit base.html</vh></v>
 <v t="amd.20151215154950.4"><vh>@edit search.html</vh></v>
+<v t="amd.20151215162536.1" a="E"><vh>@path includes</vh>
+<v t="amd.20151215162510.1"><vh>@edit sidebar.html</vh></v>
+</v>
 <v t="amd.20151215154950.5"><vh>@edit tags.html</vh></v>
 </v>
 </v>
 </v>
+<v t="amd.20151215170248.1"><vh>以下的 json 與 js 檔案為 Tipue search contents</vh></v>
 <v t="amd.20151215155650.1"><vh>@edit tipuesearch_content.json</vh></v>
 <v t="amd.20151215155533.1"><vh>@edit tipuesearch_content.js</vh></v>
-<v t="amd.20151215154225.1" a="E"><vh>@path plugin</vh>
+<v t="amd.20151215170326.1"><vh>以下在修改或查驗 plugin 目錄下的檔案</vh></v>
+<v t="amd.20151215154225.1"><vh>@path plugin</vh>
 <v t="amd.20151215154238.1" a="E"><vh>@path tipue_search</vh>
 <v t="amd.20151215154248.1"><vh>@edit tipue_search.py</vh></v>
 </v>
 </v>
+<v t="amd.20151215170350.1"><vh>以下為 content 目錄中的 md 檔案</vh></v>
+<v t="amd.20151215170031.1" a="E"><vh>@path content</vh>
+<v t="amd.20151215170031.2"><vh>@edit 20151212.md</vh></v>
+<v t="amd.20151215170031.3"><vh>@edit 20151212-1.md</vh></v>
+<v t="amd.20151215170031.4"><vh>@edit 20151213.md</vh></v>
+<v t="amd.20151215170031.5"><vh>@edit 20151213-1.md</vh></v>
+<v t="amd.20151215170031.6"><vh>@edit 20151213-2.md</vh></v>
+</v>
 </vnodes>
 <tnodes>
-<t tx="amd.20151214223609.1">static
-
-index.html 中, 主要包含下列兩項設定:
-
-css 使用
-
-&lt;link rel="stylesheet" type="text/css" href="tipuesearch/tipuesearch.css"&gt;
-
-搜尋表單
-
-&lt;form action="search.html"&gt;
-&lt;input type="text" name="q" id="tipue_search_input" autocomplete="off" required&gt;
-&lt;/form&gt;
-
-search.html 中, 則包含如下設定:
-
-&lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"&gt;&lt;/script&gt;
-
-&lt;link rel="stylesheet" href="../../inc/normalize.css"&gt;
-&lt;link rel="stylesheet" href="../../inc/standard.css"&gt;
-
-&lt;script type="text/javascript" src="tipuesearch/tipuesearch_set.js"&gt;&lt;/script&gt;
-&lt;script type="text/javascript" src="tipuesearch/tipuesearch_content.js"&gt;&lt;/script&gt;
-&lt;link rel="stylesheet" type="text/css" href="tipuesearch/tipuesearch.css"&gt;
-&lt;script type="text/javascript" src="tipuesearch/tipuesearch.min.js"&gt;&lt;/script&gt;
-
-表單與搜尋結果列出處:
-
-&lt;form action="search.html"&gt;
-&lt;input type="text" name="q" id="tipue_search_input" autocomplete="off" required&gt;
-&lt;/form&gt;
-&lt;div id="tipue_search_content"&gt;&lt;/div&gt;
-
-最後則是搜尋程式的啟動:
-
-&lt;script&gt;
-$(document).ready(function() {
-     $('#tipue_search_input').tipuesearch();
-});
-&lt;/script&gt;
-
-以上為 JQuery 的語法, 表示 document 載入完成後, 將會執行 id=tipue_search_input 物件的 tipuesearch 方法</t>
 <t tx="amd.20151215121740.1"></t>
 <t tx="amd.20151215121758.1"></t>
 <t tx="amd.20151215121816.1"></t>
@@ -109,7 +82,16 @@ $(document).ready(function() {
 <t tx="amd.20151215154238.1"></t>
 <t tx="amd.20151215154950.1"></t>
 <t tx="amd.20151215154950.2"></t>
-<t tx="leo.20151212173309.2"></t>
+<t tx="amd.20151215162536.1"></t>
+<t tx="amd.20151215164330.1"></t>
+<t tx="amd.20151215164348.1"></t>
+<t tx="amd.20151215170031.1"></t>
+<t tx="amd.20151215170117.1"></t>
+<t tx="amd.20151215170142.1"></t>
+<t tx="amd.20151215170221.1"></t>
+<t tx="amd.20151215170248.1"></t>
+<t tx="amd.20151215170326.1"></t>
+<t tx="amd.20151215170350.1"></t>
 <t tx="leo.20151212173315.1"></t>
 <t tx="leo.20151212173315.2">QTreeWidget {
     /* These apply to the selected item, but not to editing items.*/

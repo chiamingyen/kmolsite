@@ -21,13 +21,12 @@ AUTHOR_FEED_RSS = None
 
 # Blogroll
 LINKS = (('Pelican', 'http://getpelican.com/'),
-         ('Python.org', 'http://python.org/'),
-         ('Jinja2', 'http://jinja.pocoo.org/'),
-         ('You can modify those links in your config file', '#'),)
+         ('pelican-bootstrap3', 'https://github.com/DandyDev/pelican-bootstrap3/'),
+         ('pelican-plugins', 'https://github.com/getpelican/pelican-plugins'),
+         ('Tipue search', 'https://github.com/Tipue/Tipue-Search'),)
 
 # Social widget
-SOCIAL = (('You can add links in your config file', '#'),
-          ('Another social link', '#'),)
+#SOCIAL = (('You can add links in your config file', '#'),('Another social link', '#'),)
 
 DEFAULT_PAGINATION = 10
 
@@ -38,6 +37,7 @@ DEFAULT_PAGINATION = 10
 PLUGIN_PATHS = ['plugin']
 PLUGINS = ['liquid_tags.notebook', 'summary', 'tipue_search', 'sitemap']
 
+# for sitemap plugin
 SITEMAP = {
     'format': 'xml',
     'priorities': {
@@ -52,6 +52,15 @@ SITEMAP = {
     }
 }
 
+# search is for Tipue search
 DIRECT_TEMPLATES = (('index', 'tags', 'categories', 'archives', 'search'))
+
+# for pelican-bootstrap3 theme settings
+#TAG_CLOUD_MAX_ITEMS = 50
+DISPLAY_CATEGORIES_ON_SIDEBAR = True
+DISPLAY_RECENT_POSTS_ON_SIDEBAR = True
+DISPLAY_TAGS_ON_SIDEBAR = True
+DISPLAY_TAGS_INLINE = True
+TAGS_URL = "tags.html"
 
 #MENUITEMS = [('Home', '/'), ('Archives', '/archives.html'), ('Search', '/search.html')]

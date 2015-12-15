@@ -1,82 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>kmolsite</title><link href="http://chiamingyen.github.io/kmolsite/" rel="alternate"></link><link href="http://chiamingyen.github.io/kmolsite/feeds/kmol.atom.xml" rel="self"></link><id>http://chiamingyen.github.io/kmolsite/</id><updated>2015-12-15T14:07:04+08:00</updated><entry><title>2016kmol 測試</title><link href="http://chiamingyen.github.io/kmolsite/2016kmol-ce-shi.html" rel="alternate"></link><updated>2015-12-15T14:07:04+08:00</updated><author><name>kmol</name></author><id>tag:chiamingyen.github.io,2015-12-15:kmolsite/2016kmol-ce-shi.html</id><summary type="html">&lt;p&gt;可以啟動, 也能夠檢視沒有 Slug 設定的情況, 是否可以使用中文檔案名稱&lt;/p&gt;
-
-
-&lt;p&gt;以下利用 Brython 語法, 在網頁繪圖:&lt;/p&gt;
-&lt;p&gt;使用方法: &lt;a href="http://www.brython.info/"&gt;http://www.brython.info/&lt;/a&gt;&lt;/p&gt;
-&lt;!-- 導入 brython_dist.js --&gt;&lt;/p&gt;
-&lt;script type="text/javascript" src="http://brython.info/src/brython_dist.js"&gt;&lt;/script&gt;
-
-&lt;!-- 啟動 brython() --&gt;
-
-&lt;script&gt;
-window.onload=function(){
-brython(1);
-}
-&lt;/script&gt;
-
-&lt;!-- 以下利用 Brython 程式執行繪圖 --&gt;
-
-&lt;canvas id="plotarea" width="300" height="200"&gt;&lt;/canvas&gt;
-
-&lt;script type="text/python3"&gt;
-# 導入 doc
-from browser import document as doc
-import math
-
-# 準備繪圖畫布
-canvas = doc["plotarea"]
-ctx = canvas.getContext("2d")
-# 進行座標轉換, x 軸不變, y 軸反向且移動 canvas.height 單位光點
-# ctx.setTransform(1, 0, 0, -1, 0, canvas.height)
-# 以下採用 canvas 原始座標繪圖
-flag_w = canvas.width
-flag_h = canvas.height
-circle_x = flag_w/4
-circle_y = flag_h/4
-# 先畫滿地紅
-ctx.fillStyle='rgb(255, 0, 0)'
-ctx.fillRect(0,0,flag_w,flag_h)
-# 再畫青天
-ctx.fillStyle='rgb(0, 0, 150)'
-ctx.fillRect(0,0,flag_w/2,flag_h/2)
-# 畫十二道光芒白日
-ctx.beginPath()
-star_radius = flag_w/8
-angle = 0
-for i in range(24):
-    angle += 5*math.pi*2/12
-    toX = circle_x + math.cos(angle)*star_radius
-    toY = circle_y + math.sin(angle)*star_radius
-    # 只有 i 為 0 時移動到 toX, toY, 其餘都進行 lineTo
-    if (i):
-        ctx.lineTo(toX, toY)
-    else:
-        ctx.moveTo(toX, toY)
-ctx.closePath()
-# 將填色設為白色
-ctx.fillStyle = '#fff'
-ctx.fill()
-# 白日:藍圈
-ctx.beginPath()
-ctx.arc(circle_x, circle_y, flag_w*17/240, 0, math.pi*2, True)
-ctx.closePath()
-# 填色設為藍色
-ctx.fillStyle = 'rgb(0, 0, 149)'
-ctx.fill()
-# 白日:白心
-ctx.beginPath()
-ctx.arc(circle_x, circle_y, flag_w/16, 0, math.pi*2, True)
-ctx.closePath()
-# 填色設為白色
-ctx.fillStyle = '#fff'
-ctx.fill()
-&lt;/script&gt;</summary><category term="測試"></category></entry><entry><title>2016kmol initialized</title><link href="http://chiamingyen.github.io/kmolsite/2016kmol-initialized.html" rel="alternate"></link><updated>2015-12-15T14:07:04+08:00</updated><author><name>kmol</name></author><id>tag:chiamingyen.github.io,2015-12-15:kmolsite/2016kmol-initialized.html</id><summary type="html">&lt;p&gt;&lt;a href="https://github.com/chiamingyen/kmol2016"&gt;https://github.com/chiamingyen/kmol2016&lt;/a&gt; 是一個 Windows 64 位元環境下的可攜程式系統.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>kmolsite</title><link href="http://chiamingyen.github.io/kmolsite/" rel="alternate"></link><link href="http://chiamingyen.github.io/kmolsite/feeds/kmol.atom.xml" rel="self"></link><id>http://chiamingyen.github.io/kmolsite/</id><updated>2015-12-15T17:11:26+08:00</updated><entry><title>2016kmol initialized</title><link href="http://chiamingyen.github.io/kmolsite/2016kmol-initialized.html" rel="alternate"></link><updated>2015-12-15T17:11:26+08:00</updated><author><name>kmol</name></author><id>tag:chiamingyen.github.io,2015-12-15:kmolsite/2016kmol-initialized.html</id><summary type="html">&lt;p&gt;&lt;a href="https://github.com/chiamingyen/kmol2016"&gt;https://github.com/chiamingyen/kmol2016&lt;/a&gt; 是一個 Windows 64 位元環境下的可攜程式系統.&lt;/p&gt;
 
 
 &lt;p&gt;製作步驟如下:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;選擇安裝 Python 3.4.4, 原因為 Python 3.5 與 PyQt5 必須自行編譯,  為了簡化, 選擇 Python 3.4.4, 並且使用現成的 &lt;a href="https://riverbankcomputing.com/software/pyqt/download5"&gt;PyQt5-5.5.1-gpl-Py3.4-Qt5.5.1-x64.exe&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;安裝 Python 3.4.4 時, 故意不要安裝 pip, 隨後再透過 get-pip.py 以手動安裝.&lt;/li&gt;
-&lt;li&gt;安裝 pip 後, 再利用 Leo Editor 原始碼安裝, 同時利用 pip 安裝 pelican Markdown Flask&lt;/li&gt;
+&lt;li&gt;安裝 Python 3.4.4 時, 因為要製作成可攜免安裝套件, 故意不安裝 pip, 隨後再透過 &lt;a href="https://bootstrap.pypa.io/get-pip.py"&gt;get-pip.py&lt;/a&gt; 以手動安裝.&lt;/li&gt;
+&lt;li&gt;安裝 pip 後, 再利用 &lt;a href="http://leoeditor.com/"&gt;Leo Editor&lt;/a&gt; 原始碼安裝, 同時利用 pip 安裝 &lt;a href="https://github.com/getpelican/pelican"&gt;pelican&lt;/a&gt; Markdown &lt;a href="http://flask.pocoo.org/"&gt;Flask&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;為了要使用 &lt;a href="http://www.tipue.com/search/"&gt;Tipue Search&lt;/a&gt;, 再安裝 &lt;a href="http://www.crummy.com/software/BeautifulSoup/bs4/doc/"&gt;beautifulsoup4&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;</summary><category term="啟動"></category></entry></feed>

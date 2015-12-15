@@ -212,6 +212,9 @@ kmolsite            </a>
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav">
                         <li >
+                            <a href="http://chiamingyen.github.io/kmolsite/category/brython.html">Brython</a>
+                        </li>
+                        <li >
                             <a href="http://chiamingyen.github.io/kmolsite/category/git.html">Git</a>
                         </li>
                         <li >
@@ -256,7 +259,7 @@ kmolsite            </a>
 <footer class="post-info">
     <span class="label label-default">Date</span>
     <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2015-12-15T14:07:04.033327+08:00"> 二 15 十二月 2015</time>
+        <i class="fa fa-calendar"></i><time datetime="2015-12-15T17:23:42.440918+08:00"> 二 15 十二月 2015</time>
     </span>
 
 
@@ -269,8 +272,10 @@ kmolsite            </a>
                 <p>Pelican 近端與遠端的設定</p>
 
 
-<p>為了讓 Pelican 在近端產生靜態網頁後, 可以直接在近端瀏覽器中查驗, 因此必須在第一時間, 以近端設定, 若查驗無誤, 再轉換設定為遠端絕對目錄的設定, 重新再建立一次網頁內容.</p>
-<p>這樣的配置雖然不方便, 但是為了讓 disqus 留言系統可以正常運作, 必須要採取此一設定流程.</p>
+<p>基本的概念是, 在近端時, 靜態網頁使用相對目錄, SITEURL 設為 "./", 而在 Github pages 時, 則採用制式的符號名稱加上 repository 名稱作為 SITEURL.</p>
+<p>另外一個近端與遠端的差異為 Tipue search, 近端時, 利用 static 模組, 將所有網頁內容存為 tipuesearch_content.js, 而在 Github pages 時, 則使用 json 模組, 網頁內容存為 tipuesearch_content.json 格式.</p>
+<p>其中為了在網誌內容編寫與功能開發過程中, 能夠完全在近端測試 Github pages 端的所有功能, 利用 Leo Editor 的 @buttton 與 @edit, 分別針對兩端所需要的不同設定加以區分, 就連 theme 中有關 Tipue search 的啟動與設定, 也是分為近端與遠端兩套.</p>
+<p>在 <a href="http://chiamingyen.github.io/kmolsite">kmolsite</a> 的專案中, 我們可以發現, <a href="http://leoeditor.com/">Leo Editor</a> 在面對這些不同環境, 不同設定, 而必須以不同指令產生不同內容的情況下, 可以說應付自如.</p>
             </div>
             <!-- /.entry-content -->
     <hr/>
@@ -312,17 +317,64 @@ kmolsite            </a>
 
 <section class="well well-sm">
     <ul class="list-group list-group-flush">
-            <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Social</span></h4>
-              <ul class="list-group" id="social">
-                <li class="list-group-item"><a href="#"><i class="fa fa-you-can-add-links-in-your-config-file-square fa-lg"></i> You can add links in your config file</a></li>
-                <li class="list-group-item"><a href="#"><i class="fa fa-another-social-link-square fa-lg"></i> Another social link</a></li>
-              </ul>
+
+            <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
+                <ul class="list-group" id="recentposts">
+                    <li class="list-group-item">
+                        <a href="http://chiamingyen.github.io/kmolsite/tipue-site-search-for-pelican.html">
+                            Tipue Site Search for Pelican
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="http://chiamingyen.github.io/kmolsite/pelican-jin-duan-yu-yuan-duan-de-she-ding.html">
+                            Pelican 近端與遠端的設定
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="http://chiamingyen.github.io/kmolsite/2016kmol-ce-shi.html">
+                            2016kmol 測試
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="http://chiamingyen.github.io/kmolsite/2016kmol-initialized.html">
+                            2016kmol initialized
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="http://chiamingyen.github.io/kmolsite/remove-local-and-remote-branch.html">
+                            Remove local and remote branch
+                        </a>
+                    </li>
+                </ul>
             </li>
 
+            <li class="list-group-item"><a href="http://chiamingyen.github.io/kmolsite/"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Categories</span></h4></a>
+                <ul class="list-group" id="categories">
+                    <li class="list-group-item">
+                        <a href="http://chiamingyen.github.io/kmolsite/category/brython.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Brython
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="http://chiamingyen.github.io/kmolsite/category/git.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Git
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="http://chiamingyen.github.io/kmolsite/category/kmol.html">
+                            <i class="fa fa-folder-open fa-lg"></i> kmol
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="http://chiamingyen.github.io/kmolsite/category/pelican.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Pelican
+                        </a>
+                    </li>
+                </ul>
+            </li>
 
-
-            <li class="list-group-item"><a href="http://chiamingyen.github.io/kmolsite/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
-                <ul class="list-group " id="tags">
+            <li class="list-group-item"><a href="http://chiamingyen.github.io/kmolsite/tags.html"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
+                <ul class="list-group list-inline tagcloud" id="tags">
                 </ul>
             </li>
     <li class="list-group-item"><h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
@@ -333,18 +385,18 @@ kmolsite            </a>
             </a>
         </li>
         <li class="list-group-item">
-            <a href="http://python.org/" target="_blank">
-                Python.org
+            <a href="https://github.com/DandyDev/pelican-bootstrap3/" target="_blank">
+                pelican-bootstrap3
             </a>
         </li>
         <li class="list-group-item">
-            <a href="http://jinja.pocoo.org/" target="_blank">
-                Jinja2
+            <a href="https://github.com/getpelican/pelican-plugins" target="_blank">
+                pelican-plugins
             </a>
         </li>
         <li class="list-group-item">
-            <a href="#" target="_blank">
-                You can modify those links in your config file
+            <a href="https://github.com/Tipue/Tipue-Search" target="_blank">
+                Tipue search
             </a>
         </li>
       </ul>

@@ -212,6 +212,9 @@ kmolsite            </a>
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav">
                         <li >
+                            <a href="http://chiamingyen.github.io/kmolsite/category/brython.html">Brython</a>
+                        </li>
+                        <li >
                             <a href="http://chiamingyen.github.io/kmolsite/category/git.html">Git</a>
                         </li>
                         <li class="active">
@@ -256,7 +259,7 @@ kmolsite            </a>
 <footer class="post-info">
     <span class="label label-default">Date</span>
     <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2015-12-15T14:07:04.033327+08:00"> 二 15 十二月 2015</time>
+        <i class="fa fa-calendar"></i><time datetime="2015-12-15T17:11:26.932944+08:00"> 二 15 十二月 2015</time>
     </span>
 
 
@@ -272,8 +275,9 @@ kmolsite            </a>
 <p>製作步驟如下:</p>
 <ol>
 <li>選擇安裝 Python 3.4.4, 原因為 Python 3.5 與 PyQt5 必須自行編譯,  為了簡化, 選擇 Python 3.4.4, 並且使用現成的 <a href="https://riverbankcomputing.com/software/pyqt/download5">PyQt5-5.5.1-gpl-Py3.4-Qt5.5.1-x64.exe</a></li>
-<li>安裝 Python 3.4.4 時, 故意不要安裝 pip, 隨後再透過 get-pip.py 以手動安裝.</li>
-<li>安裝 pip 後, 再利用 Leo Editor 原始碼安裝, 同時利用 pip 安裝 pelican Markdown Flask</li>
+<li>安裝 Python 3.4.4 時, 因為要製作成可攜免安裝套件, 故意不安裝 pip, 隨後再透過 <a href="https://bootstrap.pypa.io/get-pip.py">get-pip.py</a> 以手動安裝.</li>
+<li>安裝 pip 後, 再利用 <a href="http://leoeditor.com/">Leo Editor</a> 原始碼安裝, 同時利用 pip 安裝 <a href="https://github.com/getpelican/pelican">pelican</a> Markdown <a href="http://flask.pocoo.org/">Flask</a></li>
+<li>為了要使用 <a href="http://www.tipue.com/search/">Tipue Search</a>, 再安裝 <a href="http://www.crummy.com/software/BeautifulSoup/bs4/doc/">beautifulsoup4</a></li>
 </ol>
             </div>
             <!-- /.entry-content -->
@@ -316,17 +320,64 @@ kmolsite            </a>
 
 <section class="well well-sm">
     <ul class="list-group list-group-flush">
-            <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Social</span></h4>
-              <ul class="list-group" id="social">
-                <li class="list-group-item"><a href="#"><i class="fa fa-you-can-add-links-in-your-config-file-square fa-lg"></i> You can add links in your config file</a></li>
-                <li class="list-group-item"><a href="#"><i class="fa fa-another-social-link-square fa-lg"></i> Another social link</a></li>
-              </ul>
+
+            <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
+                <ul class="list-group" id="recentposts">
+                    <li class="list-group-item">
+                        <a href="http://chiamingyen.github.io/kmolsite/tipue-site-search-for-pelican.html">
+                            Tipue Site Search for Pelican
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="http://chiamingyen.github.io/kmolsite/pelican-jin-duan-yu-yuan-duan-de-she-ding.html">
+                            Pelican 近端與遠端的設定
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="http://chiamingyen.github.io/kmolsite/2016kmol-ce-shi.html">
+                            2016kmol 測試
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="http://chiamingyen.github.io/kmolsite/2016kmol-initialized.html">
+                            2016kmol initialized
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="http://chiamingyen.github.io/kmolsite/remove-local-and-remote-branch.html">
+                            Remove local and remote branch
+                        </a>
+                    </li>
+                </ul>
             </li>
 
+            <li class="list-group-item"><a href="http://chiamingyen.github.io/kmolsite/"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Categories</span></h4></a>
+                <ul class="list-group" id="categories">
+                    <li class="list-group-item">
+                        <a href="http://chiamingyen.github.io/kmolsite/category/brython.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Brython
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="http://chiamingyen.github.io/kmolsite/category/git.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Git
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="http://chiamingyen.github.io/kmolsite/category/kmol.html">
+                            <i class="fa fa-folder-open fa-lg"></i> kmol
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="http://chiamingyen.github.io/kmolsite/category/pelican.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Pelican
+                        </a>
+                    </li>
+                </ul>
+            </li>
 
-
-            <li class="list-group-item"><a href="http://chiamingyen.github.io/kmolsite/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
-                <ul class="list-group " id="tags">
+            <li class="list-group-item"><a href="http://chiamingyen.github.io/kmolsite/tags.html"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
+                <ul class="list-group list-inline tagcloud" id="tags">
                 </ul>
             </li>
     <li class="list-group-item"><h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
@@ -337,18 +388,18 @@ kmolsite            </a>
             </a>
         </li>
         <li class="list-group-item">
-            <a href="http://python.org/" target="_blank">
-                Python.org
+            <a href="https://github.com/DandyDev/pelican-bootstrap3/" target="_blank">
+                pelican-bootstrap3
             </a>
         </li>
         <li class="list-group-item">
-            <a href="http://jinja.pocoo.org/" target="_blank">
-                Jinja2
+            <a href="https://github.com/getpelican/pelican-plugins" target="_blank">
+                pelican-plugins
             </a>
         </li>
         <li class="list-group-item">
-            <a href="#" target="_blank">
-                You can modify those links in your config file
+            <a href="https://github.com/Tipue/Tipue-Search" target="_blank">
+                Tipue search
             </a>
         </li>
       </ul>
