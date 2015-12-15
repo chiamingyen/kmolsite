@@ -40,7 +40,22 @@
 <v t="amd.20151215121816.1" a="E"><vh>@path templates</vh>
 <v t="amd.20151215121827.1"><vh>@edit base.html</vh></v>
 <v t="amd.20151215121849.1"><vh>@edit search.html</vh></v>
+<v t="amd.20151215152634.1"><vh>@edit tags.html</vh></v>
 </v>
+</v>
+<v t="amd.20151215154950.1" a="E"><vh>@path pelican-bootstrap3_local</vh>
+<v t="amd.20151215154950.2" a="E"><vh>@path templates</vh>
+<v t="amd.20151215154950.3"><vh>@edit base.html</vh></v>
+<v t="amd.20151215154950.4"><vh>@edit search.html</vh></v>
+<v t="amd.20151215154950.5"><vh>@edit tags.html</vh></v>
+</v>
+</v>
+</v>
+<v t="amd.20151215155650.1"><vh>@edit tipuesearch_content.json</vh></v>
+<v t="amd.20151215155533.1"><vh>@edit tipuesearch_content.js</vh></v>
+<v t="amd.20151215154225.1" a="E"><vh>@path plugin</vh>
+<v t="amd.20151215154238.1" a="E"><vh>@path tipue_search</vh>
+<v t="amd.20151215154248.1"><vh>@edit tipue_search.py</vh></v>
 </v>
 </v>
 </vnodes>
@@ -90,6 +105,10 @@ $(document).ready(function() {
 <t tx="amd.20151215121740.1"></t>
 <t tx="amd.20151215121758.1"></t>
 <t tx="amd.20151215121816.1"></t>
+<t tx="amd.20151215154225.1"></t>
+<t tx="amd.20151215154238.1"></t>
+<t tx="amd.20151215154950.1"></t>
+<t tx="amd.20151215154950.2"></t>
 <t tx="leo.20151212173309.2"></t>
 <t tx="leo.20151212173315.1"></t>
 <t tx="leo.20151212173315.2">QTreeWidget {
@@ -169,13 +188,15 @@ QLineEdit#editorLabel {
 vertical: body pane on the botton</t>
 <t tx="leo.20151212173658.1">@language python
 import os
-os.system("pelican content -o ./ -s publishconf.py -t theme/pelican-bootstrap3")
+#os.system("pelican content -o ./ -s publishconf.py -t theme/pelican-bootstrap3")
+os.system("pelican content -o ./ -s publishconf.py")
 g.es("admin pelican 執行完畢")
 
 </t>
 <t tx="leo.20151213085727.1">@language python
 import os
-os.system("pelican content -o ./ -s local_publishconf.py -t theme/pelican-bootstrap3")
+#os.system("pelican content -o ./ -s local_publishconf.py -t theme/pelican-bootstrap3")
+os.system("pelican content -o ./ -s local_publishconf.py")
 g.es("admin pelican 近端執行完畢")
 
 </t>

@@ -15,6 +15,8 @@ from pelicanconf import *
 SITEURL = 'http://chiamingyen.github.io/kmolsite'
 # 此設定用於將資料送到 gh-pages, 因此使用絕對 URL 設定
 RELATIVE_URLS = False
+# 為了要讓 local 與 gh-pages 上都能夠使用 Tipue search, 可能要採用不同的 theme
+THEME = 'theme/pelican-bootstrap3'
 
 FEED_ALL_ATOM = 'feeds/all.atom.xml'
 CATEGORY_FEED_ATOM = 'feeds/%s.atom.xml'

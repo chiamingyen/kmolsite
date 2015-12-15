@@ -103,8 +103,17 @@ class Tipue_Search_JSON_Generator(object):
         root_node = {'pages': self.json_nodes}
 
         with open(path, 'w', encoding='utf-8') as fd:
+            # 寫出所需要的 .json 檔案
             json.dump(root_node, fd, separators=(',', ':'), ensure_ascii=False)
-
+        
+        # 以下寫出 .js 檔案, 主要用於近端的 Tipue search
+        js_path = os.path.join(self.output_path, 'tipuesearch_content.js')
+        with open(js_path, 'w', encoding='utf-8') as fd:
+            # 寫出所需要的 .js 檔案
+            search_text = json.dumps(root_node, separators=(',', ':'), ensure_ascii=False)
+            fd.write('var tipuesearch = ')
+            fd.write(search_text)
+            fd.write(';')
 
 def get_generators(generators):
     return Tipue_Search_JSON_Generator
