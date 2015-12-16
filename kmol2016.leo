@@ -22,6 +22,7 @@
 </v>
 <v t="amd.20151215180106.1" a="E"><vh>設定與開發</vh>
 <v t="amd.20151216151325.1"><vh>@edit index.html</vh></v>
+<v t="amd.20151216152209.1"><vh>@edit README.md</vh></v>
 <v t="leo.20151213230723.1"><vh>Pelican 設定</vh>
 <v t="leo.20151213230957.1"><vh>文章 Date 設定</vh></v>
 <v t="leo.20151213230729.1"><vh>使用 summary plugin</vh></v>
@@ -33,13 +34,6 @@
 <v t="amd.20151215170221.1"><vh>以下 local_publishconf.py 為近端所使用的設定</vh></v>
 <v t="leo.20151213085752.1"><vh>@edit local_publishconf.py</vh></v>
 <v t="amd.20151215121740.1" a="E"><vh>@path theme</vh>
-<v t="amd.20151215164330.1" a="E"><vh>Tipue Search 程式碼</vh>
-<v t="amd.20151215164348.1" a="E"><vh>@path tipuesearch</vh>
-<v t="amd.20151215164443.1"><vh>@edit tipuesearch_set.js</vh></v>
-<v t="amd.20151215164405.1"><vh>@edit tipuesearch.js</vh></v>
-<v t="amd.20151215165242.1"><vh>@edit tipuesearch.min.js</vh></v>
-</v>
-</v>
 <v t="amd.20151215121758.1" a="E"><vh>@path pelican-bootstrap3</vh>
 <v t="amd.20151215121816.1" a="E"><vh>@path templates</vh>
 <v t="amd.20151215121827.1"><vh>@edit base.html</vh></v>
@@ -58,9 +52,6 @@
 </v>
 </v>
 </v>
-<v t="amd.20151215170248.1"><vh>以下的 json 與 js 檔案為 Tipue search contents</vh></v>
-<v t="amd.20151215155650.1"><vh>@edit tipuesearch_content.json</vh></v>
-<v t="amd.20151215155533.1"><vh>@edit tipuesearch_content.js</vh></v>
 <v t="amd.20151215170326.1"><vh>以下在修改或查驗 plugin 目錄下的檔案</vh></v>
 <v t="amd.20151215154225.1"><vh>@path plugin</vh>
 <v t="amd.20151215154238.1" a="E"><vh>@path tipue_search</vh>
@@ -80,6 +71,7 @@
 <v t="amd.20151216001255.1"><vh>@edit 20151216.md</vh></v>
 <v t="amd.20151216115441.1"><vh>@edit 20151216-1.md</vh></v>
 <v t="amd.20151216121027.1"><vh>@edit 20151216-2.md</vh></v>
+<v t="amd.20151216164430.1"><vh>@edit 20151216-3.md</vh></v>
 </v>
 <v t="amd.20151215180504.1"><vh>201601文章</vh></v>
 </v>
@@ -93,13 +85,10 @@
 <t tx="amd.20151215154950.1"></t>
 <t tx="amd.20151215154950.2"></t>
 <t tx="amd.20151215162536.1"></t>
-<t tx="amd.20151215164330.1"></t>
-<t tx="amd.20151215164348.1"></t>
 <t tx="amd.20151215170031.1"></t>
 <t tx="amd.20151215170117.1"></t>
 <t tx="amd.20151215170142.1"></t>
 <t tx="amd.20151215170221.1"></t>
-<t tx="amd.20151215170248.1"></t>
 <t tx="amd.20151215170326.1"></t>
 <t tx="amd.20151215170350.1"></t>
 <t tx="amd.20151215180106.1"></t>
