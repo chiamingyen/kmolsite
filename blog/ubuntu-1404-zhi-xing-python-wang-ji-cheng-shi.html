@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en"
+>
+<head>
+    <title>Ubuntu 14.04 執行 Python 網際程式 - kmolsite</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+
+<style type="text/css">
+
+/*some stuff for output/input prompts*/
+div.cell{border:1px solid transparent;display:-webkit-box;-webkit-box-orient:vertical;-webkit-box-align:stretch;display:-moz-box;-moz-box-orient:vertical;-moz-box-align:stretch;display:box;box-orient:vertical;box-align:stretch;display:flex;flex-direction:column;align-items:stretch}div.cell.selected{border-radius:4px;border:thin #ababab solid}
+div.cell.edit_mode{border-radius:4px;border:thin #008000 solid}
+div.cell{width:100%;padding:5px 5px 5px 0;margin:0;outline:none}
+div.prompt{min-width:11ex;padding:.4em;margin:0;font-family:monospace;text-align:right;line-height:1.21429em}
+@media (max-width:480px){div.prompt{text-align:left}}div.inner_cell{display:-webkit-box;-webkit-box-orient:vertical;-webkit-box-align:stretch;display:-moz-box;-moz-box-orient:vertical;-moz-box-align:stretch;display:box;box-orient:vertical;box-align:stretch;display:flex;flex-direction:column;align-items:stretch;-webkit-box-flex:1;-moz-box-flex:1;box-flex:1;flex:1}
+div.input_area{border:1px solid #cfcfcf;border-radius:4px;background:#f7f7f7;line-height:1.21429em}
+div.prompt:empty{padding-top:0;padding-bottom:0}
+div.input{page-break-inside:avoid;display:-webkit-box;-webkit-box-orient:horizontal;-webkit-box-align:stretch;display:-moz-box;-moz-box-orient:horizontal;-moz-box-align:stretch;display:box;box-orient:horizontal;box-align:stretch;}
+div.inner_cell{width:90%;}
+div.input_area{border:1px solid #cfcfcf;border-radius:4px;background:#f7f7f7;}
+div.input_prompt{color:navy;border-top:1px solid transparent;}
+div.output_wrapper{margin-top:5px;position:relative;display:-webkit-box;-webkit-box-orient:vertical;-webkit-box-align:stretch;display:-moz-box;-moz-box-orient:vertical;-moz-box-align:stretch;display:box;box-orient:vertical;box-align:stretch;width:100%;}
+div.output_scroll{height:24em;width:100%;overflow:auto;border-radius:4px;-webkit-box-shadow:inset 0 2px 8px rgba(0, 0, 0, 0.8);-moz-box-shadow:inset 0 2px 8px rgba(0, 0, 0, 0.8);box-shadow:inset 0 2px 8px rgba(0, 0, 0, 0.8);}
+div.output_collapsed{margin:0px;padding:0px;display:-webkit-box;-webkit-box-orient:vertical;-webkit-box-align:stretch;display:-moz-box;-moz-box-orient:vertical;-moz-box-align:stretch;display:box;box-orient:vertical;box-align:stretch;width:100%;}
+div.out_prompt_overlay{height:100%;padding:0px 0.4em;position:absolute;border-radius:4px;}
+div.out_prompt_overlay:hover{-webkit-box-shadow:inset 0 0 1px #000000;-moz-box-shadow:inset 0 0 1px #000000;box-shadow:inset 0 0 1px #000000;background:rgba(240, 240, 240, 0.5);}
+div.output_prompt{color:darkred;}
+
+a.anchor-link:link{text-decoration:none;padding:0px 20px;visibility:hidden;}
+h1:hover .anchor-link,h2:hover .anchor-link,h3:hover .anchor-link,h4:hover .anchor-link,h5:hover .anchor-link,h6:hover .anchor-link{visibility:visible;}
+/* end stuff for output/input prompts*/
+
+
+.highlight-ipynb .hll { background-color: #ffffcc }
+.highlight-ipynb  { background: #f8f8f8; }
+.highlight-ipynb .c { color: #408080; font-style: italic } /* Comment */
+.highlight-ipynb .err { border: 1px solid #FF0000 } /* Error */
+.highlight-ipynb .k { color: #008000; font-weight: bold } /* Keyword */
+.highlight-ipynb .o { color: #666666 } /* Operator */
+.highlight-ipynb .cm { color: #408080; font-style: italic } /* Comment.Multiline */
+.highlight-ipynb .cp { color: #BC7A00 } /* Comment.Preproc */
+.highlight-ipynb .c1 { color: #408080; font-style: italic } /* Comment.Single */
+.highlight-ipynb .cs { color: #408080; font-style: italic } /* Comment.Special */
+.highlight-ipynb .gd { color: #A00000 } /* Generic.Deleted */
+.highlight-ipynb .ge { font-style: italic } /* Generic.Emph */
+.highlight-ipynb .gr { color: #FF0000 } /* Generic.Error */
+.highlight-ipynb .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.highlight-ipynb .gi { color: #00A000 } /* Generic.Inserted */
+.highlight-ipynb .go { color: #888888 } /* Generic.Output */
+.highlight-ipynb .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+.highlight-ipynb .gs { font-weight: bold } /* Generic.Strong */
+.highlight-ipynb .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.highlight-ipynb .gt { color: #0044DD } /* Generic.Traceback */
+.highlight-ipynb .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+.highlight-ipynb .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+.highlight-ipynb .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+.highlight-ipynb .kp { color: #008000 } /* Keyword.Pseudo */
+.highlight-ipynb .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+.highlight-ipynb .kt { color: #B00040 } /* Keyword.Type */
+.highlight-ipynb .m { color: #666666 } /* Literal.Number */
+.highlight-ipynb .s { color: #BA2121 } /* Literal.String */
+.highlight-ipynb .na { color: #7D9029 } /* Name.Attribute */
+.highlight-ipynb .nb { color: #008000 } /* Name.Builtin */
+.highlight-ipynb .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+.highlight-ipynb .no { color: #880000 } /* Name.Constant */
+.highlight-ipynb .nd { color: #AA22FF } /* Name.Decorator */
+.highlight-ipynb .ni { color: #999999; font-weight: bold } /* Name.Entity */
+.highlight-ipynb .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+.highlight-ipynb .nf { color: #0000FF } /* Name.Function */
+.highlight-ipynb .nl { color: #A0A000 } /* Name.Label */
+.highlight-ipynb .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+.highlight-ipynb .nt { color: #008000; font-weight: bold } /* Name.Tag */
+.highlight-ipynb .nv { color: #19177C } /* Name.Variable */
+.highlight-ipynb .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+.highlight-ipynb .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight-ipynb .mf { color: #666666 } /* Literal.Number.Float */
+.highlight-ipynb .mh { color: #666666 } /* Literal.Number.Hex */
+.highlight-ipynb .mi { color: #666666 } /* Literal.Number.Integer */
+.highlight-ipynb .mo { color: #666666 } /* Literal.Number.Oct */
+.highlight-ipynb .sb { color: #BA2121 } /* Literal.String.Backtick */
+.highlight-ipynb .sc { color: #BA2121 } /* Literal.String.Char */
+.highlight-ipynb .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+.highlight-ipynb .s2 { color: #BA2121 } /* Literal.String.Double */
+.highlight-ipynb .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+.highlight-ipynb .sh { color: #BA2121 } /* Literal.String.Heredoc */
+.highlight-ipynb .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+.highlight-ipynb .sx { color: #008000 } /* Literal.String.Other */
+.highlight-ipynb .sr { color: #BB6688 } /* Literal.String.Regex */
+.highlight-ipynb .s1 { color: #BA2121 } /* Literal.String.Single */
+.highlight-ipynb .ss { color: #19177C } /* Literal.String.Symbol */
+.highlight-ipynb .bp { color: #008000 } /* Name.Builtin.Pseudo */
+.highlight-ipynb .vc { color: #19177C } /* Name.Variable.Class */
+.highlight-ipynb .vg { color: #19177C } /* Name.Variable.Global */
+.highlight-ipynb .vi { color: #19177C } /* Name.Variable.Instance */
+.highlight-ipynb .il { color: #666666 } /* Literal.Number.Integer.Long */
+</style>
+
+<style type="text/css">
+/* Overrides of notebook CSS for static HTML export */
+div.entry-content {
+  overflow: visible;
+  padding: 8px;
+}
+.input_area {
+  padding: 0.2em;
+}
+
+a.heading-anchor {
+ white-space: normal;
+}
+
+.rendered_html
+code {
+ font-size: .8em;
+}
+
+pre.ipynb {
+  color: black;
+  background: #f7f7f7;
+  border: none;
+  box-shadow: none;
+  margin-bottom: 0;
+  padding: 0;
+  margin: 0px;
+  font-size: 13px;
+}
+
+/* remove the prompt div from text cells */
+div.text_cell .prompt {
+    display: none;
+}
+
+/* remove horizontal padding from text cells, */
+/* so it aligns with outer body text */
+div.text_cell_render {
+    padding: 0.5em 0em;
+}
+
+img.anim_icon{padding:0; border:0; vertical-align:middle; -webkit-box-shadow:none; -box-shadow:none}
+</style>
+
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML" type="text/javascript"></script>
+<script type="text/javascript">
+init_mathjax = function() {
+    if (window.MathJax) {
+        // MathJax loaded
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                displayMath: [ ['$$','$$'], ["\\[","\\]"] ]
+            },
+            displayAlign: 'left', // Change this to 'center' to center equations.
+            "HTML-CSS": {
+                styles: {'.MathJax_Display': {"margin": 0}}
+            }
+        });
+        MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+    }
+}
+init_mathjax();
+</script>
+
+<link rel="canonical" href="./ubuntu-1404-zhi-xing-python-wang-ji-cheng-shi.html">
+
+        <meta name="author" content="kmol" />
+        <meta name="keywords" content="網際程式,Python,nginx,uwsgi" />
+        <meta name="description" content="Nginx 當前端, 在 Ubuntu 以 uwsgi 執行 Python 程式." />
+
+        <meta property="og:site_name" content="kmolsite" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="Ubuntu 14.04 執行 Python 網際程式"/>
+        <meta property="og:url" content="./ubuntu-1404-zhi-xing-python-wang-ji-cheng-shi.html"/>
+        <meta property="og:description" content="Nginx 當前端, 在 Ubuntu 以 uwsgi 執行 Python 程式."/>
+        <meta property="article:published_time" content="2015-12-16" />
+            <meta property="article:section" content="Ubuntu" />
+            <meta property="article:tag" content="網際程式" />
+            <meta property="article:tag" content="Python" />
+            <meta property="article:tag" content="nginx" />
+            <meta property="article:tag" content="uwsgi" />
+            <meta property="article:author" content="kmol" />
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="./theme/css/bootstrap.united.min.css" type="text/css"/>
+    <link href="./theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="./theme/css/pygments/fruity.css" rel="stylesheet">
+    <link href="./theme/tipuesearch/tipuesearch.css" rel="stylesheet">
+    <link rel="stylesheet" href="./theme/css/style.css" type="text/css"/>
+
+        <link href="./feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
+              title="kmolsite ATOM Feed"/>
+
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="./" class="navbar-brand">
+kmolsite            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                        <li >
+                            <a href="./category/brython.html">Brython</a>
+                        </li>
+                        <li >
+                            <a href="./category/git.html">Git</a>
+                        </li>
+                        <li >
+                            <a href="./category/kmol.html">Kmol</a>
+                        </li>
+                        <li >
+                            <a href="./category/pelican.html">Pelican</a>
+                        </li>
+                        <li class="active">
+                            <a href="./category/ubuntu.html">Ubuntu</a>
+                        </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><span>
+                <form class="navbar-search" action="./search.html">
+                  <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input" required>
+                </form></span>
+              </li>
+              <li><a href="./archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+<!-- Banner -->
+<!-- End Banner -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="./ubuntu-1404-zhi-xing-python-wang-ji-cheng-shi.html"
+                       rel="bookmark"
+                       title="Permalink to Ubuntu 14.04 執行 Python 網際程式">
+                        Ubuntu 14.04 執行 Python 網際程式
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2015-12-16T12:05:24.898588+08:00"> 三 16 十二月 2015</time>
+    </span>
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="./tag/wang-ji-cheng-shi.html">網際程式</a>
+        /
+	<a href="./tag/python.html">Python</a>
+        /
+	<a href="./tag/nginx.html">nginx</a>
+        /
+	<a href="./tag/uwsgi.html">uwsgi</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <p>Nginx 當前端, 在 Ubuntu 以 uwsgi 執行 Python 程式.</p>
+
+
+<p>nginx.conf 設定</p>
+<div class="highlight"><pre>user www-data;
+worker_processes <span class="m">4</span>;
+pid <span class="n">/run/nginx.pid;</span>
+
+events {
+    worker_connections <span class="m">768</span>;
+    # multi_accept <span class="k">on</span>;
+}
+
+http {
+
+    ##
+    # Basic Settings
+    ##
+
+    sendfile <span class="k">on</span>;
+    tcp_nopush <span class="k">on</span>;
+    tcp_nodelay <span class="k">on</span>;
+    keepalive_timeout <span class="m">65</span>;
+    types_hash_max_size <span class="m">2048</span>;
+    # server_tokens <span class="k">off</span>;
+
+    # server_names_hash_bucket_size <span class="m">64</span>;
+    # server_name_in_redirect <span class="k">off</span>;
+
+    include <span class="n">/etc/nginx/mime.types;</span>
+    default_type application<span class="n">/octet-stream;</span>
+
+    ##
+    # Logging Settings
+    ##
+
+    access_log <span class="n">/var/log/nginx/access.log;</span>
+    error_log <span class="n">/var/log/nginx/error.log;</span>
+
+    ##
+    # Gzip Settings
+    ##
+
+    gzip <span class="k">on</span>;
+    gzip_disable <span class="s2">&quot;msie6&quot;</span>;
+
+    # gzip_vary <span class="k">on</span>;
+    # gzip_proxied any;
+    # gzip_comp_level <span class="m">6</span>;
+    # gzip_buffers <span class="m">16</span> <span class="m">8</span>k;
+    # gzip_http_version <span class="m">1</span>.<span class="m">1</span>;
+    # gzip_types text<span class="n">/plain</span> text<span class="n">/css</span> application<span class="n">/json</span> application<span class="n">/x-javascript</span> text<span class="n">/xml</span> application<span class="n">/xml</span> application<span class="n">/xml+rss</span> text<span class="n">/javascript;</span>
+
+    ##
+    # nginx-naxsi config
+    ##
+    # Uncomment it <span class="k">if</span> you installed nginx-naxsi
+    ##
+
+    #include <span class="n">/etc/nginx/naxsi_core.rules;</span>
+
+    ##
+    # nginx-passenger config
+    ##
+    # Uncomment it <span class="k">if</span> you installed nginx-passenger
+    ##
+
+    #passenger_root <span class="n">/usr;</span>
+    #passenger_ruby <span class="n">/usr/bin/ruby;</span>
+
+    ##
+    # Virtual Host Configs
+    ##
+
+    include <span class="n">/etc/nginx/conf.d/*.conf;</span>
+    include <span class="n">/etc/nginx/sites-enabled/*;</span>
+}
+
+
+#mail {
+#   # See sample authentication script at:
+#   # http:<span class="n">//wiki.nginx.org/ImapAuthenticateWithApachePhpScript</span>
+# 
+#   # auth_http localhost<span class="n">/auth.php;</span>
+#   # pop<span class="m">3</span>_capabilities <span class="s2">&quot;TOP&quot;</span> <span class="s2">&quot;USER&quot;</span>;
+#   # imap_capabilities <span class="s2">&quot;IMAP4rev1&quot;</span> <span class="s2">&quot;UIDPLUS&quot;</span>;
+# 
+#   server {
+#       listen     localhost:110;
+#       protocol   pop<span class="m">3</span>;
+#       proxy      <span class="k">on</span>;
+#   }
+# 
+#   server {
+#       listen     localhost:143;
+#       protocol   imap;
+#       proxy      <span class="k">on</span>;
+#   }
+#}
+</pre></div>
+
+
+<p>include /etc/nginx/sites-enabled/*; 表示導入 sites-enabled 中的所有設定檔.</p>
+<p>而 sites-enabled 中只有一個 default 指向 sites-available/default, 所以隨後的設定都以 sites-available/default 檔案為主</p>
+<p>sites-availables/default 設定檔案:</p>
+<div class="highlight"><pre><span class="nt">server</span> <span class="p">{</span>
+    <span class="n">listen</span> <span class="m">80</span> <span class="n">default_server</span><span class="p">;</span>
+    <span class="n">listen</span> <span class="cp">[</span><span class="p">::</span><span class="cp">]</span><span class="o">:</span><span class="m">80</span> <span class="n">default_server</span> <span class="n">ipv6only</span><span class="o">=</span><span class="n">on</span><span class="p">;</span>
+
+    <span class="n">listen</span> <span class="m">443</span> <span class="n">ssl</span><span class="p">;</span>
+    <span class="n">listen</span> <span class="cp">[</span><span class="p">::</span><span class="cp">]</span><span class="o">:</span><span class="m">443</span> <span class="n">ssl</span> <span class="n">ipv6only</span><span class="o">=</span><span class="n">on</span><span class="p">;</span>
+
+    <span class="n">location</span> <span class="o">/</span><span class="k">static</span> <span class="err">{</span>
+        <span class="n">alias</span>  <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">hp3</span><span class="o">/</span><span class="n">cmsimply</span><span class="o">/</span><span class="n">wsgi</span><span class="o">/</span><span class="k">static</span><span class="o">/</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="nt">location</span> <span class="o">/</span> <span class="p">{</span>
+        <span class="n">include</span> <span class="n">uwsgi_params</span><span class="p">;</span>
+        <span class="n">uwsgi_pass</span>  <span class="m">127</span><span class="o">.</span><span class="m">0</span><span class="o">.</span><span class="m">0</span><span class="o">.</span><span class="m">1</span><span class="o">:</span><span class="m">8080</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="nt">server_name</span> <span class="nt">localhost</span><span class="o">;</span>
+    <span class="nf">#ssl</span> <span class="nt">on</span><span class="o">;</span>
+    <span class="nt">ssl_certificate</span> <span class="o">/</span><span class="nt">etc</span><span class="o">/</span><span class="nt">nginx</span><span class="o">/</span><span class="nt">ssl</span><span class="o">/</span><span class="nt">nginx</span><span class="nc">.crt</span><span class="o">;</span>
+    <span class="nt">ssl_certificate_key</span> <span class="o">/</span><span class="nt">etc</span><span class="o">/</span><span class="nt">nginx</span><span class="o">/</span><span class="nt">ssl</span><span class="o">/</span><span class="nt">nginx</span><span class="nc">.key</span><span class="o">;</span>
+    <span class="nt">ssl_session_timeout</span> <span class="nt">5m</span><span class="o">;</span>
+    <span class="nt">ssl_protocols</span> <span class="nt">SSLv3</span> <span class="nt">TLSv1</span> <span class="nt">TLSv1</span><span class="nc">.1</span> <span class="nt">TLSv1</span><span class="nc">.2</span><span class="o">;</span>
+    <span class="nt">ssl_ciphers</span> <span class="s2">&quot;HIGH:!aNULL:!MD5 or HIGH:!aNULL:!MD5:!3DES&quot;</span><span class="o">;</span>
+    <span class="nt">ssl_prefer_server_ciphers</span> <span class="nt">on</span><span class="o">;</span>
+    <span class="nt">try_files</span> <span class="o">$</span><span class="nt">uri</span> <span class="o">$</span><span class="nt">uri</span><span class="o">/</span> <span class="o">=</span><span class="nt">404</span><span class="o">;</span>
+
+<span class="err">}</span>
+</pre></div>
+
+
+<p>其中的 include uwsgi_params;, 表示 uwsgi_params 檔案必須位於與 default 設定檔案同一個目錄, 也就是必須位於 sites-available 目錄中.</p>
+<p>uwsgi_pass  127.0.0.1:8080; 表示 uwsgi 伺服傳送是透過近端主機中的 8080 埠號傳資料給 nginx, 然後再由 nginx 透過埠號 80 與 443 進行全球資訊網伺服, 因此用戶無法直接擷取 uwsgi 所傳出的資料, 而是經過內部 8080 傳給 nginx 後再以 http 或 https 與請求連線的客戶端進行互動.</p>
+<p>uwsgi_params 檔案內容:</p>
+<div class="highlight"><pre><span class="x">uwsgi_param QUERY_STRING </span><span class="p">$</span><span class="nv">query_string</span><span class="x">;</span>
+<span class="x">uwsgi_param REQUEST_METHOD </span><span class="p">$</span><span class="nv">request_method</span><span class="x">;</span>
+<span class="x">uwsgi_param CONTENT_TYPE </span><span class="p">$</span><span class="nv">content_type</span><span class="x">;</span>
+<span class="x">uwsgi_param CONTENT_LENGTH </span><span class="p">$</span><span class="nv">content_length</span><span class="x">;</span>
+<span class="x">uwsgi_param REQUEST_URI </span><span class="p">$</span><span class="nv">request_uri</span><span class="x">;</span>
+<span class="x">uwsgi_param PATH_INFO </span><span class="p">$</span><span class="nv">document_uri</span><span class="x">;</span>
+<span class="x">uwsgi_param DOCUMENT_ROOT </span><span class="p">$</span><span class="nv">document_root</span><span class="x">;</span>
+<span class="x">uwsgi_param SERVER_PROTOCOL </span><span class="p">$</span><span class="nv">server_protocol</span><span class="x">;</span>
+<span class="x">uwsgi_param REMOTE_ADDR </span><span class="p">$</span><span class="nv">remote_addr</span><span class="x">;</span>
+<span class="x">uwsgi_param REMOTE_PORT </span><span class="p">$</span><span class="nv">remote_port</span><span class="x">;</span>
+<span class="x">uwsgi_param SERVER_ADDR </span><span class="p">$</span><span class="nv">server_addr</span><span class="x">;</span>
+<span class="x">uwsgi_param SERVER_PORT </span><span class="p">$</span><span class="nv">server_port</span><span class="x">;</span>
+<span class="x">uwsgi_param SERVER_NAME </span><span class="p">$</span><span class="nv">server_name</span><span class="x">;</span>
+</pre></div>
+
+
+<p>處理好 nginx 設定之後, 接著處理 uwsgi 的啟動, 希望在開機時就交由操作系統啟動, 這裡透過 /etc/init/uwsgi.conf 設定完成.</p>
+<p>/etc/init/uwsgi.conf 檔案內容:</p>
+<div class="highlight"><pre>description &quot;uwsgi Emperor&quot;
+start on runlevel [2345]
+stop on runlevel [06]
+
+respawn
+
+exec uwsgi --uid hp3 --gid hp3 --emperor /home/hp3/uwsgi_ini
+</pre></div>
+
+
+<p>以上採用 uwsgi Emperor 的設定方式啟動 /home/hp3/uwsgi_ini 目錄中的所有 uwsgi 程式啟動.</p>
+<p>而目前位於 /home/hp3/uwsgi_ini 目錄中只有一個 uwsgi.ini  檔案, 內容如下:</p>
+<div class="highlight"><pre><span class="k">[uwsgi]</span>
+<span class="na">socket</span> <span class="o">=</span> <span class="s">:8080</span>
+<span class="na">processes</span> <span class="o">=</span> <span class="s">4</span>
+<span class="na">master</span> <span class="o">=</span> <span class="s">true</span>
+<span class="na">chdir</span> <span class="o">=</span> <span class="s">/home/hp3/cmsimply/wsgi</span>
+<span class="na">wsgi-file</span> <span class="o">=</span> <span class="s">/home/hp3/cmsimply/wsgi/application</span>
+</pre></div>
+
+
+<p>表示要以近端的 8080 埠號啟動 uwsgi, 而且設定執行目錄與執行的 uwsgi 應用程式 /home/hp3/cmsimply/wsgi/application</p>
+<p>這時很重要的一點就是 application 必須採 uwsgi 啟動設定, 也就是與 OpenShift 端的啟動方式相同.</p>
+<p>/home/hp3/cmsimply/wsgi/application 最後啟動設定為:</p>
+<div class="highlight"><pre>if inOpenshift:
+    # operate in OpenShift
+    application = cherrypy.Application(root, config = application_conf)
+else:
+    # operate in localhost
+    #cherrypy.server.socket_port = 8080
+    #cherrypy.server.socket_host = &#39;XXX.XXX.17.103&#39;
+    #cherrypy.quickstart(root, config = application_conf)
+    application = cherrypy.Application(root, config = application_conf)
+</pre></div>
+            </div>
+            <!-- /.entry-content -->
+        </article>
+    </section>
+
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+
+<section class="well well-sm">
+    <ul class="list-group list-group-flush">
+
+            <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
+                <ul class="list-group" id="recentposts">
+                    <li class="list-group-item">
+                        <a href="./how-to-create-a-pelican-static-site.html">
+                            How to create a Pelican static site?
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="./nginx-yu-uwsgi-de-jie-he.html">
+                            nginx 與 uwsgi 的結合
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="./tipue-site-search-for-pelican.html">
+                            Tipue Site Search for Pelican
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="./remove-local-and-remote-branch.html">
+                            Remove local and remote branch
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="./pelican-jin-duan-yu-yuan-duan-de-she-ding.html">
+                            Pelican 近端與遠端的設定
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="list-group-item"><a href="./"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Categories</span></h4></a>
+                <ul class="list-group" id="categories">
+                    <li class="list-group-item">
+                        <a href="./category/brython.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Brython
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="./category/git.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Git
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="./category/kmol.html">
+                            <i class="fa fa-folder-open fa-lg"></i> kmol
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="./category/pelican.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Pelican
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="./category/ubuntu.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Ubuntu
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="list-group-item"><a href="./tags.html"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
+                <ul class="list-group list-inline tagcloud" id="tags">
+                </ul>
+            </li>
+    <li class="list-group-item"><h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
+      <ul class="list-group" id="links">
+        <li class="list-group-item">
+            <a href="http://getpelican.com/" target="_blank">
+                Pelican
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="https://github.com/DandyDev/pelican-bootstrap3/" target="_blank">
+                pelican-bootstrap3
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="https://github.com/getpelican/pelican-plugins" target="_blank">
+                pelican-plugins
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="https://github.com/Tipue/Tipue-Search" target="_blank">
+                Tipue search
+            </a>
+        </li>
+      </ul>
+    </li>
+    </ul>
+</section>
+            </aside>
+        </div>
+    </div>
+</div>
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+         <div class="col-xs-10">&copy; 2015 kmol
+            &middot; Powered by <a href="https://github.com/DandyDev/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="./theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="./theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="./theme/js/respond.min.js"></script>
+
+
+</body>
+</html>

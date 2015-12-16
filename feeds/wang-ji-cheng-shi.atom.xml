@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>kmolsite</title><link href="./" rel="alternate"></link><link href="./feeds/wang-ji-cheng-shi.atom.xml" rel="self"></link><id>./</id><updated>2015-12-16T12:03:11+08:00</updated><entry><title>nginx 與 uwsgi 的結合</title><link href="./nginx-yu-uwsgi-de-jie-he.html" rel="alternate"></link><updated>2015-12-16T12:03:11+08:00</updated><author><name>kmol</name></author><id>tag:,2015-12-16:./nginx-yu-uwsgi-de-jie-he.html</id><summary type="html">&lt;p&gt;最新版的 nginx 必須與 2.0 版以上的 uwsgi 配合, 否則無法啟動&lt;/p&gt;
+
+
+&lt;p&gt;這是發生在編號 103 HP 伺服器上的問題, 透過查驗, 才知道, 其實在各種協同合作模式中, 必須了解細節才能解決問題.&lt;/p&gt;
+&lt;p&gt;2015.11.03 情況: IPV4 與 IPV6 都可以 SSH, 因此從遠端進入, 開始尋找為何 nginx 與 uwsgi 無法正常結合運作.&lt;/p&gt;
+&lt;p&gt;首先新增管理者用戶:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;sudo adduser username
+sudo visudo
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;將 username 納為可以執行 sudo 的帳號&lt;/p&gt;
+&lt;p&gt;在 %sudo 行下增加一行,  然後按下 Ctrl+O, 再按 Enter&lt;/p&gt;
+&lt;p&gt;經過 uwsgi 版次查驗, 發現透過 sudo apt-get install uwsgi 所安裝的版本為 1.9.17.1 版, 必須設法轉為 2.0 以上版本&lt;/p&gt;
+&lt;p&gt;版本查驗:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;uwsgi --version
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;結果為 1.9.17.1-debian, 必須改為 2.0.11.2, 否則無法與 nginx 結合&lt;/p&gt;
+&lt;p&gt;移除利用 sudo apt-get install uwsgi 安裝的 1.9.17.1 版的 uswgi&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;sudo apt-get remove uwsgi
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;準備利用 pip3 安裝 uwsgi 其中必須執行 c 程式編譯, 因此必須安裝 build-essential 與 python3-dev&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;sudo apt-get install build-essential python3-dev
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;接著利用 pip3 安裝 uwsgi&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;sudo pip3 install uwsgi
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;利用 which uwsgi 找到 2.0.11.2 版的 uwsgi 位於 /usr/local/bin/uwsgi&lt;/p&gt;
+&lt;p&gt;因為 /etc/alternatives/uwsgi 指向 /usr/bin/uwsgi-core 為舊版, 因此必須重新設定 symbolic link, 讓 uwsgi 指令指到 2.0 版本.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;cd /etc/alternatives
+sudo rm uwsgi (刪除舊的 symbolic link)
+sudo ln -s /usr/local/bin/uwsgi uwsgi (將新的 /usr/local/bin/uwsgi 對應到 uwsgi)
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;完成後執行:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;sudo service uwsgi restart 
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;就可順利啟動 nginx 中所對應設定的 CMSimply&lt;/p&gt;</summary><category term="uwsgi"></category><category term="nginx"></category></entry></feed>

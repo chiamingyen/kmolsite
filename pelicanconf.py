@@ -6,7 +6,12 @@ AUTHOR = 'kmol'
 SITENAME = 'kmolsite'
 #SITEURL = 'http://chiamingyen.github.io/kmolsite/'
 
-PATH = 'content'
+# 不要用文章所在目錄作為類別
+USE_FOLDER_AS_CATEGORY = False
+
+#PATH = 'content'
+
+#OUTPUT_PATH = 'output'
 
 TIMEZONE = 'Asia/Taipei'
 
