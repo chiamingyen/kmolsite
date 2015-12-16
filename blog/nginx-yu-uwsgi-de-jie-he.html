@@ -290,47 +290,50 @@ kmolsite            </a>
 <p>這是發生在編號 103 HP 伺服器上的問題, 透過查驗, 才知道, 其實在各種協同合作模式中, 必須了解細節才能解決問題.</p>
 <p>2015.11.03 情況: IPV4 與 IPV6 都可以 SSH, 因此從遠端進入, 開始尋找為何 nginx 與 uwsgi 無法正常結合運作.</p>
 <p>首先新增管理者用戶:</p>
-<div class="highlight"><pre>sudo adduser username
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre>sudo adduser username
 sudo visudo
 </pre></div>
-
+</td></tr></table>
 
 <p>將 username 納為可以執行 sudo 的帳號</p>
 <p>在 %sudo 行下增加一行,  然後按下 Ctrl+O, 再按 Enter</p>
 <p>經過 uwsgi 版次查驗, 發現透過 sudo apt-get install uwsgi 所安裝的版本為 1.9.17.1 版, 必須設法轉為 2.0 以上版本</p>
 <p>版本查驗:</p>
-<div class="highlight"><pre>uwsgi --version
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre>uwsgi --version
 </pre></div>
-
+</td></tr></table>
 
 <p>結果為 1.9.17.1-debian, 必須改為 2.0.11.2, 否則無法與 nginx 結合</p>
 <p>移除利用 sudo apt-get install uwsgi 安裝的 1.9.17.1 版的 uswgi</p>
-<div class="highlight"><pre>sudo apt-get remove uwsgi
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre>sudo apt-get remove uwsgi
 </pre></div>
-
+</td></tr></table>
 
 <p>準備利用 pip3 安裝 uwsgi 其中必須執行 c 程式編譯, 因此必須安裝 build-essential 與 python3-dev</p>
-<div class="highlight"><pre>sudo apt-get install build-essential python3-dev
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre>sudo apt-get install build-essential python3-dev
 </pre></div>
-
+</td></tr></table>
 
 <p>接著利用 pip3 安裝 uwsgi</p>
-<div class="highlight"><pre>sudo pip3 install uwsgi
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre>sudo pip3 install uwsgi
 </pre></div>
-
+</td></tr></table>
 
 <p>利用 which uwsgi 找到 2.0.11.2 版的 uwsgi 位於 /usr/local/bin/uwsgi</p>
 <p>因為 /etc/alternatives/uwsgi 指向 /usr/bin/uwsgi-core 為舊版, 因此必須重新設定 symbolic link, 讓 uwsgi 指令指到 2.0 版本.</p>
-<div class="highlight"><pre>cd /etc/alternatives
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre>cd /etc/alternatives
 sudo rm uwsgi (刪除舊的 symbolic link)
 sudo ln -s /usr/local/bin/uwsgi uwsgi (將新的 /usr/local/bin/uwsgi 對應到 uwsgi)
 </pre></div>
-
+</td></tr></table>
 
 <p>完成後執行:</p>
-<div class="highlight"><pre>sudo service uwsgi restart 
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre>sudo service uwsgi restart 
 </pre></div>
-
+</td></tr></table>
 
 <p>就可順利啟動 nginx 中所對應設定的 CMSimply</p>
             </div>
@@ -378,6 +381,11 @@ sudo ln -s /usr/local/bin/uwsgi uwsgi (將新的 /usr/local/bin/uwsgi 對應到 
             <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
                 <ul class="list-group" id="recentposts">
                     <li class="list-group-item">
+                        <a href="http://chiamingyen.github.io/kmolsite/blog/pelican-jin-duan-yu-yuan-duan-de-she-ding.html">
+                            Pelican 近端與遠端的設定
+                        </a>
+                    </li>
+                    <li class="list-group-item">
                         <a href="http://chiamingyen.github.io/kmolsite/blog/recursively-import-all-python-files-into-leo-editor.html">
                             Recursively import all python files into Leo Editor
                         </a>
@@ -395,11 +403,6 @@ sudo ln -s /usr/local/bin/uwsgi uwsgi (將新的 /usr/local/bin/uwsgi 對應到 
                     <li class="list-group-item">
                         <a href="http://chiamingyen.github.io/kmolsite/blog/how-to-create-a-pelican-static-site.html">
                             How to create a Pelican static site?
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="http://chiamingyen.github.io/kmolsite/blog/nginx-yu-uwsgi-de-jie-he.html">
-                            nginx 與 uwsgi 的結合
                         </a>
                     </li>
                 </ul>

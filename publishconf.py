@@ -36,3 +36,6 @@ DISQUS_SITENAME = "2016kmol"
 
 # 設定網誌以 md 檔案建立的 file system date 為準, 無需自行設定
 DEFAULT_DATE = 'fs'
+
+# 遠端的 code hightlight
+MD_EXTENSIONS = ['fenced_code', 'extra', 'codehilite(linenums=True)']

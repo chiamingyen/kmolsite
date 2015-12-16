@@ -1,9 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>kmolsite</title><link href="http://chiamingyen.github.io/kmolsite/blog/" rel="alternate"></link><link href="http://chiamingyen.github.io/kmolsite/blog/feeds/leo-editor.atom.xml" rel="self"></link><id>http://chiamingyen.github.io/kmolsite/blog/</id><updated>2015-12-16T16:54:55+08:00</updated><entry><title>Recursively import all python files into Leo Editor</title><link href="http://chiamingyen.github.io/kmolsite/blog/recursively-import-all-python-files-into-leo-editor.html" rel="alternate"></link><updated>2015-12-16T16:54:55+08:00</updated><author><name>kmol</name></author><id>tag:chiamingyen.github.io,2015-12-16:kmolsite/blog/recursively-import-all-python-files-into-leo-editor.html</id><summary type="html">&lt;p&gt;以遞迴方式導入 Python 程式碼.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>kmolsite</title><link href="http://chiamingyen.github.io/kmolsite/blog/" rel="alternate"></link><link href="http://chiamingyen.github.io/kmolsite/blog/feeds/leo-editor.atom.xml" rel="self"></link><id>http://chiamingyen.github.io/kmolsite/blog/</id><updated>2015-12-16T18:06:20+08:00</updated><entry><title>Recursively import all python files into Leo Editor</title><link href="http://chiamingyen.github.io/kmolsite/blog/recursively-import-all-python-files-into-leo-editor.html" rel="alternate"></link><updated>2015-12-16T18:06:20+08:00</updated><author><name>kmol</name></author><id>tag:chiamingyen.github.io,2015-12-16:kmolsite/blog/recursively-import-all-python-files-into-leo-editor.html</id><summary type="html">&lt;p&gt;以遞迴方式導入 Python 程式碼.&lt;/p&gt;
 
 
 &lt;p&gt;此功能已經內建在 Leo Editor 的 scripts/scripts.leo 中, 程式碼如下:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="sd"&gt;&amp;#39;&amp;#39;&amp;#39;Recursively import all python files in a directory and clean the result.&amp;#39;&amp;#39;&amp;#39;&lt;/span&gt;
+&lt;table class="codehilitetable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7
+8
+9&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="sd"&gt;&amp;#39;&amp;#39;&amp;#39;Recursively import all python files in a directory and clean the result.&amp;#39;&amp;#39;&amp;#39;&lt;/span&gt;
 
 &lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;recursiveImport&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
     &lt;span class="n"&gt;dir_&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;r&amp;#39;./&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
@@ -13,6 +21,6 @@
     &lt;span class="n"&gt;theTypes&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;None&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="c"&gt;# Same as [&amp;#39;.py&amp;#39;]&lt;/span&gt;
 &lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
-
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 
 &lt;p&gt;將此一節點從 scripts.leo 取出後, 存入要 import 程式碼的專案目錄中, 然後存為 .leo 後, 按下 Ctrl+b 就可以運行, 當然導入之後, 所有節點都以 @path 開頭, 表示此 leo 檔案並未與外部檔案直接存取互動, 而是將程式碼從外部檔案中, 架構性地取出, 並且存在 leo 專案檔中.&lt;/p&gt;</summary><category term="importer"></category><category term="Python"></category></entry></feed>
