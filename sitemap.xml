@@ -5,35 +5,56 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://chiamingyen.github.io/kmolsite/</loc>
-<lastmod>2015-12-15T17:26:48-00:00</lastmod>
+<lastmod>2015-12-16T11:50:27-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://chiamingyen.github.io/kmolsite/archives.html</loc>
-<lastmod>2015-12-15T17:26:48-00:00</lastmod>
+<lastmod>2015-12-16T11:50:27-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://chiamingyen.github.io/kmolsite/tags.html</loc>
-<lastmod>2015-12-15T17:26:48-00:00</lastmod>
+<lastmod>2015-12-16T11:50:27-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://chiamingyen.github.io/kmolsite/categories.html</loc>
-<lastmod>2015-12-15T17:26:48-00:00</lastmod>
+<lastmod>2015-12-16T11:50:27-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
+<loc>http://chiamingyen.github.io/kmolsite/ubuntu-1404-zhi-xing-python-wang-ji-cheng-shi.html</loc>
+<lastmod>2015-12-16T11:49:55+08:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>http://chiamingyen.github.io/kmolsite/2016kmol-initialized.html</loc>
+<lastmod>2015-12-15T17:59:55+08:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
 <loc>http://chiamingyen.github.io/kmolsite/tipue-site-search-for-pelican.html</loc>
-<lastmod>2015-12-15T17:25:21+08:00</lastmod>
+<lastmod>2015-12-15T17:55:03+08:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>http://chiamingyen.github.io/kmolsite/2016kmol-ce-shi.html</loc>
+<lastmod>2015-12-15T17:49:58+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
@@ -41,20 +62,6 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>http://chiamingyen.github.io/kmolsite/pelican-jin-duan-yu-yuan-duan-de-she-ding.html</loc>
 <lastmod>2015-12-15T17:23:42+08:00</lastmod>
-<changefreq>monthly</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
-<loc>http://chiamingyen.github.io/kmolsite/2016kmol-ce-shi.html</loc>
-<lastmod>2015-12-15T17:23:42+08:00</lastmod>
-<changefreq>monthly</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
-<loc>http://chiamingyen.github.io/kmolsite/2016kmol-initialized.html</loc>
-<lastmod>2015-12-15T17:11:26+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
@@ -68,7 +75,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://chiamingyen.github.io/kmolsite/category/brython.html</loc>
-<lastmod>2015-12-15T17:23:42+08:06</lastmod>
+<lastmod>2015-12-15T17:49:58+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -82,21 +89,28 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://chiamingyen.github.io/kmolsite/category/kmol.html</loc>
-<lastmod>2015-12-15T17:11:26+08:06</lastmod>
+<lastmod>2015-12-15T17:59:55+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://chiamingyen.github.io/kmolsite/category/pelican.html</loc>
-<lastmod>2015-12-15T17:25:21+08:06</lastmod>
+<lastmod>2015-12-15T17:55:03+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://chiamingyen.github.io/kmolsite/tag/ping-mian-hui-tu.html</loc>
-<lastmod>2015-12-15T17:23:42+08:06</lastmod>
+<loc>http://chiamingyen.github.io/kmolsite/category/python.html</loc>
+<lastmod>2015-12-16T11:49:55+08:06</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>http://chiamingyen.github.io/kmolsite/tag/pelican-search.html</loc>
+<lastmod>2015-12-15T17:55:03+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -109,13 +123,6 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
-<loc>http://chiamingyen.github.io/kmolsite/tag/qi-dong.html</loc>
-<lastmod>2015-12-15T17:11:26+08:06</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
 <loc>http://chiamingyen.github.io/kmolsite/tag/pelican-she-ding.html</loc>
 <lastmod>2015-12-15T17:23:42+08:06</lastmod>
 <changefreq>daily</changefreq>
@@ -123,15 +130,29 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
-<loc>http://chiamingyen.github.io/kmolsite/tag/pelican-search.html</loc>
-<lastmod>2015-12-15T17:25:21+08:06</lastmod>
+<loc>http://chiamingyen.github.io/kmolsite/tag/qi-dong.html</loc>
+<lastmod>2015-12-15T17:59:55+08:06</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>http://chiamingyen.github.io/kmolsite/tag/ping-mian-hui-tu.html</loc>
+<lastmod>2015-12-15T17:49:58+08:06</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>http://chiamingyen.github.io/kmolsite/tag/wang-ji-cheng-shi.html</loc>
+<lastmod>2015-12-16T11:49:55+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://chiamingyen.github.io/kmolsite/author/kmol.html</loc>
-<lastmod>2015-12-15T17:25:21+08:06</lastmod>
+<lastmod>2015-12-16T11:49:55+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>

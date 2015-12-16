@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>kmolsite</title><link href="http://chiamingyen.github.io/kmolsite/" rel="alternate"></link><link href="http://chiamingyen.github.io/kmolsite/feeds/pelican.atom.xml" rel="self"></link><id>http://chiamingyen.github.io/kmolsite/</id><updated>2015-12-15T17:25:21+08:00</updated><entry><title>Tipue Site Search for Pelican</title><link href="http://chiamingyen.github.io/kmolsite/tipue-site-search-for-pelican.html" rel="alternate"></link><updated>2015-12-15T17:25:21+08:00</updated><author><name>kmol</name></author><id>tag:chiamingyen.github.io,2015-12-15:kmolsite/tipue-site-search-for-pelican.html</id><summary type="html">&lt;p&gt;Pelican 靜態網站關鍵字搜尋&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>kmolsite</title><link href="http://chiamingyen.github.io/kmolsite/" rel="alternate"></link><link href="http://chiamingyen.github.io/kmolsite/feeds/pelican.atom.xml" rel="self"></link><id>http://chiamingyen.github.io/kmolsite/</id><updated>2015-12-15T17:55:03+08:00</updated><entry><title>Tipue Site Search for Pelican</title><link href="http://chiamingyen.github.io/kmolsite/tipue-site-search-for-pelican.html" rel="alternate"></link><updated>2015-12-15T17:55:03+08:00</updated><author><name>kmol</name></author><id>tag:chiamingyen.github.io,2015-12-15:kmolsite/tipue-site-search-for-pelican.html</id><summary type="html">&lt;p&gt;Pelican 靜態網站關鍵字搜尋&lt;/p&gt;
 
 
 &lt;p&gt;在這個網站中, 我們使用 Tipue Search 來搜尋內容.&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://github.com/getpelican/pelican-plugins/tree/master/tipue_search"&gt;https://github.com/getpelican/pelican-plugins/tree/master/tipue_search&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Tipue Search requires BeautifulSoup.&lt;/p&gt;
 &lt;p&gt;利用 pip 安裝 beautifulsoup4 模組.&lt;/p&gt;
-&lt;p&gt;pip install beautifulsoup4&lt;/p&gt;</summary><category term="Pelican Search"></category></entry><entry><title>Pelican 近端與遠端的設定</title><link href="http://chiamingyen.github.io/kmolsite/pelican-jin-duan-yu-yuan-duan-de-she-ding.html" rel="alternate"></link><updated>2015-12-15T17:23:42+08:00</updated><author><name>kmol</name></author><id>tag:chiamingyen.github.io,2015-12-15:kmolsite/pelican-jin-duan-yu-yuan-duan-de-she-ding.html</id><summary type="html">&lt;p&gt;Pelican 近端與遠端的設定&lt;/p&gt;
+&lt;p&gt;pip install beautifulsoup4&lt;/p&gt;
+&lt;p&gt;此外, 為了要執行協同產品開發的設計運算分析, 還要安裝 &lt;a href="http://jupyter.org/"&gt;Jupyter&lt;/a&gt;:&lt;/p&gt;
+&lt;p&gt;pip install jupyter&lt;/p&gt;
+&lt;p&gt;而在 pelican 的網誌 md 檔案中,  則是透過 &lt;a href="https://github.com/getpelican/pelican-plugins/tree/master/liquid_tags"&gt;liquid_tags&lt;/a&gt; plugin 中的 notebook 來導入 &lt;a href="https://github.com/jupyter/notebook"&gt;Jupyter notebook&lt;/a&gt; 檔案.&lt;/p&gt;</summary><category term="Pelican Search"></category></entry><entry><title>Pelican 近端與遠端的設定</title><link href="http://chiamingyen.github.io/kmolsite/pelican-jin-duan-yu-yuan-duan-de-she-ding.html" rel="alternate"></link><updated>2015-12-15T17:23:42+08:00</updated><author><name>kmol</name></author><id>tag:chiamingyen.github.io,2015-12-15:kmolsite/pelican-jin-duan-yu-yuan-duan-de-she-ding.html</id><summary type="html">&lt;p&gt;Pelican 近端與遠端的設定&lt;/p&gt;
 
 
 &lt;p&gt;基本的概念是, 在近端時, 靜態網頁使用相對目錄, SITEURL 設為 "./", 而在 Github pages 時, 則採用制式的符號名稱加上 repository 名稱作為 SITEURL.&lt;/p&gt;

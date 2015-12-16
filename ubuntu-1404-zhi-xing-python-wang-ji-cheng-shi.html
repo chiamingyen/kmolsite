@@ -2,7 +2,7 @@
 <html lang="en"
 >
 <head>
-    <title>kmol - kmolsite</title>
+    <title>Ubuntu 14.04 執行 Python 網際程式 - kmolsite</title>
     <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
@@ -166,16 +166,21 @@ init_mathjax = function() {
 init_mathjax();
 </script>
 
+<link rel="canonical" href="http://chiamingyen.github.io/kmolsite/ubuntu-1404-zhi-xing-python-wang-ji-cheng-shi.html">
 
-    <meta name="author" content="kmol" />
-    <meta name="keywords" content="kmol" />
+        <meta name="author" content="kmol" />
+        <meta name="keywords" content="網際程式" />
+        <meta name="description" content="Nginx 當前端, 在 Ubuntu 以 uwsgi 執行 Python 程式" />
 
-    <!-- Open Graph tags -->
         <meta property="og:site_name" content="kmolsite" />
-        <meta property="og:type" content="website"/>
-        <meta property="og:title" content="kmolsite"/>
-        <meta property="og:url" content="http://chiamingyen.github.io/kmolsite"/>
-        <meta property="og:description" content="kmolsite"/>
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="Ubuntu 14.04 執行 Python 網際程式"/>
+        <meta property="og:url" content="http://chiamingyen.github.io/kmolsite/ubuntu-1404-zhi-xing-python-wang-ji-cheng-shi.html"/>
+        <meta property="og:description" content="Nginx 當前端, 在 Ubuntu 以 uwsgi 執行 Python 程式"/>
+        <meta property="article:published_time" content="2015-12-16" />
+            <meta property="article:section" content="Python" />
+            <meta property="article:tag" content="網際程式" />
+            <meta property="article:author" content="kmol" />
 
 
     <!-- Bootstrap -->
@@ -212,13 +217,13 @@ kmolsite            </a>
                         <li >
                             <a href="http://chiamingyen.github.io/kmolsite/category/git.html">Git</a>
                         </li>
-                        <li class="active">
+                        <li >
                             <a href="http://chiamingyen.github.io/kmolsite/category/kmol.html">Kmol</a>
                         </li>
                         <li >
                             <a href="http://chiamingyen.github.io/kmolsite/category/pelican.html">Pelican</a>
                         </li>
-                        <li >
+                        <li class="active">
                             <a href="http://chiamingyen.github.io/kmolsite/category/python.html">Python</a>
                         </li>
             </ul>
@@ -240,14 +245,257 @@ kmolsite            </a>
     <div class="row">
         <div class="col-sm-9">
 
-            <article>
-                <h2><a href="http://chiamingyen.github.io/kmolsite/2016kmol-initialized.html">2016kmol initialized</a></h2>
-                <div class="summary"><p><a href="https://github.com/chiamingyen/kmol2016">https://github.com/chiamingyen/kmol2016</a> 是一個 Windows 64 位元環境下的可攜程式系統.</p>
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="http://chiamingyen.github.io/kmolsite/ubuntu-1404-zhi-xing-python-wang-ji-cheng-shi.html"
+                       rel="bookmark"
+                       title="Permalink to Ubuntu 14.04 執行 Python 網際程式">
+                        Ubuntu 14.04 執行 Python 網際程式
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2015-12-16T11:49:55.134620+08:00"> 三 16 十二月 2015</time>
+    </span>
 
-                    <a class="btn btn-default btn-xs" href="http://chiamingyen.github.io/kmolsite/2016kmol-initialized.html">more ...</a>
+
+
+<span class="label label-default">Tags</span>
+	<a href="http://chiamingyen.github.io/kmolsite/tag/wang-ji-cheng-shi.html">網際程式</a>
+    
+</footer><!-- /.post-info -->                    </div>
                 </div>
-            </article>
-            <hr/>
+                <p>Nginx 當前端, 在 Ubuntu 以 uwsgi 執行 Python 程式</p>
+
+
+<p>nginx.conf 設定</p>
+<div class="highlight"><pre>user www-data;
+worker_processes <span class="m">4</span>;
+pid <span class="n">/run/nginx.pid;</span>
+
+events {
+    worker_connections <span class="m">768</span>;
+    # multi_accept <span class="k">on</span>;
+}
+
+http {
+
+    ##
+    # Basic Settings
+    ##
+
+    sendfile <span class="k">on</span>;
+    tcp_nopush <span class="k">on</span>;
+    tcp_nodelay <span class="k">on</span>;
+    keepalive_timeout <span class="m">65</span>;
+    types_hash_max_size <span class="m">2048</span>;
+    # server_tokens <span class="k">off</span>;
+
+    # server_names_hash_bucket_size <span class="m">64</span>;
+    # server_name_in_redirect <span class="k">off</span>;
+
+    include <span class="n">/etc/nginx/mime.types;</span>
+    default_type application<span class="n">/octet-stream;</span>
+
+    ##
+    # Logging Settings
+    ##
+
+    access_log <span class="n">/var/log/nginx/access.log;</span>
+    error_log <span class="n">/var/log/nginx/error.log;</span>
+
+    ##
+    # Gzip Settings
+    ##
+
+    gzip <span class="k">on</span>;
+    gzip_disable <span class="s2">&quot;msie6&quot;</span>;
+
+    # gzip_vary <span class="k">on</span>;
+    # gzip_proxied any;
+    # gzip_comp_level <span class="m">6</span>;
+    # gzip_buffers <span class="m">16</span> <span class="m">8</span>k;
+    # gzip_http_version <span class="m">1</span>.<span class="m">1</span>;
+    # gzip_types text<span class="n">/plain</span> text<span class="n">/css</span> application<span class="n">/json</span> application<span class="n">/x-javascript</span> text<span class="n">/xml</span> application<span class="n">/xml</span> application<span class="n">/xml+rss</span> text<span class="n">/javascript;</span>
+
+    ##
+    # nginx-naxsi config
+    ##
+    # Uncomment it <span class="k">if</span> you installed nginx-naxsi
+    ##
+
+    #include <span class="n">/etc/nginx/naxsi_core.rules;</span>
+
+    ##
+    # nginx-passenger config
+    ##
+    # Uncomment it <span class="k">if</span> you installed nginx-passenger
+    ##
+
+    #passenger_root <span class="n">/usr;</span>
+    #passenger_ruby <span class="n">/usr/bin/ruby;</span>
+
+    ##
+    # Virtual Host Configs
+    ##
+
+    include <span class="n">/etc/nginx/conf.d/*.conf;</span>
+    include <span class="n">/etc/nginx/sites-enabled/*;</span>
+}
+
+
+#mail {
+#   # See sample authentication script at:
+#   # http:<span class="n">//wiki.nginx.org/ImapAuthenticateWithApachePhpScript</span>
+# 
+#   # auth_http localhost<span class="n">/auth.php;</span>
+#   # pop<span class="m">3</span>_capabilities <span class="s2">&quot;TOP&quot;</span> <span class="s2">&quot;USER&quot;</span>;
+#   # imap_capabilities <span class="s2">&quot;IMAP4rev1&quot;</span> <span class="s2">&quot;UIDPLUS&quot;</span>;
+# 
+#   server {
+#       listen     localhost:110;
+#       protocol   pop<span class="m">3</span>;
+#       proxy      <span class="k">on</span>;
+#   }
+# 
+#   server {
+#       listen     localhost:143;
+#       protocol   imap;
+#       proxy      <span class="k">on</span>;
+#   }
+#}
+</pre></div>
+
+
+<p>include /etc/nginx/sites-enabled/*; 表示導入 sites-enabled 中的所有設定檔.</p>
+<p>而 sites-enabled 中只有一個 default 指向 sites-available/default, 所以隨後的設定都以 sites-available/default 檔案為主</p>
+<p>sites-availables/default 設定檔案:</p>
+<div class="highlight"><pre><span class="nt">server</span> <span class="p">{</span>
+    <span class="n">listen</span> <span class="m">80</span> <span class="n">default_server</span><span class="p">;</span>
+    <span class="n">listen</span> <span class="cp">[</span><span class="p">::</span><span class="cp">]</span><span class="o">:</span><span class="m">80</span> <span class="n">default_server</span> <span class="n">ipv6only</span><span class="o">=</span><span class="n">on</span><span class="p">;</span>
+
+    <span class="n">listen</span> <span class="m">443</span> <span class="n">ssl</span><span class="p">;</span>
+    <span class="n">listen</span> <span class="cp">[</span><span class="p">::</span><span class="cp">]</span><span class="o">:</span><span class="m">443</span> <span class="n">ssl</span> <span class="n">ipv6only</span><span class="o">=</span><span class="n">on</span><span class="p">;</span>
+
+    <span class="n">location</span> <span class="o">/</span><span class="k">static</span> <span class="err">{</span>
+        <span class="n">alias</span>  <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">hp3</span><span class="o">/</span><span class="n">cmsimply</span><span class="o">/</span><span class="n">wsgi</span><span class="o">/</span><span class="k">static</span><span class="o">/</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="nt">location</span> <span class="o">/</span> <span class="p">{</span>
+        <span class="n">include</span> <span class="n">uwsgi_params</span><span class="p">;</span>
+        <span class="n">uwsgi_pass</span>  <span class="m">127</span><span class="o">.</span><span class="m">0</span><span class="o">.</span><span class="m">0</span><span class="o">.</span><span class="m">1</span><span class="o">:</span><span class="m">8080</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="nt">server_name</span> <span class="nt">localhost</span><span class="o">;</span>
+    <span class="nf">#ssl</span> <span class="nt">on</span><span class="o">;</span>
+    <span class="nt">ssl_certificate</span> <span class="o">/</span><span class="nt">etc</span><span class="o">/</span><span class="nt">nginx</span><span class="o">/</span><span class="nt">ssl</span><span class="o">/</span><span class="nt">nginx</span><span class="nc">.crt</span><span class="o">;</span>
+    <span class="nt">ssl_certificate_key</span> <span class="o">/</span><span class="nt">etc</span><span class="o">/</span><span class="nt">nginx</span><span class="o">/</span><span class="nt">ssl</span><span class="o">/</span><span class="nt">nginx</span><span class="nc">.key</span><span class="o">;</span>
+    <span class="nt">ssl_session_timeout</span> <span class="nt">5m</span><span class="o">;</span>
+    <span class="nt">ssl_protocols</span> <span class="nt">SSLv3</span> <span class="nt">TLSv1</span> <span class="nt">TLSv1</span><span class="nc">.1</span> <span class="nt">TLSv1</span><span class="nc">.2</span><span class="o">;</span>
+    <span class="nt">ssl_ciphers</span> <span class="s2">&quot;HIGH:!aNULL:!MD5 or HIGH:!aNULL:!MD5:!3DES&quot;</span><span class="o">;</span>
+    <span class="nt">ssl_prefer_server_ciphers</span> <span class="nt">on</span><span class="o">;</span>
+    <span class="nt">try_files</span> <span class="o">$</span><span class="nt">uri</span> <span class="o">$</span><span class="nt">uri</span><span class="o">/</span> <span class="o">=</span><span class="nt">404</span><span class="o">;</span>
+
+<span class="err">}</span>
+</pre></div>
+
+
+<p>其中的 include uwsgi_params;, 表示 uwsgi_params 檔案必須位於與 default 設定檔案同一個目錄, 也就是必須位於 sites-available 目錄中.</p>
+<p>uwsgi_pass  127.0.0.1:8080; 表示 uwsgi 伺服傳送是透過近端主機中的 8080 埠號傳資料給 nginx, 然後再由 nginx 透過埠號 80 與 443 進行全球資訊網伺服, 因此用戶無法直接擷取 uwsgi 所傳出的資料, 而是經過內部 8080 傳給 nginx 後再以 http 或 https 與請求連線的客戶端進行互動.</p>
+<p>uwsgi_params 檔案內容:</p>
+<div class="highlight"><pre><span class="x">uwsgi_param QUERY_STRING </span><span class="p">$</span><span class="nv">query_string</span><span class="x">;</span>
+<span class="x">uwsgi_param REQUEST_METHOD </span><span class="p">$</span><span class="nv">request_method</span><span class="x">;</span>
+<span class="x">uwsgi_param CONTENT_TYPE </span><span class="p">$</span><span class="nv">content_type</span><span class="x">;</span>
+<span class="x">uwsgi_param CONTENT_LENGTH </span><span class="p">$</span><span class="nv">content_length</span><span class="x">;</span>
+<span class="x">uwsgi_param REQUEST_URI </span><span class="p">$</span><span class="nv">request_uri</span><span class="x">;</span>
+<span class="x">uwsgi_param PATH_INFO </span><span class="p">$</span><span class="nv">document_uri</span><span class="x">;</span>
+<span class="x">uwsgi_param DOCUMENT_ROOT </span><span class="p">$</span><span class="nv">document_root</span><span class="x">;</span>
+<span class="x">uwsgi_param SERVER_PROTOCOL </span><span class="p">$</span><span class="nv">server_protocol</span><span class="x">;</span>
+<span class="x">uwsgi_param REMOTE_ADDR </span><span class="p">$</span><span class="nv">remote_addr</span><span class="x">;</span>
+<span class="x">uwsgi_param REMOTE_PORT </span><span class="p">$</span><span class="nv">remote_port</span><span class="x">;</span>
+<span class="x">uwsgi_param SERVER_ADDR </span><span class="p">$</span><span class="nv">server_addr</span><span class="x">;</span>
+<span class="x">uwsgi_param SERVER_PORT </span><span class="p">$</span><span class="nv">server_port</span><span class="x">;</span>
+<span class="x">uwsgi_param SERVER_NAME </span><span class="p">$</span><span class="nv">server_name</span><span class="x">;</span>
+</pre></div>
+
+
+<p>處理好 nginx 設定之後, 接著處理 uwsgi 的啟動, 希望在開機時就交由操作系統啟動, 這裡透過 /etc/init/uwsgi.conf 設定完成.</p>
+<p>/etc/init/uwsgi.conf 檔案內容:</p>
+<div class="highlight"><pre>description &quot;uwsgi Emperor&quot;
+start on runlevel [2345]
+stop on runlevel [06]
+
+respawn
+
+exec uwsgi --uid hp3 --gid hp3 --emperor /home/hp3/uwsgi_ini
+</pre></div>
+
+
+<p>以上採用 uwsgi Emperor 的設定方式啟動 /home/hp3/uwsgi_ini 目錄中的所有 uwsgi 程式啟動.</p>
+<p>而目前位於 /home/hp3/uwsgi_ini 目錄中只有一個 uwsgi.ini  檔案, 內容如下:</p>
+<div class="highlight"><pre><span class="k">[uwsgi]</span>
+<span class="na">socket</span> <span class="o">=</span> <span class="s">:8080</span>
+<span class="na">processes</span> <span class="o">=</span> <span class="s">4</span>
+<span class="na">master</span> <span class="o">=</span> <span class="s">true</span>
+<span class="na">chdir</span> <span class="o">=</span> <span class="s">/home/hp3/cmsimply/wsgi</span>
+<span class="na">wsgi-file</span> <span class="o">=</span> <span class="s">/home/hp3/cmsimply/wsgi/application</span>
+</pre></div>
+
+
+<p>表示要以近端的 8080 埠號啟動 uwsgi, 而且設定執行目錄與執行的 uwsgi 應用程式 /home/hp3/cmsimply/wsgi/application</p>
+<p>這時很重要的一點就是 application 必須採 uwsgi 啟動設定, 也就是與 OpenShift 端的啟動方式相同.</p>
+<p>/home/hp3/cmsimply/wsgi/application 最後啟動設定為:</p>
+<div class="highlight"><pre>if inOpenshift:
+    # operate in OpenShift
+    application = cherrypy.Application(root, config = application_conf)
+else:
+    # operate in localhost
+    #cherrypy.server.socket_port = 8080
+    #cherrypy.server.socket_host = &#39;XXX.XXX.17.103&#39;
+    #cherrypy.quickstart(root, config = application_conf)
+    application = cherrypy.Application(root, config = application_conf)
+</pre></div>
+            </div>
+            <!-- /.entry-content -->
+    <hr/>
+    <section class="comments" id="comments">
+        <h2>Comments</h2>
+
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = '2016kmol'; // required: replace example with your forum shortname
+
+                    var disqus_identifier = 'ubuntu-1404-zhi-xing-python-wang-ji-cheng-shi';
+                var disqus_url = 'http://chiamingyen.github.io/kmolsite/ubuntu-1404-zhi-xing-python-wang-ji-cheng-shi.html';
+
+            var disqus_config = function () {
+                this.language = "en";
+            };
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function () {
+                var dsq = document.createElement('script');
+                dsq.type = 'text/javascript';
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+            Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    </section>
+        </article>
+    </section>
 
         </div>
         <div class="col-sm-3" id="sidebar">
@@ -259,8 +507,28 @@ kmolsite            </a>
             <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
                 <ul class="list-group" id="recentposts">
                     <li class="list-group-item">
+                        <a href="http://chiamingyen.github.io/kmolsite/ubuntu-1404-zhi-xing-python-wang-ji-cheng-shi.html">
+                            Ubuntu 14.04 執行 Python 網際程式
+                        </a>
+                    </li>
+                    <li class="list-group-item">
                         <a href="http://chiamingyen.github.io/kmolsite/2016kmol-initialized.html">
                             2016kmol initialized
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="http://chiamingyen.github.io/kmolsite/tipue-site-search-for-pelican.html">
+                            Tipue Site Search for Pelican
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="http://chiamingyen.github.io/kmolsite/2016kmol-ce-shi.html">
+                            2016kmol 測試
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="http://chiamingyen.github.io/kmolsite/pelican-jin-duan-yu-yuan-duan-de-she-ding.html">
+                            Pelican 近端與遠端的設定
                         </a>
                     </li>
                 </ul>

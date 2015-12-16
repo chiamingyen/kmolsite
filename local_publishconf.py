@@ -18,6 +18,11 @@ SITEURL = './'
 RELATIVE_URLS = True
 # 為了要讓 local 與 gh-pages 上都能夠使用 Tipue search, 可能要採用不同的 theme
 THEME = 'theme/pelican-bootstrap3_local'
+#BOOTSTRAP_THEME = 'readable'
+#BOOTSTRAP_THEME = 'readable-old'
+BOOTSTRAP_THEME = 'united'
+#PYGMENTS_STYLE = 'paraiso-drak'
+PYGMENTS_STYLE = 'fruity'
 
 FEED_ALL_ATOM = 'feeds/all.atom.xml'
 CATEGORY_FEED_ATOM = 'feeds/%s.atom.xml'
