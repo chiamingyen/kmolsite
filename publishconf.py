@@ -13,7 +13,7 @@ from pelicanconf import *
 # 因為 publishconf.py 在 pelicanconf.py 之後, 因此若兩處有相同變數的設定, 將以較後讀入的 publishconf.py 中的設定為主.
 
 # 將所有靜態 html 檔案移到 blog 子目錄
-SITEURL = 'http://chiamingyen.github.io/kmolsite/blog'
+SITEURL = 'http://chiamingyen.github.io/kmolsite/blog/post'
 # 此設定用於將資料送到 gh-pages, 因此使用絕對 URL 設定
 RELATIVE_URLS = False
 # 為了要讓 local 與 gh-pages 上都能夠使用 Tipue search, 可能要採用不同的 theme
@@ -39,3 +39,9 @@ DEFAULT_DATE = 'fs'
 
 # 遠端的 code hightlight
 MD_EXTENSIONS = ['fenced_code', 'extra', 'codehilite(linenums=True)']
+
+# 改為依照日期存檔呼叫
+ARTICLE_URL = 'posts/{date:%Y}/{date:%m}/{date:%d}/{slug}/'
+ARTICLE_SAVE_AS = 'posts/{date:%Y}/{date:%m}/{date:%d}/{slug}/index.html'
+PAGE_URL = 'pages/{slug}/'
+PAGE_SAVE_AS = 'pages/{slug}/index.html'
