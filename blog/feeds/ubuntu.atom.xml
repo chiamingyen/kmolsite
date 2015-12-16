@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>kmolsite</title><link href="http://chiamingyen.github.io/kmolsite/blog/" rel="alternate"></link><link href="http://chiamingyen.github.io/kmolsite/blog/feeds/ubuntu.atom.xml" rel="self"></link><id>http://chiamingyen.github.io/kmolsite/blog/</id><updated>2015-12-16T18:20:24+08:00</updated><entry><title>Ubuntu 14.04 執行 Python 網際程式</title><link href="http://chiamingyen.github.io/kmolsite/blog/posts/2015/12/16/ubuntu-1404-zhi-xing-python-wang-ji-cheng-shi/" rel="alternate"></link><updated>2015-12-16T18:20:24+08:00</updated><author><name>kmol</name></author><id>tag:chiamingyen.github.io,2015-12-16:kmolsite/blog/posts/2015/12/16/ubuntu-1404-zhi-xing-python-wang-ji-cheng-shi/</id><summary type="html">&lt;p&gt;Nginx 當前端, 在 Ubuntu 以 uwsgi 執行 Python 程式.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>kmolsite</title><link href="http://chiamingyen.github.io/kmolsite/blog/" rel="alternate"></link><link href="http://chiamingyen.github.io/kmolsite/blog/feeds/ubuntu.atom.xml" rel="self"></link><id>http://chiamingyen.github.io/kmolsite/blog/</id><updated>2015-12-16T21:11:10+08:00</updated><entry><title>Ubuntu 14.04 執行 Python 網際程式</title><link href="http://chiamingyen.github.io/kmolsite/blog/posts/2015/12/16/ubuntu-1404-zhi-xing-python-wang-ji-cheng-shi/" rel="alternate"></link><updated>2015-12-16T21:11:10+08:00</updated><author><name>kmol</name></author><id>tag:chiamingyen.github.io,2015-12-16:kmolsite/blog/posts/2015/12/16/ubuntu-1404-zhi-xing-python-wang-ji-cheng-shi/</id><summary type="html">&lt;p&gt;Nginx 當前端, 在 Ubuntu 以 uwsgi 執行 Python 程式.&lt;/p&gt;
 
 
 &lt;p&gt;nginx.conf 設定&lt;/p&gt;
@@ -254,7 +254,8 @@ http {
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 
-&lt;p&gt;其中第 13 行 include uwsgi_params;, 表示 uwsgi_params 檔案必須位於與 default 設定檔案同一個目錄, 也就是必須位於 sites-available 目錄中.&lt;/p&gt;
+&lt;p&gt;&lt;br /&gt;
+其中第 13 行 include uwsgi_params;, 表示 uwsgi_params 檔案必須位於與 default 設定檔案同一個目錄, 也就是必須位於 sites-available 目錄中.&lt;/p&gt;
 &lt;p&gt;第 14 行 uwsgi_pass  127.0.0.1:8080; 表示 uwsgi 伺服傳送是透過近端主機中的 8080 埠號傳資料給 nginx, 然後再由 nginx 透過埠號 80 與 443 進行全球資訊網伺服, 因此用戶無法直接擷取 uwsgi 所傳出的資料, 而是經過內部 8080 傳給 nginx 後再以 http 或 https 與請求連線的客戶端進行互動.&lt;/p&gt;
 &lt;p&gt;uwsgi_params 檔案內容:&lt;/p&gt;
 &lt;table class="codehilitetable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt; 1
@@ -285,7 +286,8 @@ http {
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 
-&lt;p&gt;處理好 nginx 設定之後, 接著處理 uwsgi 的啟動, 希望在開機時就交由操作系統啟動, 這裡透過 /etc/init/uwsgi.conf 設定完成.&lt;/p&gt;
+&lt;p&gt;&lt;br /&gt;
+處理好 nginx 設定之後, 接著處理 uwsgi 的啟動, 希望在開機時就交由操作系統啟動, 這裡透過 /etc/init/uwsgi.conf 設定完成.&lt;/p&gt;
 &lt;p&gt;/etc/init/uwsgi.conf 檔案內容:&lt;/p&gt;
 &lt;table class="codehilitetable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1
 2
@@ -303,7 +305,8 @@ exec uwsgi --uid hp3 --gid hp3 --emperor /home/hp3/uwsgi_ini
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 
-&lt;p&gt;以上採用 uwsgi Emperor 的設定方式啟動 /home/hp3/uwsgi_ini 目錄中的所有 uwsgi 程式啟動.&lt;/p&gt;
+&lt;p&gt;&lt;br /&gt;
+以上採用 uwsgi Emperor 的設定方式啟動 /home/hp3/uwsgi_ini 目錄中的所有 uwsgi 程式啟動.&lt;/p&gt;
 &lt;p&gt;而目前位於 /home/hp3/uwsgi_ini 目錄中只有一個 uwsgi.ini  檔案, 內容如下:&lt;/p&gt;
 &lt;table class="codehilitetable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1
 2
@@ -319,7 +322,8 @@ exec uwsgi --uid hp3 --gid hp3 --emperor /home/hp3/uwsgi_ini
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 
-&lt;p&gt;表示要以近端的 8080 埠號啟動 uwsgi, 而且設定執行目錄與執行的 uwsgi 應用程式 /home/hp3/cmsimply/wsgi/application&lt;/p&gt;
+&lt;p&gt;&lt;br /&gt;
+表示要以近端的 8080 埠號啟動 uwsgi, 而且設定執行目錄與執行的 uwsgi 應用程式 /home/hp3/cmsimply/wsgi/application&lt;/p&gt;
 &lt;p&gt;這時很重要的一點就是 application 必須採 uwsgi 啟動設定, 也就是與 OpenShift 端的啟動方式相同.&lt;/p&gt;
 &lt;p&gt;/home/hp3/cmsimply/wsgi/application 最後啟動設定為:&lt;/p&gt;
 &lt;table class="codehilitetable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1
@@ -340,7 +344,7 @@ else:
     #cherrypy.quickstart(root, config = application_conf)
     application = cherrypy.Application(root, config = application_conf)
 &lt;/pre&gt;&lt;/div&gt;
-&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</summary><category term="網際程式"></category><category term="Python"></category><category term="nginx"></category><category term="uwsgi"></category></entry><entry><title>nginx 與 uwsgi 的結合</title><link href="http://chiamingyen.github.io/kmolsite/blog/posts/2015/12/16/nginx-yu-uwsgi-de-jie-he/" rel="alternate"></link><updated>2015-12-16T15:33:24+08:00</updated><author><name>kmol</name></author><id>tag:chiamingyen.github.io,2015-12-16:kmolsite/blog/posts/2015/12/16/nginx-yu-uwsgi-de-jie-he/</id><summary type="html">&lt;p&gt;最新版的 nginx 必須與 2.0 版以上的 uwsgi 配合, 否則無法啟動.&lt;/p&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</summary><category term="網際程式"></category><category term="Python"></category><category term="nginx"></category><category term="uwsgi"></category></entry><entry><title>nginx 與 uwsgi 的結合</title><link href="http://chiamingyen.github.io/kmolsite/blog/posts/2015/12/16/nginx-yu-uwsgi-de-jie-he/" rel="alternate"></link><updated>2015-12-16T21:02:42+08:00</updated><author><name>kmol</name></author><id>tag:chiamingyen.github.io,2015-12-16:kmolsite/blog/posts/2015/12/16/nginx-yu-uwsgi-de-jie-he/</id><summary type="html">&lt;p&gt;最新版的 nginx 必須與 2.0 版以上的 uwsgi 配合, 否則無法啟動.&lt;/p&gt;
 
 
 &lt;p&gt;這是發生在編號 103 HP 伺服器上的問題, 透過查驗, 才知道, 其實在各種協同合作模式中, 必須了解細節才能解決問題.&lt;/p&gt;
@@ -352,7 +356,8 @@ sudo visudo
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 
-&lt;p&gt;將 username 納為可以執行 sudo 的帳號&lt;/p&gt;
+&lt;p&gt;&lt;br /&gt;
+將 username 納為可以執行 sudo 的帳號&lt;/p&gt;
 &lt;p&gt;在 %sudo 行下增加一行,  然後按下 Ctrl+O, 再按 Enter&lt;/p&gt;
 &lt;p&gt;經過 uwsgi 版次查驗, 發現透過 sudo apt-get install uwsgi 所安裝的版本為 1.9.17.1 版, 必須設法轉為 2.0 以上版本&lt;/p&gt;
 &lt;p&gt;版本查驗:&lt;/p&gt;
@@ -360,23 +365,27 @@ sudo visudo
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 
-&lt;p&gt;結果為 1.9.17.1-debian, 必須改為 2.0.11.2, 否則無法與 nginx 結合&lt;/p&gt;
+&lt;p&gt;&lt;br /&gt;
+結果為 1.9.17.1-debian, 必須改為 2.0.11.2, 否則無法與 nginx 結合&lt;/p&gt;
 &lt;p&gt;移除利用 sudo apt-get install uwsgi 安裝的 1.9.17.1 版的 uswgi&lt;/p&gt;
 &lt;table class="codehilitetable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="codehilite"&gt;&lt;pre&gt;sudo apt-get remove uwsgi
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 
-&lt;p&gt;準備利用 pip3 安裝 uwsgi 其中必須執行 c 程式編譯, 因此必須安裝 build-essential 與 python3-dev&lt;/p&gt;
+&lt;p&gt;&lt;br /&gt;
+準備利用 pip3 安裝 uwsgi 其中必須執行 c 程式編譯, 因此必須安裝 build-essential 與 python3-dev&lt;/p&gt;
 &lt;table class="codehilitetable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="codehilite"&gt;&lt;pre&gt;sudo apt-get install build-essential python3-dev
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 
-&lt;p&gt;接著利用 pip3 安裝 uwsgi&lt;/p&gt;
+&lt;p&gt;&lt;br /&gt;
+接著利用 pip3 安裝 uwsgi&lt;/p&gt;
 &lt;table class="codehilitetable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="codehilite"&gt;&lt;pre&gt;sudo pip3 install uwsgi
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 
-&lt;p&gt;利用 which uwsgi 找到 2.0.11.2 版的 uwsgi 位於 /usr/local/bin/uwsgi&lt;/p&gt;
+&lt;p&gt;&lt;br /&gt;
+利用 which uwsgi 找到 2.0.11.2 版的 uwsgi 位於 /usr/local/bin/uwsgi&lt;/p&gt;
 &lt;p&gt;因為 /etc/alternatives/uwsgi 指向 /usr/bin/uwsgi-core 為舊版, 因此必須重新設定 symbolic link, 讓 uwsgi 指令指到 2.0 版本.&lt;/p&gt;
 &lt;table class="codehilitetable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1
 2
@@ -386,9 +395,11 @@ sudo ln -s /usr/local/bin/uwsgi uwsgi (將新的 /usr/local/bin/uwsgi 對應到 
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 
-&lt;p&gt;完成後執行:&lt;/p&gt;
+&lt;p&gt;&lt;br /&gt;
+完成後執行:&lt;/p&gt;
 &lt;table class="codehilitetable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="codehilite"&gt;&lt;pre&gt;sudo service uwsgi restart 
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 
-&lt;p&gt;就可順利啟動 nginx 中所對應設定的 CMSimply&lt;/p&gt;</summary><category term="uwsgi"></category><category term="nginx"></category><category term="網際程式"></category><category term="Python"></category></entry></feed>
+&lt;p&gt;&lt;br /&gt;
+就可順利啟動 nginx 中所對應設定的 CMSimply&lt;/p&gt;</summary><category term="uwsgi"></category><category term="nginx"></category><category term="網際程式"></category><category term="Python"></category></entry></feed>

@@ -268,7 +268,7 @@ kmolsite            </a>
 <footer class="post-info">
     <span class="label label-default">Date</span>
     <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2015-12-16T15:33:24.554156+08:00"> 三 16 十二月 2015</time>
+        <i class="fa fa-calendar"></i><time datetime="2015-12-16T21:02:42.121472+08:00"> 三 16 十二月 2015</time>
     </span>
 
 
@@ -296,7 +296,8 @@ sudo visudo
 </pre></div>
 </td></tr></table>
 
-<p>將 username 納為可以執行 sudo 的帳號</p>
+<p><br />
+將 username 納為可以執行 sudo 的帳號</p>
 <p>在 %sudo 行下增加一行,  然後按下 Ctrl+O, 再按 Enter</p>
 <p>經過 uwsgi 版次查驗, 發現透過 sudo apt-get install uwsgi 所安裝的版本為 1.9.17.1 版, 必須設法轉為 2.0 以上版本</p>
 <p>版本查驗:</p>
@@ -304,23 +305,27 @@ sudo visudo
 </pre></div>
 </td></tr></table>
 
-<p>結果為 1.9.17.1-debian, 必須改為 2.0.11.2, 否則無法與 nginx 結合</p>
+<p><br />
+結果為 1.9.17.1-debian, 必須改為 2.0.11.2, 否則無法與 nginx 結合</p>
 <p>移除利用 sudo apt-get install uwsgi 安裝的 1.9.17.1 版的 uswgi</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre>sudo apt-get remove uwsgi
 </pre></div>
 </td></tr></table>
 
-<p>準備利用 pip3 安裝 uwsgi 其中必須執行 c 程式編譯, 因此必須安裝 build-essential 與 python3-dev</p>
+<p><br />
+準備利用 pip3 安裝 uwsgi 其中必須執行 c 程式編譯, 因此必須安裝 build-essential 與 python3-dev</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre>sudo apt-get install build-essential python3-dev
 </pre></div>
 </td></tr></table>
 
-<p>接著利用 pip3 安裝 uwsgi</p>
+<p><br />
+接著利用 pip3 安裝 uwsgi</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre>sudo pip3 install uwsgi
 </pre></div>
 </td></tr></table>
 
-<p>利用 which uwsgi 找到 2.0.11.2 版的 uwsgi 位於 /usr/local/bin/uwsgi</p>
+<p><br />
+利用 which uwsgi 找到 2.0.11.2 版的 uwsgi 位於 /usr/local/bin/uwsgi</p>
 <p>因為 /etc/alternatives/uwsgi 指向 /usr/bin/uwsgi-core 為舊版, 因此必須重新設定 symbolic link, 讓 uwsgi 指令指到 2.0 版本.</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
@@ -330,12 +335,14 @@ sudo ln -s /usr/local/bin/uwsgi uwsgi (將新的 /usr/local/bin/uwsgi 對應到 
 </pre></div>
 </td></tr></table>
 
-<p>完成後執行:</p>
+<p><br />
+完成後執行:</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre>sudo service uwsgi restart 
 </pre></div>
 </td></tr></table>
 
-<p>就可順利啟動 nginx 中所對應設定的 CMSimply</p>
+<p><br />
+就可順利啟動 nginx 中所對應設定的 CMSimply</p>
             </div>
             <!-- /.entry-content -->
     <hr/>
@@ -396,13 +403,13 @@ sudo ln -s /usr/local/bin/uwsgi uwsgi (將新的 /usr/local/bin/uwsgi 對應到 
                         </a>
                     </li>
                     <li class="list-group-item">
-                        <a href="http://chiamingyen.github.io/kmolsite/blog/posts/2015/12/16/2016kmol-ce-shi/">
-                            2016kmol 測試
+                        <a href="http://chiamingyen.github.io/kmolsite/blog/posts/2015/12/16/nginx-yu-uwsgi-de-jie-he/">
+                            nginx 與 uwsgi 的結合
                         </a>
                     </li>
                     <li class="list-group-item">
-                        <a href="http://chiamingyen.github.io/kmolsite/blog/posts/2015/12/16/2016kmol-initialized/">
-                            2016kmol initialized
+                        <a href="http://chiamingyen.github.io/kmolsite/blog/posts/2015/12/16/2016kmol-ce-shi/">
+                            2016kmol 測試
                         </a>
                     </li>
                 </ul>

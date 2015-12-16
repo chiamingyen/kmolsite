@@ -268,7 +268,7 @@ kmolsite            </a>
 <footer class="post-info">
     <span class="label label-default">Date</span>
     <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2015-12-16T18:20:24.393809+08:00"> 三 16 十二月 2015</time>
+        <i class="fa fa-calendar"></i><time datetime="2015-12-16T21:11:10.321454+08:00"> 三 16 十二月 2015</time>
     </span>
 
 
@@ -539,7 +539,8 @@ http {
 </pre></div>
 </td></tr></table>
 
-<p>其中第 13 行 include uwsgi_params;, 表示 uwsgi_params 檔案必須位於與 default 設定檔案同一個目錄, 也就是必須位於 sites-available 目錄中.</p>
+<p><br />
+其中第 13 行 include uwsgi_params;, 表示 uwsgi_params 檔案必須位於與 default 設定檔案同一個目錄, 也就是必須位於 sites-available 目錄中.</p>
 <p>第 14 行 uwsgi_pass  127.0.0.1:8080; 表示 uwsgi 伺服傳送是透過近端主機中的 8080 埠號傳資料給 nginx, 然後再由 nginx 透過埠號 80 與 443 進行全球資訊網伺服, 因此用戶無法直接擷取 uwsgi 所傳出的資料, 而是經過內部 8080 傳給 nginx 後再以 http 或 https 與請求連線的客戶端進行互動.</p>
 <p>uwsgi_params 檔案內容:</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
@@ -570,7 +571,8 @@ http {
 </pre></div>
 </td></tr></table>
 
-<p>處理好 nginx 設定之後, 接著處理 uwsgi 的啟動, 希望在開機時就交由操作系統啟動, 這裡透過 /etc/init/uwsgi.conf 設定完成.</p>
+<p><br />
+處理好 nginx 設定之後, 接著處理 uwsgi 的啟動, 希望在開機時就交由操作系統啟動, 這裡透過 /etc/init/uwsgi.conf 設定完成.</p>
 <p>/etc/init/uwsgi.conf 檔案內容:</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
@@ -588,7 +590,8 @@ exec uwsgi --uid hp3 --gid hp3 --emperor /home/hp3/uwsgi_ini
 </pre></div>
 </td></tr></table>
 
-<p>以上採用 uwsgi Emperor 的設定方式啟動 /home/hp3/uwsgi_ini 目錄中的所有 uwsgi 程式啟動.</p>
+<p><br />
+以上採用 uwsgi Emperor 的設定方式啟動 /home/hp3/uwsgi_ini 目錄中的所有 uwsgi 程式啟動.</p>
 <p>而目前位於 /home/hp3/uwsgi_ini 目錄中只有一個 uwsgi.ini  檔案, 內容如下:</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
@@ -604,7 +607,8 @@ exec uwsgi --uid hp3 --gid hp3 --emperor /home/hp3/uwsgi_ini
 </pre></div>
 </td></tr></table>
 
-<p>表示要以近端的 8080 埠號啟動 uwsgi, 而且設定執行目錄與執行的 uwsgi 應用程式 /home/hp3/cmsimply/wsgi/application</p>
+<p><br />
+表示要以近端的 8080 埠號啟動 uwsgi, 而且設定執行目錄與執行的 uwsgi 應用程式 /home/hp3/cmsimply/wsgi/application</p>
 <p>這時很重要的一點就是 application 必須採 uwsgi 啟動設定, 也就是與 OpenShift 端的啟動方式相同.</p>
 <p>/home/hp3/cmsimply/wsgi/application 最後啟動設定為:</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
@@ -686,13 +690,13 @@ else:
                         </a>
                     </li>
                     <li class="list-group-item">
-                        <a href="http://chiamingyen.github.io/kmolsite/blog/posts/2015/12/16/2016kmol-ce-shi/">
-                            2016kmol 測試
+                        <a href="http://chiamingyen.github.io/kmolsite/blog/posts/2015/12/16/nginx-yu-uwsgi-de-jie-he/">
+                            nginx 與 uwsgi 的結合
                         </a>
                     </li>
                     <li class="list-group-item">
-                        <a href="http://chiamingyen.github.io/kmolsite/blog/posts/2015/12/16/2016kmol-initialized/">
-                            2016kmol initialized
+                        <a href="http://chiamingyen.github.io/kmolsite/blog/posts/2015/12/16/2016kmol-ce-shi/">
+                            2016kmol 測試
                         </a>
                     </li>
                 </ul>

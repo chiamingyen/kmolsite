@@ -265,7 +265,7 @@ kmolsite            </a>
 <footer class="post-info">
     <span class="label label-default">Date</span>
     <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2015-12-16T18:11:30.157827+08:00"> 三 16 十二月 2015</time>
+        <i class="fa fa-calendar"></i><time datetime="2015-12-16T21:11:10.313454+08:00"> 三 16 十二月 2015</time>
     </span>
 
 
@@ -282,6 +282,35 @@ kmolsite            </a>
 <p>另外一個近端與遠端的差異為 Tipue search, 近端時, 利用 static 模組, 將所有網頁內容存為 tipuesearch_content.js, 而在 Github pages 時, 則使用 json 模組, 網頁內容存為 tipuesearch_content.json 格式.</p>
 <p>其中為了在網誌內容編寫與功能開發過程中, 能夠完全在近端測試 Github pages 端的所有功能, 利用 Leo Editor 的 @buttton 與 @edit, 分別針對兩端所需要的不同設定加以區分, 就連 theme 中有關 Tipue search 的啟動與設定, 也是分為近端與遠端兩套.</p>
 <p>在 <a href="http://chiamingyen.github.io/kmolsite">kmolsite</a> 的專案中, 我們可以發現, <a href="http://leoeditor.com/">Leo Editor</a> 在面對這些不同環境, 不同設定, 而必須以不同指令產生不同內容的情況下, 可以說應付自如.</p>
+<h1>網誌存檔與呼叫設定</h1>
+<p>近端的設定, 主要在於瀏覽器無法自行開啟 index.html, 因此 ARTICLE_URL 直接指到 index.html</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span class="c"># 改為依照日期存檔呼叫</span>
+<span class="n">ARTICLE_URL</span> <span class="o">=</span> <span class="s">&#39;posts/{date:%Y}/{date:%m}/{date:</span><span class="si">%d</span><span class="s">}/{slug}/index.html&#39;</span>
+<span class="n">ARTICLE_SAVE_AS</span> <span class="o">=</span> <span class="s">&#39;posts/{date:%Y}/{date:%m}/{date:</span><span class="si">%d</span><span class="s">}/{slug}/index.html&#39;</span>
+<span class="n">PAGE_URL</span> <span class="o">=</span> <span class="s">&#39;pages/{slug}/&#39;</span>
+<span class="n">PAGE_SAVE_AS</span> <span class="o">=</span> <span class="s">&#39;pages/{slug}/index.html&#39;</span>
+</pre></div>
+</td></tr></table>
+
+<p><br />
+而在 gh-pages 端的設定, 因為會直接開啟各網誌文章目錄中的 index.html, 因此 ARTICLE_URL 只要設到文章目錄即可.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span class="c"># 改為依照日期存檔呼叫</span>
+<span class="n">ARTICLE_URL</span> <span class="o">=</span> <span class="s">&#39;posts/{date:%Y}/{date:%m}/{date:</span><span class="si">%d</span><span class="s">}/{slug}/&#39;</span>
+<span class="n">ARTICLE_SAVE_AS</span> <span class="o">=</span> <span class="s">&#39;posts/{date:%Y}/{date:%m}/{date:</span><span class="si">%d</span><span class="s">}/{slug}/index.html&#39;</span>
+<span class="n">PAGE_URL</span> <span class="o">=</span> <span class="s">&#39;pages/{slug}/&#39;</span>
+<span class="n">PAGE_SAVE_AS</span> <span class="o">=</span> <span class="s">&#39;pages/{slug}/index.html&#39;</span>
+</pre></div>
+</td></tr></table>
+
+<p><br /></p>
 <h1>codehilite 設定</h1>
 <p>首先是 Pelican 的設定檔案:</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
@@ -290,7 +319,8 @@ kmolsite            </a>
 </pre></div>
 </td></tr></table>
 
-<p>接著則是在所選擇的 Pygment css 設定檔案最後面, 加上以下格式設定碼:</p>
+<p><br />
+接著則是在所選擇的 Pygment css 設定檔案最後面, 加上以下格式設定碼:</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>  1
   2
   3
@@ -860,13 +890,13 @@ kmolsite            </a>
                         </a>
                     </li>
                     <li class="list-group-item">
-                        <a href="http://chiamingyen.github.io/kmolsite/blog/posts/2015/12/16/2016kmol-ce-shi/">
-                            2016kmol 測試
+                        <a href="http://chiamingyen.github.io/kmolsite/blog/posts/2015/12/16/nginx-yu-uwsgi-de-jie-he/">
+                            nginx 與 uwsgi 的結合
                         </a>
                     </li>
                     <li class="list-group-item">
-                        <a href="http://chiamingyen.github.io/kmolsite/blog/posts/2015/12/16/2016kmol-initialized/">
-                            2016kmol initialized
+                        <a href="http://chiamingyen.github.io/kmolsite/blog/posts/2015/12/16/2016kmol-ce-shi/">
+                            2016kmol 測試
                         </a>
                     </li>
                 </ul>

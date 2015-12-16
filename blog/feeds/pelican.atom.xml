@@ -1,11 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>kmolsite</title><link href="http://chiamingyen.github.io/kmolsite/blog/" rel="alternate"></link><link href="http://chiamingyen.github.io/kmolsite/blog/feeds/pelican.atom.xml" rel="self"></link><id>http://chiamingyen.github.io/kmolsite/blog/</id><updated>2015-12-16T18:11:30+08:00</updated><entry><title>Pelican 近端與遠端的設定</title><link href="http://chiamingyen.github.io/kmolsite/blog/posts/2015/12/16/pelican-jin-duan-yu-yuan-duan-de-she-ding/" rel="alternate"></link><updated>2015-12-16T18:11:30+08:00</updated><author><name>kmol</name></author><id>tag:chiamingyen.github.io,2015-12-16:kmolsite/blog/posts/2015/12/16/pelican-jin-duan-yu-yuan-duan-de-she-ding/</id><summary type="html">&lt;p&gt;Pelican 近端與遠端的設定.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>kmolsite</title><link href="http://chiamingyen.github.io/kmolsite/blog/" rel="alternate"></link><link href="http://chiamingyen.github.io/kmolsite/blog/feeds/pelican.atom.xml" rel="self"></link><id>http://chiamingyen.github.io/kmolsite/blog/</id><updated>2015-12-16T21:11:10+08:00</updated><entry><title>Pelican 近端與遠端的設定</title><link href="http://chiamingyen.github.io/kmolsite/blog/posts/2015/12/16/pelican-jin-duan-yu-yuan-duan-de-she-ding/" rel="alternate"></link><updated>2015-12-16T21:11:10+08:00</updated><author><name>kmol</name></author><id>tag:chiamingyen.github.io,2015-12-16:kmolsite/blog/posts/2015/12/16/pelican-jin-duan-yu-yuan-duan-de-she-ding/</id><summary type="html">&lt;p&gt;Pelican 近端與遠端的設定.&lt;/p&gt;
 
 
 &lt;p&gt;基本的概念是, 在近端時, 靜態網頁使用相對目錄, SITEURL 設為 "./", 而在 Github pages 時, 則採用制式的符號名稱加上 repository 名稱作為 SITEURL.&lt;/p&gt;
 &lt;p&gt;另外一個近端與遠端的差異為 Tipue search, 近端時, 利用 static 模組, 將所有網頁內容存為 tipuesearch_content.js, 而在 Github pages 時, 則使用 json 模組, 網頁內容存為 tipuesearch_content.json 格式.&lt;/p&gt;
 &lt;p&gt;其中為了在網誌內容編寫與功能開發過程中, 能夠完全在近端測試 Github pages 端的所有功能, 利用 Leo Editor 的 @buttton 與 @edit, 分別針對兩端所需要的不同設定加以區分, 就連 theme 中有關 Tipue search 的啟動與設定, 也是分為近端與遠端兩套.&lt;/p&gt;
 &lt;p&gt;在 &lt;a href="http://chiamingyen.github.io/kmolsite"&gt;kmolsite&lt;/a&gt; 的專案中, 我們可以發現, &lt;a href="http://leoeditor.com/"&gt;Leo Editor&lt;/a&gt; 在面對這些不同環境, 不同設定, 而必須以不同指令產生不同內容的情況下, 可以說應付自如.&lt;/p&gt;
+&lt;h1&gt;網誌存檔與呼叫設定&lt;/h1&gt;
+&lt;p&gt;近端的設定, 主要在於瀏覽器無法自行開啟 index.html, 因此 ARTICLE_URL 直接指到 index.html&lt;/p&gt;
+&lt;table class="codehilitetable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1
+2
+3
+4
+5&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="c"&gt;# 改為依照日期存檔呼叫&lt;/span&gt;
+&lt;span class="n"&gt;ARTICLE_URL&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;posts/{date:%Y}/{date:%m}/{date:&lt;/span&gt;&lt;span class="si"&gt;%d&lt;/span&gt;&lt;span class="s"&gt;}/{slug}/index.html&amp;#39;&lt;/span&gt;
+&lt;span class="n"&gt;ARTICLE_SAVE_AS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;posts/{date:%Y}/{date:%m}/{date:&lt;/span&gt;&lt;span class="si"&gt;%d&lt;/span&gt;&lt;span class="s"&gt;}/{slug}/index.html&amp;#39;&lt;/span&gt;
+&lt;span class="n"&gt;PAGE_URL&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;pages/{slug}/&amp;#39;&lt;/span&gt;
+&lt;span class="n"&gt;PAGE_SAVE_AS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;pages/{slug}/index.html&amp;#39;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;p&gt;&lt;br /&gt;
+而在 gh-pages 端的設定, 因為會直接開啟各網誌文章目錄中的 index.html, 因此 ARTICLE_URL 只要設到文章目錄即可.&lt;/p&gt;
+&lt;table class="codehilitetable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1
+2
+3
+4
+5&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="c"&gt;# 改為依照日期存檔呼叫&lt;/span&gt;
+&lt;span class="n"&gt;ARTICLE_URL&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;posts/{date:%Y}/{date:%m}/{date:&lt;/span&gt;&lt;span class="si"&gt;%d&lt;/span&gt;&lt;span class="s"&gt;}/{slug}/&amp;#39;&lt;/span&gt;
+&lt;span class="n"&gt;ARTICLE_SAVE_AS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;posts/{date:%Y}/{date:%m}/{date:&lt;/span&gt;&lt;span class="si"&gt;%d&lt;/span&gt;&lt;span class="s"&gt;}/{slug}/index.html&amp;#39;&lt;/span&gt;
+&lt;span class="n"&gt;PAGE_URL&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;pages/{slug}/&amp;#39;&lt;/span&gt;
+&lt;span class="n"&gt;PAGE_SAVE_AS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;pages/{slug}/index.html&amp;#39;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;h1&gt;codehilite 設定&lt;/h1&gt;
 &lt;p&gt;首先是 Pelican 的設定檔案:&lt;/p&gt;
 &lt;table class="codehilitetable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1
@@ -14,7 +43,8 @@
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 
-&lt;p&gt;接著則是在所選擇的 Pygment css 設定檔案最後面, 加上以下格式設定碼:&lt;/p&gt;
+&lt;p&gt;&lt;br /&gt;
+接著則是在所選擇的 Pygment css 設定檔案最後面, 加上以下格式設定碼:&lt;/p&gt;
 &lt;table class="codehilitetable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;  1
   2
   3

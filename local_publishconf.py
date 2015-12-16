@@ -41,7 +41,7 @@ DEFAULT_DATE = 'fs'
 MD_EXTENSIONS = ['fenced_code', 'extra', 'codehilite(linenums=True)']
 
 # 改為依照日期存檔呼叫
-ARTICLE_URL = 'posts/{date:%Y}/{date:%m}/{date:%d}/{slug}/'
+ARTICLE_URL = 'posts/{date:%Y}/{date:%m}/{date:%d}/{slug}/index.html'
 ARTICLE_SAVE_AS = 'posts/{date:%Y}/{date:%m}/{date:%d}/{slug}/index.html'
 PAGE_URL = 'pages/{slug}/'
 PAGE_SAVE_AS = 'pages/{slug}/index.html'
