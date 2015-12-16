@@ -21,7 +21,7 @@
 <v t="leo.20151213085727.1"><vh>@button local pelican</vh></v>
 </v>
 <v t="amd.20151215180106.1" a="E"><vh>設定與開發</vh>
-<v t="amd.20151216150108.1"><vh>@edit index.html</vh></v>
+<v t="amd.20151216151325.1"><vh>@edit index.html</vh></v>
 <v t="leo.20151213230723.1"><vh>Pelican 設定</vh>
 <v t="leo.20151213230957.1"><vh>文章 Date 設定</vh></v>
 <v t="leo.20151213230729.1"><vh>使用 summary plugin</vh></v>
@@ -195,7 +195,7 @@ vertical: body pane on the botton</t>
 <t tx="leo.20151212173658.1">@language python
 import os
 #os.system("pelican content -o ./ -s publishconf.py -t theme/pelican-bootstrap3")
-os.system("pelican content -o ./ -s publishconf.py")
+os.system("pelican content -o blog -s publishconf.py")
 g.es("admin pelican 執行完畢")
 
 </t>
