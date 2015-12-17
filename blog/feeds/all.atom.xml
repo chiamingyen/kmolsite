@@ -1,5 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>kmolsite</title><link href="http://chiamingyen.github.io/kmolsite/blog/" rel="alternate"></link><link href="http://chiamingyen.github.io/kmolsite/blog/feeds/all.atom.xml" rel="self"></link><id>http://chiamingyen.github.io/kmolsite/blog/</id><updated>2015-12-16T21:11:10+08:00</updated><entry><title>Ubuntu 14.04 執行 Python 網際程式</title><link href="http://chiamingyen.github.io/kmolsite/blog/posts/2015/12/16/ubuntu-1404-zhi-xing-python-wang-ji-cheng-shi/" rel="alternate"></link><updated>2015-12-16T21:11:10+08:00</updated><author><name>kmol</name></author><id>tag:chiamingyen.github.io,2015-12-16:kmolsite/blog/posts/2015/12/16/ubuntu-1404-zhi-xing-python-wang-ji-cheng-shi/</id><summary type="html">&lt;p&gt;Nginx 當前端, 在 Ubuntu 以 uwsgi 執行 Python 程式.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>kmolsite</title><link href="http://chiamingyen.github.io/kmolsite/blog/" rel="alternate"></link><link href="http://chiamingyen.github.io/kmolsite/blog/feeds/all.atom.xml" rel="self"></link><id>http://chiamingyen.github.io/kmolsite/blog/</id><updated>2015-12-17T10:38:59+08:00</updated><entry><title>Leo Editor 教學(一)</title><link href="http://chiamingyen.github.io/kmolsite/blog/posts/2015/12/17/leo-editor-jiao-xue-yi/" rel="alternate"></link><updated>2015-12-17T10:38:59+08:00</updated><author><name>kmol</name></author><id>tag:chiamingyen.github.io,2015-12-17:kmolsite/blog/posts/2015/12/17/leo-editor-jiao-xue-yi/</id><summary type="html">&lt;p&gt;有人說, Leo 編輯器是程式開發歷程上的一項創新, 也有人說, 一旦用上手, 就再也回不去了.&lt;/p&gt;
+
+
+&lt;p&gt;但是, 這樣一套看似程式開發與資料編輯管理的神器級工具, 為何如此冷門, 好像受歡迎程式不如預期?&lt;/p&gt;
+&lt;p&gt;經過整理歸納, 理由如下:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Leo Editor 歷經 Python2 與 Tkinter 的年代, 到目前採 Python3 與 PyQt5 的架構後, 網路上仍然留存許多幾年前甚或十年前的舊導引資料, 初學者很難掌握正確的資訊, 因此無法輕易導入.&lt;/li&gt;
+&lt;li&gt;Leo Editor 雖然全部使用 Python 編寫, 但是在同時支援 Python2 與 Python3 的情況下, 程式碼中仍留存許多老舊的設計與秘笈指令, 即使是使用 Leo Editor 多年的老手都很不容易通盤掌握, 更遑論新手.&lt;/li&gt;
+&lt;li&gt;Leo Editor 的開發群面對龐大的程式碼, 雖然不斷積極在思考改良, 但是真正能夠動手貢獻新功能或參與計劃的人數, 卻非常少, 因此進展的速度與靈活度並非很高.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;總之, Leo Editor 並非是一套能夠輕易上手的工具, 但也正因為如此, 才需要有更多人能夠面對上述三項問題, 努力提供更多的實用導引資料, 介紹比較常用的功能, 而且協助 Leo Editor 開發群, 讓這套工具可以由更多新手接棒, 持續更新改進.&lt;/p&gt;
+&lt;p&gt;以下, 我們將從系統的安裝開始, 逐步介紹 Leo Editor 的相關功能.&lt;/p&gt;
+&lt;h1&gt;安裝 Leo Editor&lt;/h1&gt;
+&lt;p&gt;Leo Editor 在 5.1 版時推出 @clean 節點指令功能, 這項新功能改進了先前 @auto 指令在內容置入 Leo Editor 特有標註的問題, 因此大家若要安裝, 記得一定要使用 5.1 以上的版本.&lt;/p&gt;
+&lt;p&gt;至於什麼是"節點指令功能", 什麼又是"Leo Editor 特有標註", 我們隨後再來了解.&lt;/p&gt;
+&lt;p&gt;Leo Editor 推廣上的另外一個問題, 上面已經提過, 門檻高導致冷門, 參與人數少則導致 Ubuntu 目前的 apt-get install leo, 仍然會安裝舊的 Leo Editor 5.0 版, 因此初學者必須非常細心, 努力收集資料, 綜合判讀, 才能走上一條正確的學習之路.&lt;/p&gt;
+&lt;p&gt;好了, 我們先從 Windows 操作系統的安裝看起.&lt;/p&gt;
+&lt;p&gt;因為 Leo Editor 5.1 版可以在 Python3 環境下開啟, 而 Leo Editor 5.1 版採用 PyQt 作為圖形介面, 因此 Leo Editor 5.1 版的安裝 , 就必須從 Python3 與 PyQt 的安裝開始.&lt;/p&gt;
+&lt;p&gt;在 Windows 環境下安裝 Python3 非常簡單, 但是安裝 PyQt 則相對比較困難, 主要原因在於 Windows 環境下 PyQt 的安裝, 牽涉到程式碼的編譯, 而通常網路上現成的簡易 PyQt 安裝套件會牽涉到版本, 假如 Python3 與 PyQt 版本沒有正確搭配, 簡易 PyQt 安裝套件就無法完成安裝.&lt;/p&gt;
+&lt;p&gt;以下在 Windows 環境中的 Python3 與 PyQt 安裝, 又分為固定式安裝與可攜式安裝, 而所謂的可攜式安裝 ,其實就是在固定式安裝之後, 透過額外的啟動及卸載設定, 讓安裝套件可以在不同的 Windows 操作系統中使用.&lt;/p&gt;
+&lt;h2&gt;Windows 環境 Python3 安裝&lt;/h2&gt;
+&lt;p&gt;未完待續&lt;/p&gt;</summary><category term="大綱編輯"></category><category term="Python"></category><category term="PyQt"></category></entry><entry><title>How to create a Pelican static site?</title><link href="http://chiamingyen.github.io/kmolsite/blog/posts/2015/12/16/how-to-create-a-pelican-static-site/" rel="alternate"></link><updated>2015-12-16T22:07:18+08:00</updated><author><name>kmol</name></author><id>tag:chiamingyen.github.io,2015-12-16:kmolsite/blog/posts/2015/12/16/how-to-create-a-pelican-static-site/</id><summary type="html">&lt;p&gt;如何在 Github page 建立靜態網誌系統?&lt;/p&gt;
+
+
+&lt;p&gt;1994 年開始, 許多人用 html 建立功能陽春的網站, 二十一個年頭過去, 無論大家經歷過多麼令人讚嘆激賞的全球資訊網技術, 我們終於又回到當時的起點, 還是採用最陽春的 html 格式來建立網站, 唯一的差別是, 這一次我們真正感受到天涯若比鄰, 遠端與近端, 在分散式版本的最高運行模式下, 原來是同一端.&lt;/p&gt;
+&lt;p&gt;從 &lt;a href="https://staticsitegenerators.net/"&gt;https://staticsitegenerators.net/&lt;/a&gt; 可以發現, 截至目前, 已經有超過 400 種靜態網頁產生器, 其中以 Python 編寫的 Pelican,  &lt;a href="https://github.com/getpelican/pelican "&gt;https://github.com/getpelican/pelican &lt;/a&gt; 算是其中的佼佼者.&lt;/p&gt;
+&lt;p&gt;至於在 Github pages 環境中採用靜態網頁系統, 相較於動態網頁系統的好處, 一般都認為:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;比較安全&lt;/li&gt;
+&lt;li&gt;比較不會過時&lt;/li&gt;
+&lt;li&gt;部署成本比較低&lt;/li&gt;
+&lt;li&gt;可在各種平台上使用&lt;/li&gt;
+&lt;li&gt;各階段改版資料均有紀錄&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;以下介紹利用 Python3 與 Pelican 建立能在 Gihub pages 部署的工具與環境.&lt;/p&gt;
+&lt;h1&gt;工具組&lt;/h1&gt;
+&lt;p&gt;假如您使用 Windows 64 位元操作系統, 可以直接下載可攜式系統 &lt;a href="https://github.com/chiamingyen/kmol2016"&gt;https://github.com/chiamingyen/kmol2016&lt;/a&gt;, 理論上, 只要按下 start.bat, 系統就會啟動 Leo Editor, 並且在對應啟動的 cmd 指令視窗, 就可以直接執行 git 指令.&lt;/p&gt;
+&lt;p&gt;假如您使用 Ubuntu 操作系統, 則必須安裝 Python3, PyQt, Leo Editor, Pelican, Markdown, 假如還希望透過 Jupyter 進行 notebook 檔案導入, 還要安裝 Jupyter.&lt;/p&gt;
+&lt;h1&gt;Pelican 網誌系統&lt;/h1&gt;
+&lt;p&gt;可以透過 git clone 本網站的倉儲資料 &lt;a href="https://github.com/chiamingyen/kmolsite"&gt;https://github.com/chiamingyen/kmolsite&lt;/a&gt;, 然後將分支切換到 gh-pages, 就可以利用 Leo Editor 開啟分支工作目錄中的 kmol2016.leo, 然後開始建立自己的 Pelican 靜態網誌.&lt;/p&gt;
+&lt;h1&gt;kmol2016 系統說明&lt;/h1&gt;
+&lt;p&gt;這裡所謂的"可攜 kmol2016", 其實就是在 Windows 64 位元的環境中, 可以無需安裝, 直接利用 start.bat 中的設定, 就可以在 Windows 操作系統中執行建立 Pelican 靜態網誌所需要的指令, 其中包括啟動 Leo Editor, 執行 git 指令以及啟動 Jupyter 等.&lt;/p&gt;
+&lt;h1&gt;kmolsite 系統說明&lt;/h1&gt;
+&lt;p&gt;開啟 kmol2016.leo 後, 可以發現 @path content 以下的子節點, 就是 Pelican 網誌系統的原始 md 檔案, 只要透過 @button local pelican 指令的執行, 就可以在近端建立 Pelican 靜態網誌, 而 @button gh-pages pelican 則用來建立 Github pages 端的 Pelican 靜態網誌資料.&lt;/p&gt;
+&lt;p&gt;從"設定與開發"節點下, 可以發現 pelicanconf.py 為近端與遠端的共同設定檔, 而近端透過 Pelican 轉檔時, 則採用 local_publishconf.py, 而 Gihub pages 端則使用 publishconf.py.&lt;/p&gt;
+&lt;p&gt;其中因為採用 Tipue search plugin, 在近端使用 tipuesearch_content.js 而在遠端則使用 tipuesearch_content.json, 所以才會將 theme 目錄下區隔近端使用 pelican-bootstrap3_local, 而遠端則使用 pelican-bootstrap3 目錄, 其間的差異在於啟動 Tipue search 搜尋的模式設定, 近端為 static, 而遠端則為 json.&lt;/p&gt;</summary><category term="Python"></category><category term="Github pages"></category><category term="Leo Editor"></category></entry><entry><title>Ubuntu 14.04 執行 Python 網際程式</title><link href="http://chiamingyen.github.io/kmolsite/blog/posts/2015/12/16/ubuntu-1404-zhi-xing-python-wang-ji-cheng-shi/" rel="alternate"></link><updated>2015-12-16T21:14:38+08:00</updated><author><name>kmol</name></author><id>tag:chiamingyen.github.io,2015-12-16:kmolsite/blog/posts/2015/12/16/ubuntu-1404-zhi-xing-python-wang-ji-cheng-shi/</id><summary type="html">&lt;p&gt;Nginx 當前端, 在 Ubuntu 以 uwsgi 執行 Python 程式.&lt;/p&gt;
 
 
 &lt;p&gt;nginx.conf 設定&lt;/p&gt;
@@ -195,7 +240,8 @@ http {
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 
-&lt;p&gt;72 行中的 include /etc/nginx/sites-enabled/*; 表示導入 sites-enabled 中的所有設定檔.&lt;/p&gt;
+&lt;p&gt;&lt;br /&gt;
+72 行中的 include /etc/nginx/sites-enabled/*; 表示導入 sites-enabled 中的所有設定檔.&lt;/p&gt;
 &lt;p&gt;而 sites-enabled 中只有一個 default 指向 sites-available/default, 所以隨後的設定都以 sites-available/default 檔案為主&lt;/p&gt;
 &lt;p&gt;sites-availables/default 設定檔案:&lt;/p&gt;
 &lt;table class="codehilitetable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt; 1
@@ -1204,21 +1250,7 @@ ctx.fill()
 &lt;li&gt;安裝 pip 後, 再利用 &lt;a href="http://leoeditor.com/"&gt;Leo Editor&lt;/a&gt; 原始碼安裝, 同時利用 pip 安裝 &lt;a href="https://github.com/getpelican/pelican"&gt;pelican&lt;/a&gt; Markdown &lt;a href="http://flask.pocoo.org/"&gt;Flask&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;為了要使用 &lt;a href="http://www.tipue.com/search/"&gt;Tipue Search&lt;/a&gt;, 再安裝 &lt;a href="http://www.crummy.com/software/BeautifulSoup/bs4/doc/"&gt;beautifulsoup4&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;為了要執行協同產品開發的設計運算分析, 還要安裝 &lt;a href="http://jupyter.org/"&gt;Jupyter&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;</summary><category term="啟動"></category></entry><entry><title>How to create a Pelican static site?</title><link href="http://chiamingyen.github.io/kmolsite/blog/posts/2015/12/16/how-to-create-a-pelican-static-site/" rel="alternate"></link><updated>2015-12-16T15:33:24+08:00</updated><author><name>kmol</name></author><id>tag:chiamingyen.github.io,2015-12-16:kmolsite/blog/posts/2015/12/16/how-to-create-a-pelican-static-site/</id><summary type="html">&lt;p&gt;如何在 Github page 建立靜態網誌系統?&lt;/p&gt;
-
-
-&lt;p&gt;1994 年開始, 許多人用 html 建立功能陽春的網站, 二十一個年頭過去, 無論大家經歷過多麼令人讚嘆激賞的全球資訊網技術, 我們終於又回到當時的起點, 還是採用最陽春的 html 格式來建立網站, 唯一的差別是, 這一次我們真正感受到天涯若比鄰, 遠端與近端, 在分散式版本的最高運行模式下, 原來是同一端.&lt;/p&gt;
-&lt;h1&gt;工具組&lt;/h1&gt;
-&lt;p&gt;假如您使用 Windows 64 位元操作系統, 可以直接下載可攜式系統 &lt;a href="https://github.com/chiamingyen/kmol2016"&gt;https://github.com/chiamingyen/kmol2016&lt;/a&gt;, 理論上, 只要按下 start.bat, 系統就會啟動 Leo Editor, 並且在對應啟動的 cmd 指令視窗, 就可以直接執行 git 指令.&lt;/p&gt;
-&lt;p&gt;假如您使用 Ubuntu 操作系統, 則必須安裝 Python3, PyQt, Leo Editor, Pelican, Markdown, 假如還希望透過 Jupyter 進行 notebook 檔案導入, 還要安裝 Jupyter.&lt;/p&gt;
-&lt;h1&gt;Pelican 網誌系統&lt;/h1&gt;
-&lt;p&gt;可以透過 git clone 本網站的倉儲資料 &lt;a href="https://github.com/chiamingyen/kmolsite"&gt;https://github.com/chiamingyen/kmolsite&lt;/a&gt;, 然後將分支切換到 gh-pages, 就可以利用 Leo Editor 開啟分支工作目錄中的 kmol2016.leo, 然後開始建立自己的 Pelican 靜態網誌.&lt;/p&gt;
-&lt;h1&gt;kmol2016 系統說明&lt;/h1&gt;
-&lt;p&gt;這裡所謂的"可攜 kmol2016", 其實就是在 Windows 64 位元的環境中, 可以無需安裝, 直接利用 start.bat 中的設定, 就可以在 Windows 操作系統中執行建立 Pelican 靜態網誌所需要的指令, 其中包括啟動 Leo Editor, 執行 git 指令以及啟動 Jupyter 等.&lt;/p&gt;
-&lt;h1&gt;kmolsite 系統說明&lt;/h1&gt;
-&lt;p&gt;開啟 kmol2016.leo 後, 可以發現 @path content 以下的子節點, 就是 Pelican 網誌系統的原始 md 檔案, 只要透過 @button local pelican 指令的執行, 就可以在近端建立 Pelican 靜態網誌, 而 @button gh-pages pelican 則用來建立 Github pages 端的 Pelican 靜態網誌資料.&lt;/p&gt;
-&lt;p&gt;從"設定與開發"節點下, 可以發現 pelicanconf.py 為近端與遠端的共同設定檔, 而近端透過 Pelican 轉檔時, 則採用 local_publishconf.py, 而 Gihub pages 端則使用 publishconf.py.&lt;/p&gt;
-&lt;p&gt;其中因為採用 Tipue search plugin, 在近端使用 tipuesearch_content.js 而在遠端則使用 tipuesearch_content.json, 所以才會將 theme 目錄下區隔近端使用 pelican-bootstrap3_local, 而遠端則使用 pelican-bootstrap3 目錄, 其間的差異在於啟動 Tipue search 搜尋的模式設定, 近端為 static, 而遠端則為 json.&lt;/p&gt;</summary><category term="Python"></category><category term="Github pages"></category><category term="Leo Editor"></category></entry><entry><title>Remove local and remote branch</title><link href="http://chiamingyen.github.io/kmolsite/blog/posts/2015/12/16/remove-local-and-remote-branch/" rel="alternate"></link><updated>2015-12-16T15:33:24+08:00</updated><author><name>kmol</name></author><id>tag:chiamingyen.github.io,2015-12-16:kmolsite/blog/posts/2015/12/16/remove-local-and-remote-branch/</id><summary type="html">&lt;p&gt;刪除近端與遠端的 Git 分支.&lt;/p&gt;
+&lt;/ol&gt;</summary><category term="啟動"></category></entry><entry><title>Remove local and remote branch</title><link href="http://chiamingyen.github.io/kmolsite/blog/posts/2015/12/16/remove-local-and-remote-branch/" rel="alternate"></link><updated>2015-12-16T15:33:24+08:00</updated><author><name>kmol</name></author><id>tag:chiamingyen.github.io,2015-12-16:kmolsite/blog/posts/2015/12/16/remove-local-and-remote-branch/</id><summary type="html">&lt;p&gt;刪除近端與遠端的 Git 分支.&lt;/p&gt;
 
 
 &lt;p&gt;To delete a local branch&lt;/p&gt;
