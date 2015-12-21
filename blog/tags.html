@@ -173,19 +173,19 @@ init_mathjax();
         <meta property="og:site_name" content="kmolsite" />
         <meta property="og:type" content="website"/>
         <meta property="og:title" content="kmolsite"/>
-        <meta property="og:url" content="http://chiamingyen.github.io/kmolsite/blog"/>
+        <meta property="og:url" content="."/>
         <meta property="og:description" content="kmolsite"/>
 
 
     <!-- Bootstrap -->
-        <link rel="stylesheet" href="http://chiamingyen.github.io/kmolsite/blog/theme/css/bootstrap.united.min.css" type="text/css"/>
-    <link href="http://chiamingyen.github.io/kmolsite/blog/theme/css/font-awesome.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="./theme/css/bootstrap.united.min.css" type="text/css"/>
+    <link href="./theme/css/font-awesome.min.css" rel="stylesheet">
 
-    <link href="http://chiamingyen.github.io/kmolsite/blog/theme/css/pygments/fruity.css" rel="stylesheet">
-    <link href="http://chiamingyen.github.io/kmolsite/blog/theme/tipuesearch/tipuesearch.css" rel="stylesheet">
-    <link rel="stylesheet" href="http://chiamingyen.github.io/kmolsite/blog/theme/css/style.css" type="text/css"/>
+    <link href="./theme/css/pygments/fruity.css" rel="stylesheet">
+    <link href="./theme/tipuesearch/tipuesearch.css" rel="stylesheet">
+    <link rel="stylesheet" href="./theme/css/style.css" type="text/css"/>
 
-        <link href="http://chiamingyen.github.io/kmolsite/blog/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
+        <link href="./feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
               title="kmolsite ATOM Feed"/>
 
 </head>
@@ -200,37 +200,40 @@ init_mathjax();
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a href="http://chiamingyen.github.io/kmolsite/blog/" class="navbar-brand">
+            <a href="./" class="navbar-brand">
 kmolsite            </a>
         </div>
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav">
                         <li >
-                            <a href="http://chiamingyen.github.io/kmolsite/blog/category/brython.html">Brython</a>
+                            <a href="./category/brython.html">Brython</a>
                         </li>
                         <li >
-                            <a href="http://chiamingyen.github.io/kmolsite/blog/category/git.html">Git</a>
+                            <a href="./category/git.html">Git</a>
                         </li>
                         <li >
-                            <a href="http://chiamingyen.github.io/kmolsite/blog/category/kmol.html">Kmol</a>
+                            <a href="./category/kmol.html">Kmol</a>
                         </li>
                         <li >
-                            <a href="http://chiamingyen.github.io/kmolsite/blog/category/leo-editor.html">Leo editor</a>
+                            <a href="./category/leo-editor.html">Leo editor</a>
                         </li>
                         <li >
-                            <a href="http://chiamingyen.github.io/kmolsite/blog/category/pelican.html">Pelican</a>
+                            <a href="./category/pelican.html">Pelican</a>
                         </li>
                         <li >
-                            <a href="http://chiamingyen.github.io/kmolsite/blog/category/ubuntu.html">Ubuntu</a>
+                            <a href="./category/python.html">Python</a>
+                        </li>
+                        <li >
+                            <a href="./category/ubuntu.html">Ubuntu</a>
                         </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
               <li><span>
-                <form class="navbar-search" action="http://chiamingyen.github.io/kmolsite/blog/search.html">
+                <form class="navbar-search" action="./search.html">
                   <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input" required>
                 </form></span>
               </li>
-              <li><a href="http://chiamingyen.github.io/kmolsite/blog/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+              <li><a href="./archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
             </ul>
         </div>
         <!-- /.navbar-collapse -->
@@ -247,12 +250,36 @@ kmolsite            </a>
         <div class="panel-group" id="accordion">            <div class="panel panel-default">
                 <div class="panel-heading">
                     <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse-cha-dan-zi">查單字 <span class="badge pull-right">1</span></a>
+                    </h4>
+                </div>
+                <div id="collapse-cha-dan-zi" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <p><span class="categories-timestamp"><time datetime="2015-12-19T12:51:54.461021+08:00">六 19 十二月 2015</time></span> <a href="./posts/2015/12/19/use-python-script-to-check-dictionary/index.html">Use python script to check dictionary</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse-cherrypy">Cherrypy <span class="badge pull-right">1</span></a>
+                    </h4>
+                </div>
+                <div id="collapse-cherrypy" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <p><span class="categories-timestamp"><time datetime="2015-12-21T20:53:12.666387+08:00">一 21 十二月 2015</time></span> <a href="./posts/2015/12/21/develop-python-program-in-leo-editor/index.html">Develop Python Program in Leo Editor</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
                         <a data-toggle="collapse" data-parent="#accordion" href="#collapse-da-gang-bian-ji">大綱編輯 <span class="badge pull-right">1</span></a>
                     </h4>
                 </div>
                 <div id="collapse-da-gang-bian-ji" class="panel-collapse collapse">
                     <div class="panel-body">
-                        <p><span class="categories-timestamp"><time datetime="2015-12-17T10:38:59.551586+08:00">四 17 十二月 2015</time></span> <a href="http://chiamingyen.github.io/kmolsite/blog/posts/2015/12/17/leo-editor-jiao-xue-yi/">Leo Editor 教學(一)</a></p>
+                        <p><span class="categories-timestamp"><time datetime="2015-12-19T11:17:54.245217+08:00">六 19 十二月 2015</time></span> <a href="./posts/2015/12/19/leo-editor-jiao-xue-yi/index.html">Leo Editor 教學(一)</a></p>
                     </div>
                 </div>
             </div>
@@ -264,7 +291,7 @@ kmolsite            </a>
                 </div>
                 <div id="collapse-git-zhi-ling" class="panel-collapse collapse">
                     <div class="panel-body">
-                        <p><span class="categories-timestamp"><time datetime="2015-12-16T15:33:24.554156+08:00">三 16 十二月 2015</time></span> <a href="http://chiamingyen.github.io/kmolsite/blog/posts/2015/12/16/remove-local-and-remote-branch/">Remove local and remote branch</a></p>
+                        <p><span class="categories-timestamp"><time datetime="2015-12-16T15:33:24.554156+08:00">三 16 十二月 2015</time></span> <a href="./posts/2015/12/16/remove-local-and-remote-branch/index.html">Remove local and remote branch</a></p>
                     </div>
                 </div>
             </div>
@@ -276,7 +303,7 @@ kmolsite            </a>
                 </div>
                 <div id="collapse-github-pages" class="panel-collapse collapse">
                     <div class="panel-body">
-                        <p><span class="categories-timestamp"><time datetime="2015-12-16T22:07:18.329337+08:00">三 16 十二月 2015</time></span> <a href="http://chiamingyen.github.io/kmolsite/blog/posts/2015/12/16/how-to-create-a-pelican-static-site/">How to create a Pelican static site?</a></p>
+                        <p><span class="categories-timestamp"><time datetime="2015-12-16T22:07:18.329337+08:00">三 16 十二月 2015</time></span> <a href="./posts/2015/12/16/how-to-create-a-pelican-static-site/index.html">How to create a Pelican static site?</a></p>
                     </div>
                 </div>
             </div>
@@ -288,7 +315,7 @@ kmolsite            </a>
                 </div>
                 <div id="collapse-importer" class="panel-collapse collapse">
                     <div class="panel-body">
-                        <p><span class="categories-timestamp"><time datetime="2015-12-16T21:02:42.129472+08:00">三 16 十二月 2015</time></span> <a href="http://chiamingyen.github.io/kmolsite/blog/posts/2015/12/16/recursively-import-all-python-files-into-leo-editor/">Recursively import all python files into Leo Editor</a></p>
+                        <p><span class="categories-timestamp"><time datetime="2015-12-21T20:53:12.630387+08:00">一 21 十二月 2015</time></span> <a href="./posts/2015/12/21/recursively-import-all-python-files-into-leo-editor/index.html">Recursively import all python files into Leo Editor</a></p>
                     </div>
                 </div>
             </div>
@@ -300,7 +327,7 @@ kmolsite            </a>
                 </div>
                 <div id="collapse-leo-editor" class="panel-collapse collapse">
                     <div class="panel-body">
-                        <p><span class="categories-timestamp"><time datetime="2015-12-16T22:07:18.329337+08:00">三 16 十二月 2015</time></span> <a href="http://chiamingyen.github.io/kmolsite/blog/posts/2015/12/16/how-to-create-a-pelican-static-site/">How to create a Pelican static site?</a></p>
+                        <p><span class="categories-timestamp"><time datetime="2015-12-16T22:07:18.329337+08:00">三 16 十二月 2015</time></span> <a href="./posts/2015/12/16/how-to-create-a-pelican-static-site/index.html">How to create a Pelican static site?</a></p>
                     </div>
                 </div>
             </div>
@@ -312,8 +339,8 @@ kmolsite            </a>
                 </div>
                 <div id="collapse-nginx" class="panel-collapse collapse">
                     <div class="panel-body">
-                        <p><span class="categories-timestamp"><time datetime="2015-12-16T21:14:38.941447+08:00">三 16 十二月 2015</time></span> <a href="http://chiamingyen.github.io/kmolsite/blog/posts/2015/12/16/ubuntu-1404-zhi-xing-python-wang-ji-cheng-shi/">Ubuntu 14.04 執行 Python 網際程式</a></p>
-                        <p><span class="categories-timestamp"><time datetime="2015-12-16T21:02:42.121472+08:00">三 16 十二月 2015</time></span> <a href="http://chiamingyen.github.io/kmolsite/blog/posts/2015/12/16/nginx-yu-uwsgi-de-jie-he/">nginx 與 uwsgi 的結合</a></p>
+                        <p><span class="categories-timestamp"><time datetime="2015-12-16T21:14:38.941447+08:00">三 16 十二月 2015</time></span> <a href="./posts/2015/12/16/ubuntu-1404-zhi-xing-python-wang-ji-cheng-shi/index.html">Ubuntu 14.04 執行 Python 網際程式</a></p>
+                        <p><span class="categories-timestamp"><time datetime="2015-12-16T21:02:42.121472+08:00">三 16 十二月 2015</time></span> <a href="./posts/2015/12/16/nginx-yu-uwsgi-de-jie-he/index.html">nginx 與 uwsgi 的結合</a></p>
                     </div>
                 </div>
             </div>
@@ -325,7 +352,7 @@ kmolsite            </a>
                 </div>
                 <div id="collapse-pelican-search" class="panel-collapse collapse">
                     <div class="panel-body">
-                        <p><span class="categories-timestamp"><time datetime="2015-12-16T15:33:24.554156+08:00">三 16 十二月 2015</time></span> <a href="http://chiamingyen.github.io/kmolsite/blog/posts/2015/12/16/tipue-site-search-for-pelican/">Tipue Site Search for Pelican</a></p>
+                        <p><span class="categories-timestamp"><time datetime="2015-12-16T15:33:24.554156+08:00">三 16 十二月 2015</time></span> <a href="./posts/2015/12/16/tipue-site-search-for-pelican/index.html">Tipue Site Search for Pelican</a></p>
                     </div>
                 </div>
             </div>
@@ -337,7 +364,7 @@ kmolsite            </a>
                 </div>
                 <div id="collapse-pelican-she-ding" class="panel-collapse collapse">
                     <div class="panel-body">
-                        <p><span class="categories-timestamp"><time datetime="2015-12-16T21:11:10.313454+08:00">三 16 十二月 2015</time></span> <a href="http://chiamingyen.github.io/kmolsite/blog/posts/2015/12/16/pelican-jin-duan-yu-yuan-duan-de-she-ding/">Pelican 近端與遠端的設定</a></p>
+                        <p><span class="categories-timestamp"><time datetime="2015-12-16T21:11:10.313454+08:00">三 16 十二月 2015</time></span> <a href="./posts/2015/12/16/pelican-jin-duan-yu-yuan-duan-de-she-ding/index.html">Pelican 近端與遠端的設定</a></p>
                     </div>
                 </div>
             </div>
@@ -349,7 +376,7 @@ kmolsite            </a>
                 </div>
                 <div id="collapse-ping-mian-hui-tu" class="panel-collapse collapse">
                     <div class="panel-body">
-                        <p><span class="categories-timestamp"><time datetime="2015-12-16T18:04:43.853841+08:00">三 16 十二月 2015</time></span> <a href="http://chiamingyen.github.io/kmolsite/blog/posts/2015/12/16/2016kmol-ce-shi/">2016kmol 測試</a></p>
+                        <p><span class="categories-timestamp"><time datetime="2015-12-21T20:56:20.458381+08:00">一 21 十二月 2015</time></span> <a href="./posts/2015/12/21/2016kmol-ce-shi/index.html">2016kmol 測試</a></p>
                     </div>
                 </div>
             </div>
@@ -361,23 +388,24 @@ kmolsite            </a>
                 </div>
                 <div id="collapse-pyqt" class="panel-collapse collapse">
                     <div class="panel-body">
-                        <p><span class="categories-timestamp"><time datetime="2015-12-17T10:38:59.551586+08:00">四 17 十二月 2015</time></span> <a href="http://chiamingyen.github.io/kmolsite/blog/posts/2015/12/17/leo-editor-jiao-xue-yi/">Leo Editor 教學(一)</a></p>
+                        <p><span class="categories-timestamp"><time datetime="2015-12-19T11:17:54.245217+08:00">六 19 十二月 2015</time></span> <a href="./posts/2015/12/19/leo-editor-jiao-xue-yi/index.html">Leo Editor 教學(一)</a></p>
                     </div>
                 </div>
             </div>
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h4 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse-python">Python <span class="badge pull-right">5</span></a>
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse-python">Python <span class="badge pull-right">6</span></a>
                     </h4>
                 </div>
                 <div id="collapse-python" class="panel-collapse collapse">
                     <div class="panel-body">
-                        <p><span class="categories-timestamp"><time datetime="2015-12-17T10:38:59.551586+08:00">四 17 十二月 2015</time></span> <a href="http://chiamingyen.github.io/kmolsite/blog/posts/2015/12/17/leo-editor-jiao-xue-yi/">Leo Editor 教學(一)</a></p>
-                        <p><span class="categories-timestamp"><time datetime="2015-12-16T22:07:18.329337+08:00">三 16 十二月 2015</time></span> <a href="http://chiamingyen.github.io/kmolsite/blog/posts/2015/12/16/how-to-create-a-pelican-static-site/">How to create a Pelican static site?</a></p>
-                        <p><span class="categories-timestamp"><time datetime="2015-12-16T21:14:38.941447+08:00">三 16 十二月 2015</time></span> <a href="http://chiamingyen.github.io/kmolsite/blog/posts/2015/12/16/ubuntu-1404-zhi-xing-python-wang-ji-cheng-shi/">Ubuntu 14.04 執行 Python 網際程式</a></p>
-                        <p><span class="categories-timestamp"><time datetime="2015-12-16T21:02:42.129472+08:00">三 16 十二月 2015</time></span> <a href="http://chiamingyen.github.io/kmolsite/blog/posts/2015/12/16/recursively-import-all-python-files-into-leo-editor/">Recursively import all python files into Leo Editor</a></p>
-                        <p><span class="categories-timestamp"><time datetime="2015-12-16T21:02:42.121472+08:00">三 16 十二月 2015</time></span> <a href="http://chiamingyen.github.io/kmolsite/blog/posts/2015/12/16/nginx-yu-uwsgi-de-jie-he/">nginx 與 uwsgi 的結合</a></p>
+                        <p><span class="categories-timestamp"><time datetime="2015-12-21T20:53:12.666387+08:00">一 21 十二月 2015</time></span> <a href="./posts/2015/12/21/develop-python-program-in-leo-editor/index.html">Develop Python Program in Leo Editor</a></p>
+                        <p><span class="categories-timestamp"><time datetime="2015-12-21T20:53:12.630387+08:00">一 21 十二月 2015</time></span> <a href="./posts/2015/12/21/recursively-import-all-python-files-into-leo-editor/index.html">Recursively import all python files into Leo Editor</a></p>
+                        <p><span class="categories-timestamp"><time datetime="2015-12-19T11:17:54.245217+08:00">六 19 十二月 2015</time></span> <a href="./posts/2015/12/19/leo-editor-jiao-xue-yi/index.html">Leo Editor 教學(一)</a></p>
+                        <p><span class="categories-timestamp"><time datetime="2015-12-16T22:07:18.329337+08:00">三 16 十二月 2015</time></span> <a href="./posts/2015/12/16/how-to-create-a-pelican-static-site/index.html">How to create a Pelican static site?</a></p>
+                        <p><span class="categories-timestamp"><time datetime="2015-12-16T21:14:38.941447+08:00">三 16 十二月 2015</time></span> <a href="./posts/2015/12/16/ubuntu-1404-zhi-xing-python-wang-ji-cheng-shi/index.html">Ubuntu 14.04 執行 Python 網際程式</a></p>
+                        <p><span class="categories-timestamp"><time datetime="2015-12-16T21:02:42.121472+08:00">三 16 十二月 2015</time></span> <a href="./posts/2015/12/16/nginx-yu-uwsgi-de-jie-he/index.html">nginx 與 uwsgi 的結合</a></p>
                     </div>
                 </div>
             </div>
@@ -389,7 +417,31 @@ kmolsite            </a>
                 </div>
                 <div id="collapse-qi-dong" class="panel-collapse collapse">
                     <div class="panel-body">
-                        <p><span class="categories-timestamp"><time datetime="2015-12-16T15:33:24.554156+08:00">三 16 十二月 2015</time></span> <a href="http://chiamingyen.github.io/kmolsite/blog/posts/2015/12/16/2016kmol-initialized/">2016kmol initialized</a></p>
+                        <p><span class="categories-timestamp"><time datetime="2015-12-16T15:33:24.554156+08:00">三 16 十二月 2015</time></span> <a href="./posts/2015/12/16/2016kmol-initialized/index.html">2016kmol initialized</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse-rattlecad">rattlecad <span class="badge pull-right">1</span></a>
+                    </h4>
+                </div>
+                <div id="collapse-rattlecad" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <p><span class="categories-timestamp"><time datetime="2015-12-20T20:21:54.229095+08:00">日 20 十二月 2015</time></span> <a href="./posts/2015/12/20/rattlecad-on-ubuntu/index.html">rattleCAD on Ubuntu</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse-tclsh">tclsh <span class="badge pull-right">1</span></a>
+                    </h4>
+                </div>
+                <div id="collapse-tclsh" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <p><span class="categories-timestamp"><time datetime="2015-12-20T20:21:54.229095+08:00">日 20 十二月 2015</time></span> <a href="./posts/2015/12/20/rattlecad-on-ubuntu/index.html">rattleCAD on Ubuntu</a></p>
                     </div>
                 </div>
             </div>
@@ -401,8 +453,8 @@ kmolsite            </a>
                 </div>
                 <div id="collapse-uwsgi" class="panel-collapse collapse">
                     <div class="panel-body">
-                        <p><span class="categories-timestamp"><time datetime="2015-12-16T21:14:38.941447+08:00">三 16 十二月 2015</time></span> <a href="http://chiamingyen.github.io/kmolsite/blog/posts/2015/12/16/ubuntu-1404-zhi-xing-python-wang-ji-cheng-shi/">Ubuntu 14.04 執行 Python 網際程式</a></p>
-                        <p><span class="categories-timestamp"><time datetime="2015-12-16T21:02:42.121472+08:00">三 16 十二月 2015</time></span> <a href="http://chiamingyen.github.io/kmolsite/blog/posts/2015/12/16/nginx-yu-uwsgi-de-jie-he/">nginx 與 uwsgi 的結合</a></p>
+                        <p><span class="categories-timestamp"><time datetime="2015-12-16T21:14:38.941447+08:00">三 16 十二月 2015</time></span> <a href="./posts/2015/12/16/ubuntu-1404-zhi-xing-python-wang-ji-cheng-shi/index.html">Ubuntu 14.04 執行 Python 網際程式</a></p>
+                        <p><span class="categories-timestamp"><time datetime="2015-12-16T21:02:42.121472+08:00">三 16 十二月 2015</time></span> <a href="./posts/2015/12/16/nginx-yu-uwsgi-de-jie-he/index.html">nginx 與 uwsgi 的結合</a></p>
                     </div>
                 </div>
             </div>
@@ -414,8 +466,8 @@ kmolsite            </a>
                 </div>
                 <div id="collapse-wang-ji-cheng-shi" class="panel-collapse collapse">
                     <div class="panel-body">
-                        <p><span class="categories-timestamp"><time datetime="2015-12-16T21:14:38.941447+08:00">三 16 十二月 2015</time></span> <a href="http://chiamingyen.github.io/kmolsite/blog/posts/2015/12/16/ubuntu-1404-zhi-xing-python-wang-ji-cheng-shi/">Ubuntu 14.04 執行 Python 網際程式</a></p>
-                        <p><span class="categories-timestamp"><time datetime="2015-12-16T21:02:42.121472+08:00">三 16 十二月 2015</time></span> <a href="http://chiamingyen.github.io/kmolsite/blog/posts/2015/12/16/nginx-yu-uwsgi-de-jie-he/">nginx 與 uwsgi 的結合</a></p>
+                        <p><span class="categories-timestamp"><time datetime="2015-12-16T21:14:38.941447+08:00">三 16 十二月 2015</time></span> <a href="./posts/2015/12/16/ubuntu-1404-zhi-xing-python-wang-ji-cheng-shi/index.html">Ubuntu 14.04 執行 Python 網際程式</a></p>
+                        <p><span class="categories-timestamp"><time datetime="2015-12-16T21:02:42.121472+08:00">三 16 十二月 2015</time></span> <a href="./posts/2015/12/16/nginx-yu-uwsgi-de-jie-he/index.html">nginx 與 uwsgi 的結合</a></p>
                     </div>
                 </div>
             </div>
@@ -432,69 +484,74 @@ kmolsite            </a>
             <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
                 <ul class="list-group" id="recentposts">
                     <li class="list-group-item">
-                        <a href="http://chiamingyen.github.io/kmolsite/blog/posts/2015/12/17/leo-editor-jiao-xue-yi/">
-                            Leo Editor 教學(一)
+                        <a href="./posts/2015/12/21/2016kmol-ce-shi/index.html">
+                            2016kmol 測試
                         </a>
                     </li>
                     <li class="list-group-item">
-                        <a href="http://chiamingyen.github.io/kmolsite/blog/posts/2015/12/16/how-to-create-a-pelican-static-site/">
-                            How to create a Pelican static site?
+                        <a href="./posts/2015/12/21/develop-python-program-in-leo-editor/index.html">
+                            Develop Python Program in Leo Editor
                         </a>
                     </li>
                     <li class="list-group-item">
-                        <a href="http://chiamingyen.github.io/kmolsite/blog/posts/2015/12/16/ubuntu-1404-zhi-xing-python-wang-ji-cheng-shi/">
-                            Ubuntu 14.04 執行 Python 網際程式
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="http://chiamingyen.github.io/kmolsite/blog/posts/2015/12/16/pelican-jin-duan-yu-yuan-duan-de-she-ding/">
-                            Pelican 近端與遠端的設定
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="http://chiamingyen.github.io/kmolsite/blog/posts/2015/12/16/recursively-import-all-python-files-into-leo-editor/">
+                        <a href="./posts/2015/12/21/recursively-import-all-python-files-into-leo-editor/index.html">
                             Recursively import all python files into Leo Editor
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="./posts/2015/12/20/rattlecad-on-ubuntu/index.html">
+                            rattleCAD on Ubuntu
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="./posts/2015/12/19/use-python-script-to-check-dictionary/index.html">
+                            Use python script to check dictionary
                         </a>
                     </li>
                 </ul>
             </li>
 
-            <li class="list-group-item"><a href="http://chiamingyen.github.io/kmolsite/blog/categories.html"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Categories</span></h4></a>
+            <li class="list-group-item"><a href="./categories.html"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Categories</span></h4></a>
                 <ul class="list-group" id="categories">
                     <li class="list-group-item">
-                        <a href="http://chiamingyen.github.io/kmolsite/blog/category/brython.html">
+                        <a href="./category/brython.html">
                             <i class="fa fa-folder-open fa-lg"></i> Brython
                         </a>
                     </li>
                     <li class="list-group-item">
-                        <a href="http://chiamingyen.github.io/kmolsite/blog/category/git.html">
+                        <a href="./category/git.html">
                             <i class="fa fa-folder-open fa-lg"></i> Git
                         </a>
                     </li>
                     <li class="list-group-item">
-                        <a href="http://chiamingyen.github.io/kmolsite/blog/category/kmol.html">
+                        <a href="./category/kmol.html">
                             <i class="fa fa-folder-open fa-lg"></i> kmol
                         </a>
                     </li>
                     <li class="list-group-item">
-                        <a href="http://chiamingyen.github.io/kmolsite/blog/category/leo-editor.html">
+                        <a href="./category/leo-editor.html">
                             <i class="fa fa-folder-open fa-lg"></i> Leo Editor
                         </a>
                     </li>
                     <li class="list-group-item">
-                        <a href="http://chiamingyen.github.io/kmolsite/blog/category/pelican.html">
+                        <a href="./category/pelican.html">
                             <i class="fa fa-folder-open fa-lg"></i> Pelican
                         </a>
                     </li>
                     <li class="list-group-item">
-                        <a href="http://chiamingyen.github.io/kmolsite/blog/category/ubuntu.html">
+                        <a href="./category/python.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Python
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="./category/ubuntu.html">
                             <i class="fa fa-folder-open fa-lg"></i> Ubuntu
                         </a>
                     </li>
                 </ul>
             </li>
 
-            <li class="list-group-item"><a href="http://chiamingyen.github.io/kmolsite/blog/tags.html"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
+            <li class="list-group-item"><a href="./tags.html"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
                 <ul class="list-group list-inline tagcloud" id="tags">
                 </ul>
             </li>
@@ -540,29 +597,14 @@ kmolsite            </a>
       </div>
    </div>
 </footer>
-<script src="http://chiamingyen.github.io/kmolsite/blog/theme/js/jquery.min.js"></script>
+<script src="./theme/js/jquery.min.js"></script>
 
 <!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="http://chiamingyen.github.io/kmolsite/blog/theme/js/bootstrap.min.js"></script>
+<script src="./theme/js/bootstrap.min.js"></script>
 
 <!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
-<script src="http://chiamingyen.github.io/kmolsite/blog/theme/js/respond.min.js"></script>
+<script src="./theme/js/respond.min.js"></script>
 
-    <!-- Disqus -->
-    <script type="text/javascript">
-        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-        var disqus_shortname = '2016kmol'; // required: replace example with your forum shortname
-
-        /* * * DON'T EDIT BELOW THIS LINE * * */
-        (function () {
-            var s = document.createElement('script');
-            s.async = true;
-            s.type = 'text/javascript';
-            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
-            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
-        }());
-    </script>
-    <!-- End Disqus Code -->
 
 </body>
 </html>
