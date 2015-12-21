@@ -4,301 +4,301 @@ xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitem
 xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
-<loc>./</loc>
-<lastmod>2015-12-21T20:56:24-00:00</lastmod>
+<loc>http://chiamingyen.github.io/kmolsite/blog/</loc>
+<lastmod>2015-12-21T20:59:39-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>./archives.html</loc>
-<lastmod>2015-12-21T20:56:24-00:00</lastmod>
+<loc>http://chiamingyen.github.io/kmolsite/blog/archives.html</loc>
+<lastmod>2015-12-21T20:59:39-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>./tags.html</loc>
-<lastmod>2015-12-21T20:56:24-00:00</lastmod>
+<loc>http://chiamingyen.github.io/kmolsite/blog/tags.html</loc>
+<lastmod>2015-12-21T20:59:39-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>./categories.html</loc>
-<lastmod>2015-12-21T20:56:24-00:00</lastmod>
+<loc>http://chiamingyen.github.io/kmolsite/blog/categories.html</loc>
+<lastmod>2015-12-21T20:59:39-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>./posts/2015/12/21/2016kmol-ce-shi/index.html</loc>
+<loc>http://chiamingyen.github.io/kmolsite/blog/posts/2015/12/21/2016kmol-ce-shi/</loc>
 <lastmod>2015-12-21T20:56:20+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>./posts/2015/12/21/develop-python-program-in-leo-editor/index.html</loc>
+<loc>http://chiamingyen.github.io/kmolsite/blog/posts/2015/12/21/develop-python-program-in-leo-editor/</loc>
 <lastmod>2015-12-21T20:53:12+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>./posts/2015/12/21/recursively-import-all-python-files-into-leo-editor/index.html</loc>
+<loc>http://chiamingyen.github.io/kmolsite/blog/posts/2015/12/21/recursively-import-all-python-files-into-leo-editor/</loc>
 <lastmod>2015-12-21T20:53:12+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>./posts/2015/12/20/rattlecad-on-ubuntu/index.html</loc>
+<loc>http://chiamingyen.github.io/kmolsite/blog/posts/2015/12/20/rattlecad-on-ubuntu/</loc>
 <lastmod>2015-12-20T20:21:54+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>./posts/2015/12/19/use-python-script-to-check-dictionary/index.html</loc>
+<loc>http://chiamingyen.github.io/kmolsite/blog/posts/2015/12/19/use-python-script-to-check-dictionary/</loc>
 <lastmod>2015-12-19T12:51:54+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>./posts/2015/12/19/leo-editor-jiao-xue-yi/index.html</loc>
+<loc>http://chiamingyen.github.io/kmolsite/blog/posts/2015/12/19/leo-editor-jiao-xue-yi/</loc>
 <lastmod>2015-12-19T11:17:54+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>./posts/2015/12/16/how-to-create-a-pelican-static-site/index.html</loc>
+<loc>http://chiamingyen.github.io/kmolsite/blog/posts/2015/12/16/how-to-create-a-pelican-static-site/</loc>
 <lastmod>2015-12-16T22:07:18+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>./posts/2015/12/16/ubuntu-1404-zhi-xing-python-wang-ji-cheng-shi/index.html</loc>
+<loc>http://chiamingyen.github.io/kmolsite/blog/posts/2015/12/16/ubuntu-1404-zhi-xing-python-wang-ji-cheng-shi/</loc>
 <lastmod>2015-12-16T21:14:38+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>./posts/2015/12/16/pelican-jin-duan-yu-yuan-duan-de-she-ding/index.html</loc>
+<loc>http://chiamingyen.github.io/kmolsite/blog/posts/2015/12/16/pelican-jin-duan-yu-yuan-duan-de-she-ding/</loc>
 <lastmod>2015-12-16T21:11:10+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>./posts/2015/12/16/nginx-yu-uwsgi-de-jie-he/index.html</loc>
+<loc>http://chiamingyen.github.io/kmolsite/blog/posts/2015/12/16/nginx-yu-uwsgi-de-jie-he/</loc>
 <lastmod>2015-12-16T21:02:42+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>./posts/2015/12/16/2016kmol-initialized/index.html</loc>
+<loc>http://chiamingyen.github.io/kmolsite/blog/posts/2015/12/16/2016kmol-initialized/</loc>
 <lastmod>2015-12-16T15:33:24+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>./posts/2015/12/16/remove-local-and-remote-branch/index.html</loc>
+<loc>http://chiamingyen.github.io/kmolsite/blog/posts/2015/12/16/remove-local-and-remote-branch/</loc>
 <lastmod>2015-12-16T15:33:24+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>./posts/2015/12/16/tipue-site-search-for-pelican/index.html</loc>
+<loc>http://chiamingyen.github.io/kmolsite/blog/posts/2015/12/16/tipue-site-search-for-pelican/</loc>
 <lastmod>2015-12-16T15:33:24+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>./category/brython.html</loc>
+<loc>http://chiamingyen.github.io/kmolsite/blog/category/brython.html</loc>
 <lastmod>2015-12-21T20:56:20+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>./category/git.html</loc>
+<loc>http://chiamingyen.github.io/kmolsite/blog/category/git.html</loc>
 <lastmod>2015-12-16T15:33:24+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>./category/kmol.html</loc>
+<loc>http://chiamingyen.github.io/kmolsite/blog/category/kmol.html</loc>
 <lastmod>2015-12-16T15:33:24+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>./category/leo-editor.html</loc>
+<loc>http://chiamingyen.github.io/kmolsite/blog/category/leo-editor.html</loc>
 <lastmod>2015-12-21T20:53:12+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>./category/pelican.html</loc>
+<loc>http://chiamingyen.github.io/kmolsite/blog/category/pelican.html</loc>
 <lastmod>2015-12-16T22:07:18+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>./category/python.html</loc>
+<loc>http://chiamingyen.github.io/kmolsite/blog/category/python.html</loc>
 <lastmod>2015-12-19T12:51:54+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>./category/ubuntu.html</loc>
+<loc>http://chiamingyen.github.io/kmolsite/blog/category/ubuntu.html</loc>
 <lastmod>2015-12-20T20:21:54+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>./tag/da-gang-bian-ji.html</loc>
-<lastmod>2015-12-19T11:17:54+08:06</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
-<loc>./tag/importer.html</loc>
-<lastmod>2015-12-21T20:53:12+08:06</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
-<loc>./tag/pyqt.html</loc>
-<lastmod>2015-12-19T11:17:54+08:06</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
-<loc>./tag/qi-dong.html</loc>
+<loc>http://chiamingyen.github.io/kmolsite/blog/tag/qi-dong.html</loc>
 <lastmod>2015-12-16T15:33:24+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>./tag/uwsgi.html</loc>
+<loc>http://chiamingyen.github.io/kmolsite/blog/tag/uwsgi.html</loc>
 <lastmod>2015-12-16T21:14:38+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>./tag/tclsh.html</loc>
-<lastmod>2015-12-20T20:21:54+08:06</lastmod>
+<loc>http://chiamingyen.github.io/kmolsite/blog/tag/nginx.html</loc>
+<lastmod>2015-12-16T21:14:38+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>./tag/leo-editor.html</loc>
+<loc>http://chiamingyen.github.io/kmolsite/blog/tag/python.html</loc>
+<lastmod>2015-12-21T20:53:12+08:06</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>http://chiamingyen.github.io/kmolsite/blog/tag/da-gang-bian-ji.html</loc>
+<lastmod>2015-12-19T11:17:54+08:06</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>http://chiamingyen.github.io/kmolsite/blog/tag/wang-ji-cheng-shi.html</loc>
+<lastmod>2015-12-16T21:14:38+08:06</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>http://chiamingyen.github.io/kmolsite/blog/tag/github-pages.html</loc>
 <lastmod>2015-12-16T22:07:18+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>./tag/cherrypy.html</loc>
-<lastmod>2015-12-21T20:53:12+08:06</lastmod>
+<loc>http://chiamingyen.github.io/kmolsite/blog/tag/cha-dan-zi.html</loc>
+<lastmod>2015-12-19T12:51:54+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>./tag/python.html</loc>
-<lastmod>2015-12-21T20:53:12+08:06</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
-<loc>./tag/wang-ji-cheng-shi.html</loc>
-<lastmod>2015-12-16T21:14:38+08:06</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
-<loc>./tag/rattlecad.html</loc>
+<loc>http://chiamingyen.github.io/kmolsite/blog/tag/tclsh.html</loc>
 <lastmod>2015-12-20T20:21:54+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>./tag/pelican-she-ding.html</loc>
+<loc>http://chiamingyen.github.io/kmolsite/blog/tag/pelican-she-ding.html</loc>
 <lastmod>2015-12-16T21:11:10+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>./tag/cha-dan-zi.html</loc>
-<lastmod>2015-12-19T12:51:54+08:06</lastmod>
+<loc>http://chiamingyen.github.io/kmolsite/blog/tag/pelican-search.html</loc>
+<lastmod>2015-12-16T15:33:24+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>./tag/ping-mian-hui-tu.html</loc>
+<loc>http://chiamingyen.github.io/kmolsite/blog/tag/git-zhi-ling.html</loc>
+<lastmod>2015-12-16T15:33:24+08:06</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>http://chiamingyen.github.io/kmolsite/blog/tag/ping-mian-hui-tu.html</loc>
 <lastmod>2015-12-21T20:56:20+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>./tag/pelican-search.html</loc>
-<lastmod>2015-12-16T15:33:24+08:06</lastmod>
+<loc>http://chiamingyen.github.io/kmolsite/blog/tag/cherrypy.html</loc>
+<lastmod>2015-12-21T20:53:12+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>./tag/nginx.html</loc>
-<lastmod>2015-12-16T21:14:38+08:06</lastmod>
+<loc>http://chiamingyen.github.io/kmolsite/blog/tag/importer.html</loc>
+<lastmod>2015-12-21T20:53:12+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>./tag/git-zhi-ling.html</loc>
-<lastmod>2015-12-16T15:33:24+08:06</lastmod>
+<loc>http://chiamingyen.github.io/kmolsite/blog/tag/rattlecad.html</loc>
+<lastmod>2015-12-20T20:21:54+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>./tag/github-pages.html</loc>
+<loc>http://chiamingyen.github.io/kmolsite/blog/tag/pyqt.html</loc>
+<lastmod>2015-12-19T11:17:54+08:06</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>http://chiamingyen.github.io/kmolsite/blog/tag/leo-editor.html</loc>
 <lastmod>2015-12-16T22:07:18+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>./author/kmol.html</loc>
+<loc>http://chiamingyen.github.io/kmolsite/blog/author/kmol.html</loc>
 <lastmod>2015-12-21T20:56:20+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
