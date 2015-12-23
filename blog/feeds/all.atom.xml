@@ -1,5 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>kmolsite</title><link href="http://chiamingyen.github.io/kmolsite/blog/" rel="alternate"></link><link href="http://chiamingyen.github.io/kmolsite/blog/feeds/all.atom.xml" rel="self"></link><id>http://chiamingyen.github.io/kmolsite/blog/</id><updated>2015-12-21T20:56:20+08:00</updated><entry><title>2016kmol 測試</title><link href="http://chiamingyen.github.io/kmolsite/blog/posts/2015/12/21/2016kmol-ce-shi/" rel="alternate"></link><updated>2015-12-21T20:56:20+08:00</updated><author><name>kmol</name></author><id>tag:chiamingyen.github.io,2015-12-21:kmolsite/blog/posts/2015/12/21/2016kmol-ce-shi/</id><summary type="html">&lt;p&gt;在 Plican 靜態網頁系統中,Title 若使用中文, 而且不指定 Slug 的情況下, 系統會將中文字逐一轉為英文拼音來建立網誌檔案.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>kmolsite</title><link href="http://chiamingyen.github.io/kmolsite/blog/" rel="alternate"></link><link href="http://chiamingyen.github.io/kmolsite/blog/feeds/all.atom.xml" rel="self"></link><id>http://chiamingyen.github.io/kmolsite/blog/</id><updated>2015-12-23T21:31:57+08:00</updated><entry><title>Onshape Tutorial</title><link href="http://chiamingyen.github.io/kmolsite/blog/posts/2015/12/23/onshape-tutorial/" rel="alternate"></link><updated>2015-12-23T21:31:57+08:00</updated><author><name>kmol</name></author><id>tag:chiamingyen.github.io,2015-12-23:kmolsite/blog/posts/2015/12/23/onshape-tutorial/</id><summary type="html">&lt;p&gt;Onshape 導引&lt;/p&gt;
+
+
+&lt;p&gt;Onshape 是一套可以完全在瀏覽器, 平板與手機中操作的電腦輔助機械設計繪圖軟體 (Mechanical Computer Aided Design, MCAD).&lt;/p&gt;
+&lt;p&gt;Onshape 所使用的技術環境包括 Parasolid: &lt;a href="https://en.wikipedia.org/wiki/Parasolid"&gt;https://en.wikipedia.org/wiki/Parasolid&lt;/a&gt;, Javascript V8: &lt;a href="https://github.com/v8/v8"&gt;https://github.com/v8/v8&lt;/a&gt;, WebGL, NoSQL 以及快速的網路連線 (&lt;a href="http://www.worldcadaccess.com/blog/2015/10/all-about-the-drafting-component-in-onshape.html"&gt;ref&lt;/a&gt;).&lt;/p&gt;
+&lt;h1&gt;Onshape 文件檔案概念&lt;/h1&gt;
+&lt;p&gt;Onshape 將設計專案中的各式檔案全部集中在一起, 而且在 Document 列表中, 只以一個 Workspace 檔案來代表這一群檔案, 且透過 Tab 來表示零件, 組立, 工程圖或其他從外部 import 進來的各種檔案.&lt;/p&gt;
+&lt;p&gt;另外, 一旦某一 Workspace 檔案透過分享, 允許其他用戶編輯後, 所有俱備權限檢視或編輯此一工作空間的用戶, 都使用相同的單一工作空間檔案, 而且在各用戶編輯零件或組立文件時, 每一個動作均會自動儲存歷史紀錄.&lt;/p&gt;
+&lt;p&gt;Onshape 組立約束:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Fastened Mate - 固結接合 - 兩零件緊固結合後, 彼此結為一體, 相互之間沒有自由度.&lt;/li&gt;
+&lt;li&gt;Revolute Mate - 旋轉接合 -  兩零件旋轉接合後, 只剩下一個沿 Z 軸旋轉的自由度.&lt;/li&gt;
+&lt;li&gt;Slider Mate - 滑動接合 - 兩零件滑動接合後, 只剩下一個沿 Z 軸平移的自由度.&lt;/li&gt;
+&lt;li&gt;Planar Mate - 面接合 - 兩零件面接合後, 剩下在配接平面上 X, Y 方向自由移動, 而且可以延 Z 方向自由旋轉, 因此剩下 3 個自由度.&lt;/li&gt;
+&lt;li&gt;Cylindrical Mate - 圓柱接合 - 兩零件圓柱接合後, 剩下沿著 Z 軸移動以及轉動等 2 個自由度.&lt;/li&gt;
+&lt;li&gt;Pin Slot Mate - 銷槽接合 - 兩零件銷槽接合後, 剩下延 X 方向移動, 且可以沿 Z 軸方向旋轉, 因此剩下 2 自由度.&lt;/li&gt;
+&lt;li&gt;Ball Mate - 球接合 - 兩零件球接合後, 剩下三軸方向的 3 個旋轉自由度.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Onshape 的組立約束與一般單機上的 MCAD 有些許差異, 只能分別透過兩兩約束的堆疊來定義組立.&lt;/p&gt;
+&lt;h1&gt;Onshape 基本使用流程&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;登入後點選左方 My documents 下的 Created by me, 然後可以再透過左上方的 Create 或 import documents file(s) 建立檔案或從近端上傳檔案.&lt;/li&gt;
+&lt;li&gt;選擇 Create document 後, 可以決定要建立 private 或 public 類別的檔案, 在免費帳號下, 使用者至多可以建立 10 個 private 檔案, 總容量 100 MB 以內, 若選擇建立 public 類別檔案, 則無檔案個數限制, 但總容量必須在 5GB 以內.&lt;/li&gt;
+&lt;li&gt;進入 Create public 檔案後, 可以透過左下方的 + 號, 選擇建立 Part Studio, Assembly, Drawing 或從近端 import 檔案.&lt;/li&gt;
+&lt;li&gt;Part Studio 就是零件繪製模組, Assembly 就是零件組立, Drawing 就是零件工程圖, 而 import 檔案可以讓使用者從外部上傳各式檔案或零組件檔案.&lt;/li&gt;
+&lt;li&gt;Part Studio 採 history based 方式建立特徵, 起始繪圖時, 必須先選擇 Create new sketch 後, 再選擇繪圖平面, 之後的額外功能選擇, 可以利用滑鼠右鍵帶出, 其中包括 View normal to sketch plane, 假如是在平版 App 環境, 則必須利用兩指張開, 同時點擊畫面帶出此一設定功能視窗, 而且在平版必須透過連續輕敲觸控螢幕來取消先前的各式點擊選擇.&lt;/li&gt;
+&lt;/ul&gt;</summary><category term="CAD"></category></entry><entry><title>Develop Python Program in Leo Editor</title><link href="http://chiamingyen.github.io/kmolsite/blog/posts/2015/12/21/develop-python-program-in-leo-editor/" rel="alternate"></link><updated>2015-12-21T21:04:29+08:00</updated><author><name>kmol</name></author><id>tag:chiamingyen.github.io,2015-12-21:kmolsite/blog/posts/2015/12/21/develop-python-program-in-leo-editor/</id><summary type="html">&lt;p&gt;在 Leo Editor 環境開發並執行 Python 程式&lt;/p&gt;
+
+
+&lt;p&gt;以下我們利用 Leo Editor 用來開發 CherryPy 網際程式, 首先開啟一個新的 Leo Editor 專案&lt;/p&gt;
+&lt;p&gt;新增一個節點, 標題寫上"@edit mycherrypy1.py", 而內容則是:&lt;/p&gt;
+&lt;table class="codehilitetable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;cherrypy&lt;/span&gt;
+&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;HelloWorld&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;object&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="nd"&gt;@cherrypy.expose&lt;/span&gt;
+    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;index&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+        &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;Hello World, 可以開始開發 Cherrypy 程式!&amp;quot;&lt;/span&gt;
+
+&lt;span class="n"&gt;cherrypy&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;quickstart&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;HelloWorld&lt;/span&gt;&lt;span class="p"&gt;())&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;p&gt;&lt;br /&gt;
+接著, 再建立一個節點, 標題寫上"@button run mycherrypy1.py", 而內容則是:&lt;/p&gt;
+&lt;table class="codehilitetable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;subprocess&lt;/span&gt;
+
+&lt;span class="n"&gt;p&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;subprocess&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Popen&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;start cmd /c v:\ide\python34\python mycherrypy1.py&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;shell&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;True&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="n"&gt;p&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;wait&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+
+&lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;done&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;p&gt;&lt;br /&gt;
+然後, 將這個專案存為  cherrypy1.leo, 並且將滑鼠停在 @button run mycherrypy1.py 這個節點上, 按下上方的 script-button, 系統將會建立一個按鈕.&lt;/p&gt;
+&lt;p&gt;當您按下這個按鈕時, Leo Editor 將會執行這個 button 所對應的 Python 程式, 也就是在背後執行"啟動執行 mycherrypy1.py"的 dos command 指令.&lt;/p&gt;
+&lt;p&gt;這樣的 CherrPy 程式編輯與執行, 可以在程式內容更新時, 由此背後執行的 dos command 自動重新啟動 CherryPy 程式, 而無需使用者介入開關.&lt;/p&gt;
+&lt;p&gt;總結上述過程:&lt;/p&gt;
+&lt;p&gt;運用  @edit 節點指令, 將節點的內容存入外部的檔案, 在此就是建立一個可以在近端執行的 CherryPy 網際程式
+運用  @button 可以建立一個內容為 Python 程式的指令按鈕, 當使用者按下此一按鈕, Leo Editor 就會設法執行此一 Python 程式
+將與按鈕對應的程式透過 subprocess 模組, 讓程式在系統背景狀態下執行, 表示不要與 Leo Editor 執行中的 Python 程序有所瓜葛
+這樣的 CherryPy 程式開發模式, 當使用者更新程式內容時, 系統會自動關閉, 再啟動 CherryPy 程式, 而使用者也可以透過 Ctrl+C 關閉上面所開啟的 dos command 程式執行
+所完成的 leo 專案: &lt;a href="https://copy.com/GXuWZ6YwaaiPpZKd"&gt;https://copy.com/GXuWZ6YwaaiPpZKd&lt;/a&gt;&lt;/p&gt;</summary><category term="Python"></category><category term="Cherrypy"></category></entry><entry><title>2016kmol 測試</title><link href="http://chiamingyen.github.io/kmolsite/blog/posts/2015/12/21/2016kmol-ce-shi/" rel="alternate"></link><updated>2015-12-21T20:56:20+08:00</updated><author><name>kmol</name></author><id>tag:chiamingyen.github.io,2015-12-21:kmolsite/blog/posts/2015/12/21/2016kmol-ce-shi/</id><summary type="html">&lt;p&gt;在 Plican 靜態網頁系統中,Title 若使用中文, 而且不指定 Slug 的情況下, 系統會將中文字逐一轉為英文拼音來建立網誌檔案.&lt;/p&gt;
 
 
 &lt;p&gt;以下利用 Brython 語法, 在網頁中繪圖:&lt;/p&gt;
@@ -666,55 +740,7 @@ ctx.fill()
 &lt;span class="n"&gt;dataURL&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;canvas&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;toDataURL&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
 &lt;span class="n"&gt;doc&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;canvas_image&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;src&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;dataURL&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
-&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</summary><category term="平面繪圖"></category></entry><entry><title>Develop Python Program in Leo Editor</title><link href="http://chiamingyen.github.io/kmolsite/blog/posts/2015/12/21/develop-python-program-in-leo-editor/" rel="alternate"></link><updated>2015-12-21T20:53:12+08:00</updated><author><name>kmol</name></author><id>tag:chiamingyen.github.io,2015-12-21:kmolsite/blog/posts/2015/12/21/develop-python-program-in-leo-editor/</id><summary type="html">&lt;p&gt;在 Leo Editor 環境開發並執行 Python 程式&lt;/p&gt;
-
-
-&lt;p&gt;以下我們利用 Leo Editor 用來開發 CherryPy 網際程式, 首先開啟一個新的 Leo Editor 專案&lt;/p&gt;
-&lt;p&gt;新增一個節點, 標題寫上"@edit mycherrypy1.py", 而內容則是:&lt;/p&gt;
-&lt;table class="codehilitetable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1
-2
-3
-4
-5
-6
-7&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;cherrypy&lt;/span&gt;
-&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;HelloWorld&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;object&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-    &lt;span class="nd"&gt;@cherrypy.expose&lt;/span&gt;
-    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;index&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-        &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;Hello World, 可以開始開發 Cherrypy 程式!&amp;quot;&lt;/span&gt;
-
-&lt;span class="n"&gt;cherrypy&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;quickstart&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;HelloWorld&lt;/span&gt;&lt;span class="p"&gt;())&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-
-&lt;p&gt;&lt;br /&gt;
-接著, 再建立一個節點, 標題寫上"@button run mycherrypy1.py", 而內容則是:&lt;/p&gt;
-&lt;table class="codehilitetable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1
-2
-3
-4
-5
-6
-7&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;subprocess&lt;/span&gt;
-
-&lt;span class="n"&gt;p&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;subprocess&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Popen&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;start cmd /c v:\ide\python34\python mycherrypy1.py&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;shell&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;True&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-
-&lt;span class="n"&gt;p&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;wait&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
-
-&lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;done&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-
-&lt;p&gt;&lt;br /&gt;
-然後, 將這個專案存為  cherrypy1.leo, 並且將滑鼠停在 @button run mycherrypy1.py 這個節點上, 按下上方的 script-button, 系統將會建立一個按鈕.&lt;/p&gt;
-&lt;p&gt;當您按下這個按鈕時, Leo Editor 將會執行這個 button 所對應的 Python 程式, 也就是在背後執行"啟動執行 mycherrypy1.py"的 dos command 指令.&lt;/p&gt;
-&lt;p&gt;這樣的 CherrPy 程式編輯與執行, 可以在程式內容更新時, 由此背後執行的 dos command 自動重新啟動 CherryPy 程式, 而無需使用者介入開關.&lt;/p&gt;
-&lt;p&gt;總結上述過程:&lt;/p&gt;
-&lt;p&gt;運用  @edit 節點指令, 將節點的內容存入外部的檔案, 在此就是建立一個可以在近端執行的 CherryPy 網際程式
-運用  @button 可以建立一個內容為 Python 程式的指令按鈕, 當使用者按下此一按鈕, Leo Editor 就會設法執行此一 Python 程式
-將與按鈕對應的程式透過 subprocess 模組, 讓程式在系統背景狀態下執行, 表示不要與 Leo Editor 執行中的 Python 程序有所瓜葛
-這樣的 CherryPy 程式開發模式, 當使用者更新程式內容時, 系統會自動關閉, 再啟動 CherryPy 程式, 而使用者也可以透過 Ctrl+C 關閉上面所開啟的 dos command 程式執行
-所完成的 leo 專案: https://copy.com/GXuWZ6YwaaiPpZKd&lt;/p&gt;</summary><category term="Python"></category><category term="Cherrypy"></category></entry><entry><title>Recursively import all python files into Leo Editor</title><link href="http://chiamingyen.github.io/kmolsite/blog/posts/2015/12/21/recursively-import-all-python-files-into-leo-editor/" rel="alternate"></link><updated>2015-12-21T20:53:12+08:00</updated><author><name>kmol</name></author><id>tag:chiamingyen.github.io,2015-12-21:kmolsite/blog/posts/2015/12/21/recursively-import-all-python-files-into-leo-editor/</id><summary type="html">&lt;p&gt;以遞迴方式導入 Python 程式碼.&lt;/p&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</summary><category term="平面繪圖"></category></entry><entry><title>Recursively import all python files into Leo Editor</title><link href="http://chiamingyen.github.io/kmolsite/blog/posts/2015/12/21/recursively-import-all-python-files-into-leo-editor/" rel="alternate"></link><updated>2015-12-21T20:53:12+08:00</updated><author><name>kmol</name></author><id>tag:chiamingyen.github.io,2015-12-21:kmolsite/blog/posts/2015/12/21/recursively-import-all-python-files-into-leo-editor/</id><summary type="html">&lt;p&gt;以遞迴方式導入 Python 程式碼.&lt;/p&gt;
 
 
 &lt;p&gt;此功能已經內建在 Leo Editor 的 scripts/scripts.leo 中, 程式碼如下:&lt;/p&gt;
