@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>kmolsite</title><link href="http://chiamingyen.github.io/kmolsite/blog/" rel="alternate"></link><link href="http://chiamingyen.github.io/kmolsite/blog/feeds/onshape.atom.xml" rel="self"></link><id>http://chiamingyen.github.io/kmolsite/blog/</id><updated>2015-12-23T21:31:57+08:00</updated><entry><title>Onshape Tutorial</title><link href="http://chiamingyen.github.io/kmolsite/blog/posts/2015/12/23/onshape-tutorial/" rel="alternate"></link><updated>2015-12-23T21:31:57+08:00</updated><author><name>kmol</name></author><id>tag:chiamingyen.github.io,2015-12-23:kmolsite/blog/posts/2015/12/23/onshape-tutorial/</id><summary type="html">&lt;p&gt;Onshape 導引&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>kmolsite</title><link href="http://chiamingyen.github.io/kmolsite/blog/" rel="alternate"></link><link href="http://chiamingyen.github.io/kmolsite/blog/feeds/onshape.atom.xml" rel="self"></link><id>http://chiamingyen.github.io/kmolsite/blog/</id><updated>2015-12-23T22:39:08+08:00</updated><entry><title>Onshape Tutorial</title><link href="http://chiamingyen.github.io/kmolsite/blog/posts/2015/12/23/onshape-tutorial/" rel="alternate"></link><updated>2015-12-23T22:39:08+08:00</updated><author><name>kmol</name></author><id>tag:chiamingyen.github.io,2015-12-23:kmolsite/blog/posts/2015/12/23/onshape-tutorial/</id><summary type="html">&lt;p&gt;Onshape 導引&lt;/p&gt;
 
 
-&lt;p&gt;Onshape 是一套可以完全在瀏覽器, 平板與手機中操作的電腦輔助機械設計繪圖軟體 (Mechanical Computer Aided Design, MCAD).&lt;/p&gt;
+&lt;p&gt;Onshape: &lt;a href="http://www.onshape.com"&gt;http://www.onshape.com&lt;/a&gt; 是一套可以完全在瀏覽器, 平板與手機中操作的電腦輔助機械設計繪圖軟體 (Mechanical Computer Aided Design, MCAD).&lt;/p&gt;
 &lt;p&gt;Onshape 所使用的技術環境包括 Parasolid: &lt;a href="https://en.wikipedia.org/wiki/Parasolid"&gt;https://en.wikipedia.org/wiki/Parasolid&lt;/a&gt;, Javascript V8: &lt;a href="https://github.com/v8/v8"&gt;https://github.com/v8/v8&lt;/a&gt;, WebGL, NoSQL 以及快速的網路連線 (&lt;a href="http://www.worldcadaccess.com/blog/2015/10/all-about-the-drafting-component-in-onshape.html"&gt;ref&lt;/a&gt;).&lt;/p&gt;
 &lt;h1&gt;Onshape 文件檔案概念&lt;/h1&gt;
 &lt;p&gt;Onshape 將設計專案中的各式檔案全部集中在一起, 而且在 Document 列表中, 只以一個 Workspace 檔案來代表這一群檔案, 且透過 Tab 來表示零件, 組立, 工程圖或其他從外部 import 進來的各種檔案.&lt;/p&gt;
@@ -25,4 +25,11 @@
 &lt;li&gt;進入 Create public 檔案後, 可以透過左下方的 + 號, 選擇建立 Part Studio, Assembly, Drawing 或從近端 import 檔案.&lt;/li&gt;
 &lt;li&gt;Part Studio 就是零件繪製模組, Assembly 就是零件組立, Drawing 就是零件工程圖, 而 import 檔案可以讓使用者從外部上傳各式檔案或零組件檔案.&lt;/li&gt;
 &lt;li&gt;Part Studio 採 history based 方式建立特徵, 起始繪圖時, 必須先選擇 Create new sketch 後, 再選擇繪圖平面, 之後的額外功能選擇, 可以利用滑鼠右鍵帶出, 其中包括 View normal to sketch plane, 假如是在平版 App 環境, 則必須利用兩指張開, 同時點擊畫面帶出此一設定功能視窗, 而且在平版必須透過連續輕敲觸控螢幕來取消先前的各式點擊選擇.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;Onshape 協同設計 (&lt;a href="https://www.onshape.com/cad-blog/under-the-hood-collaboration"&gt;ref&lt;/a&gt;)&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;在每一個 Workspace 列表中的最右方, 使用者可以利用滑鼠帶出相關功能, 其中 Share 功能, 可以將特定的 Workspace 分享設定給其他用戶, 由於 Onshape 將所有資料都存在雲端, 因此特定 Workspace 的協同設計都同步儲存在對應的 History 與 Version 資料中, 也就是各參與協同用戶可以透過工作空間的 Share, 進行各資料的同步編輯 (simultaneous editing).&lt;/li&gt;
+&lt;li&gt;進入特定 Workspace 的 Version 功能設定時 (或從 Version Manager 進入管理), 參與協同的設計者, 可以利用特定版本的最右方功能, 從先前所儲存的版本中, 選擇 Branch to create workspace, 建立"分支" 工作空間, 並且在這些"分支"空間中, 增加新的內容, 並且可以在隨後的時間點將分支合併到其他版本內容空間中, 這時建立分支的用戶便可以在不影響主要分支版本的進程中, 執行平行式的分支編輯 (branched editing).&lt;/li&gt;
+&lt;li&gt;因為 Onshape 提供工作空間切出分支的功能, 當兩個分支要執行合併時, 系統解決衝突的過程, 將以原始分支的內容為主(&lt;a href="https://www.onshape.com/cad-blog/merging-branches-in-onshape"&gt;ref1&lt;/a&gt;, &lt;a href="https://cad.onshape.com/help/Content/merge.htm"&gt;ref2&lt;/a&gt;).&lt;/li&gt;
+&lt;li&gt;Onshape 各版本的屬性設定, 包括名稱 (Name), 類別 (Type), 說明 (Description), 零件編號 (Part number), 版本 (Revision) 與狀態 (State), 而狀態可以包括進行中 (In progress), 待定 (Pending), 已發行 (Released) 以及已過時 (Obsolete), 換言之, 雲端協同模式下的 Onshape 先天已經俱備基本的 PDM 與 PLM 的功能, 相信隨後的 CAE, CAM, ERP 或 MRP 等對應功能, 將會透過 API 的架構逐一由第3方協力商釋放出來.&lt;/li&gt;
 &lt;/ul&gt;</summary><category term="CAD"></category></entry></feed>
