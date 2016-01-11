@@ -1,14 +1,603 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>kmolsite</title><link href="http://chiamingyen.github.io/kmolsite/blog/" rel="alternate"></link><link href="http://chiamingyen.github.io/kmolsite/blog/feeds/all.atom.xml" rel="self"></link><id>http://chiamingyen.github.io/kmolsite/blog/</id><updated>2015-12-26T12:33:39+08:00</updated><entry><title>Right MCAD for the 21 century</title><link href="http://chiamingyen.github.io/kmolsite/blog/posts/2015/12/26/right-mcad-for-the-21-century/" rel="alternate"></link><updated>2015-12-26T12:33:39+08:00</updated><author><name>kmol</name></author><id>tag:chiamingyen.github.io,2015-12-26:kmolsite/blog/posts/2015/12/26/right-mcad-for-the-21-century/</id><summary type="html">&lt;p&gt;真正屬於二十一世紀的電腦輔助機械設計軟體&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>kmolsite</title><link href="http://chiamingyen.github.io/kmolsite/blog/" rel="alternate"></link><link href="http://chiamingyen.github.io/kmolsite/blog/feeds/all.atom.xml" rel="self"></link><id>http://chiamingyen.github.io/kmolsite/blog/</id><updated>2016-01-05T22:19:54+08:00</updated><entry><title>git cheat sheet</title><link href="http://chiamingyen.github.io/kmolsite/blog/git-cheat-sheet.html" rel="alternate"></link><updated>2016-01-05T22:19:54+08:00</updated><author><name>kmol</name></author><id>tag:chiamingyen.github.io,2016-01-05:kmolsite/blog/git-cheat-sheet.html</id><summary type="html">&lt;p&gt;git 常用指令回顧&lt;/p&gt;
+
+
+&lt;p&gt;以下為常用的 git 指令:&lt;/p&gt;
+&lt;p&gt;Setup&lt;/p&gt;
+&lt;p&gt;Show current configuration:&lt;/p&gt;
+&lt;p&gt;$ git config --list&lt;/p&gt;
+&lt;p&gt;Show local configuration:&lt;/p&gt;
+&lt;p&gt;$ git config --local --list&lt;/p&gt;
+&lt;p&gt;Show global configuration:&lt;/p&gt;
+&lt;p&gt;$ git config --global --list&lt;/p&gt;
+&lt;p&gt;Show system configuration:&lt;/p&gt;
+&lt;p&gt;$ git config --system --list&lt;/p&gt;
+&lt;p&gt;Set a name that is identifiable for credit when review version history:&lt;/p&gt;
+&lt;p&gt;$ git config --global user.name “[firstname lastname]”&lt;/p&gt;
+&lt;p&gt;Set an email address that will be associated with each history marker:&lt;/p&gt;
+&lt;p&gt;$ git config --global user.email “[valid-email]”&lt;/p&gt;
+&lt;p&gt;Set automatic command line coloring for Git for easy reviewing:&lt;/p&gt;
+&lt;p&gt;$ git config --global color.ui auto&lt;/p&gt;
+&lt;p&gt;Configuration Files&lt;/p&gt;
+&lt;p&gt;Repository specific configuration file [--local]:&lt;/p&gt;
+&lt;p&gt;&lt;repo&gt;/.git/config&lt;/p&gt;
+&lt;p&gt;User-specific configuration file [--global]:&lt;/p&gt;
+&lt;p&gt;~/.gitconfig&lt;/p&gt;
+&lt;p&gt;System-wide configuration file [--system]:&lt;/p&gt;
+&lt;p&gt;/etc/gitconfig&lt;/p&gt;
+&lt;p&gt;Create&lt;/p&gt;
+&lt;p&gt;Clone an existing repository:&lt;/p&gt;
+&lt;p&gt;There are two ways:&lt;/p&gt;
+&lt;p&gt;Via SSH&lt;/p&gt;
+&lt;p&gt;$ git clone ssh://user@domain.com/repo.git&lt;/p&gt;
+&lt;p&gt;Via HTTP&lt;/p&gt;
+&lt;p&gt;$ git clone http://domain.com/user/repo.git&lt;/p&gt;
+&lt;p&gt;Create a new local repository:&lt;/p&gt;
+&lt;p&gt;$ git init&lt;/p&gt;
+&lt;p&gt;Local Changes&lt;/p&gt;
+&lt;p&gt;Changes in working directory:&lt;/p&gt;
+&lt;p&gt;$ git status&lt;/p&gt;
+&lt;p&gt;Changes to tracked files:&lt;/p&gt;
+&lt;p&gt;$ git diff&lt;/p&gt;
+&lt;p&gt;Add all current changes to the next commit:&lt;/p&gt;
+&lt;p&gt;$ git add&lt;/p&gt;
+&lt;p&gt;Add some changes in &lt;file&gt; to the next commit:&lt;/p&gt;
+&lt;p&gt;$ git add -p &lt;file&gt;&lt;/p&gt;
+&lt;p&gt;Commit all local changes in tracked files:&lt;/p&gt;
+&lt;p&gt;$ git commit -a&lt;/p&gt;
+&lt;p&gt;Commit previously staged changes:&lt;/p&gt;
+&lt;p&gt;$ git commit&lt;/p&gt;
+&lt;p&gt;Commit with message:&lt;/p&gt;
+&lt;p&gt;$ git commit -m 'message here'&lt;/p&gt;
+&lt;p&gt;Commit skipping the staging area and adding message:&lt;/p&gt;
+&lt;p&gt;$ git commit -am 'message here'&lt;/p&gt;
+&lt;p&gt;Commit to some previous date:&lt;/p&gt;
+&lt;p&gt;git commit --date="&lt;code&gt;date --date='n day ago'&lt;/code&gt;" -am "Commit Message"&lt;/p&gt;
+&lt;p&gt;Change last commit:&lt;/p&gt;
+&lt;p&gt;Don't amend published commits!&lt;/p&gt;
+&lt;p&gt;$ git commit -a --amend&lt;/p&gt;
+&lt;p&gt;Move uncommitted changes from current branch to some other branch:&lt;/p&gt;
+&lt;p&gt;git stash
+git checkout branch2
+git stash pop&lt;/p&gt;
+&lt;p&gt;Restore stashed changes back to current branch&lt;/p&gt;
+&lt;p&gt;git stash apply&lt;/p&gt;
+&lt;p&gt;Search&lt;/p&gt;
+&lt;p&gt;A text search on all files in the directory:&lt;/p&gt;
+&lt;p&gt;$ git grep "Hello"&lt;/p&gt;
+&lt;p&gt;In any version of a text search:&lt;/p&gt;
+&lt;p&gt;$ git grep "Hello" v2.5&lt;/p&gt;
+&lt;p&gt;Commit History&lt;/p&gt;
+&lt;p&gt;Show all commits, starting with newest (it'll show the hash, author information, date of commit and title of the commit):&lt;/p&gt;
+&lt;p&gt;$ git log&lt;/p&gt;
+&lt;p&gt;Show all the commits(it'll show just the commit hash and the commit message):&lt;/p&gt;
+&lt;p&gt;$ git log --oneline&lt;/p&gt;
+&lt;p&gt;Show all commits of a specific user:&lt;/p&gt;
+&lt;p&gt;$ git log --author="username"&lt;/p&gt;
+&lt;p&gt;Show changes over time for a specific file:&lt;/p&gt;
+&lt;p&gt;$ git log -p &lt;file&gt;&lt;/p&gt;
+&lt;p&gt;Who changed, what and when in &lt;file&gt;:&lt;/p&gt;
+&lt;p&gt;$ git blame &lt;file&gt;&lt;/p&gt;
+&lt;p&gt;Branches &amp;amp; Tags&lt;/p&gt;
+&lt;p&gt;List all local branches:&lt;/p&gt;
+&lt;p&gt;$ git branch&lt;/p&gt;
+&lt;p&gt;List all remote branches:&lt;/p&gt;
+&lt;p&gt;$ git branch -r&lt;/p&gt;
+&lt;p&gt;Switch HEAD branch:&lt;/p&gt;
+&lt;p&gt;$ git checkout &lt;branch&gt;&lt;/p&gt;
+&lt;p&gt;Create and switch new branch:&lt;/p&gt;
+&lt;p&gt;$ git checkout -b &lt;branch&gt;&lt;/p&gt;
+&lt;p&gt;Create a new branch based on your current HEAD:&lt;/p&gt;
+&lt;p&gt;$ git branch &lt;new-branch&gt;&lt;/p&gt;
+&lt;p&gt;Create a new tracking branch based on a remote branch:&lt;/p&gt;
+&lt;p&gt;$ git branch --track &lt;new-branch&gt; &lt;remote-branch&gt;&lt;/p&gt;
+&lt;p&gt;Delete a local branch:&lt;/p&gt;
+&lt;p&gt;$ git branch -d &lt;branch&gt;&lt;/p&gt;
+&lt;p&gt;Force delete a local branch:&lt;/p&gt;
+&lt;p&gt;You will lose unmerged changes!&lt;/p&gt;
+&lt;p&gt;$ git branch -D &lt;branch&gt;&lt;/p&gt;
+&lt;p&gt;Mark the current commit with a tag:&lt;/p&gt;
+&lt;p&gt;$ git tag &lt;tag-name&gt;&lt;/p&gt;
+&lt;p&gt;Mark the current commit with a tag that includes a message:&lt;/p&gt;
+&lt;p&gt;$ git tag -a &lt;tag-name&gt;&lt;/p&gt;
+&lt;p&gt;Update &amp;amp; Publish&lt;/p&gt;
+&lt;p&gt;List all current configured remotes:&lt;/p&gt;
+&lt;p&gt;$ git remote -v&lt;/p&gt;
+&lt;p&gt;Show information about a remote:&lt;/p&gt;
+&lt;p&gt;$ git remote show &lt;remote&gt;&lt;/p&gt;
+&lt;p&gt;Add new remote repository, named &lt;remote&gt;:&lt;/p&gt;
+&lt;p&gt;$ git remote add &lt;remote&gt; &lt;url&gt;&lt;/p&gt;
+&lt;p&gt;Download all changes from &lt;remote&gt;, but don't integrate into HEAD:&lt;/p&gt;
+&lt;p&gt;$ git fetch &lt;remote&gt;&lt;/p&gt;
+&lt;p&gt;Download changes and directly merge/integrate into HEAD:&lt;/p&gt;
+&lt;p&gt;$ git remote pull &lt;remote&gt; &lt;url&gt;&lt;/p&gt;
+&lt;p&gt;Get all changes from HEAD to local repository:&lt;/p&gt;
+&lt;p&gt;$ git pull origin master&lt;/p&gt;
+&lt;p&gt;Get all changes from HEAD to local repository without a merge:&lt;/p&gt;
+&lt;p&gt;git pull --rebase &lt;remote&gt; &lt;branch&gt;&lt;/p&gt;
+&lt;p&gt;Publish local changes on a remote:&lt;/p&gt;
+&lt;p&gt;$ git push remote &lt;remote&gt; &lt;branch&gt;&lt;/p&gt;
+&lt;p&gt;Delete a branch on the remote:&lt;/p&gt;
+&lt;p&gt;$ git push &lt;remote&gt; :&lt;branch&gt; (since Git v1.5.0)
+or
+git push &lt;remote&gt; --delete &lt;branch&gt; (since Git v1.7.0)&lt;/p&gt;
+&lt;p&gt;Publish your tags:&lt;/p&gt;
+&lt;p&gt;$ git push --tags&lt;/p&gt;
+&lt;p&gt;Merge &amp;amp; Rebase&lt;/p&gt;
+&lt;p&gt;Merge into your current HEAD:&lt;/p&gt;
+&lt;p&gt;$ git merge &lt;branch&gt;&lt;/p&gt;
+&lt;p&gt;Rebase your current HEAD onto &lt;branch&gt;:&lt;/p&gt;
+&lt;p&gt;Don't rebase published commit!&lt;/p&gt;
+&lt;p&gt;$ git rebase &lt;branch&gt;&lt;/p&gt;
+&lt;p&gt;Abort a rebase:&lt;/p&gt;
+&lt;p&gt;$ git rebase --abort&lt;/p&gt;
+&lt;p&gt;Continue a rebase after resolving conflicts:&lt;/p&gt;
+&lt;p&gt;$ git rebase --continue&lt;/p&gt;
+&lt;p&gt;Use your configured merge tool to solve conflicts:&lt;/p&gt;
+&lt;p&gt;$ git mergetool&lt;/p&gt;
+&lt;p&gt;Use your editor to manually solve conflicts and (after resolving) mark file as resolved:&lt;/p&gt;
+&lt;p&gt;$ git add &lt;resolved-file&gt;
+$ git rm &lt;resolved-file&gt;&lt;/p&gt;
+&lt;p&gt;Squashing commits:&lt;/p&gt;
+&lt;p&gt;$ git rebase -i &lt;commit-just-before-first&gt;&lt;/p&gt;
+&lt;p&gt;Now replace this,&lt;/p&gt;
+&lt;p&gt;pick &lt;commit_id&gt;
+pick &lt;commit_id2&gt;
+pick &lt;commit_id3&gt;
+to this,&lt;/p&gt;
+&lt;p&gt;pick &lt;commit_id&gt;
+squash &lt;commit_id2&gt;
+squash &lt;commit_id3&gt;
+Undo&lt;/p&gt;
+&lt;p&gt;Discard all local changes in your working directory:&lt;/p&gt;
+&lt;p&gt;$ git reset --hard HEAD&lt;/p&gt;
+&lt;p&gt;Get all the files out of the staging area(i.e. undo the last git add):&lt;/p&gt;
+&lt;p&gt;$ git reset HEAD&lt;/p&gt;
+&lt;p&gt;Discard local changes in a specific file:&lt;/p&gt;
+&lt;p&gt;$ git checkout HEAD &lt;file&gt;&lt;/p&gt;
+&lt;p&gt;Revert a commit (by producing a new commit with contrary changes):&lt;/p&gt;
+&lt;p&gt;$ git revert &lt;commit&gt;&lt;/p&gt;
+&lt;p&gt;Reset your HEAD pointer to a previous commit and discard all changes since then:&lt;/p&gt;
+&lt;p&gt;$ git reset --hard &lt;commit&gt;&lt;/p&gt;
+&lt;p&gt;Reset your HEAD pointer to a remote branch current state.&lt;/p&gt;
+&lt;p&gt;git reset --hard &lt;remote/branch&gt; e.g., upstream/master, origin/my-feature
+Reset your HEAD pointer to a previous commit and preserve all changes as unstaged changes:&lt;/p&gt;
+&lt;p&gt;$ git reset &lt;commit&gt;&lt;/p&gt;
+&lt;p&gt;Reset your HEAD pointer to a previous commit and preserve uncommitted local changes:&lt;/p&gt;
+&lt;p&gt;$ git reset --keep &lt;commit&gt;&lt;/p&gt;
+&lt;p&gt;Remove files that were accidentally committed before they were added to .gitignore&lt;/p&gt;
+&lt;p&gt;$ git rm -r --cached .
+$ git add .
+$ git commit -m "remove xyz file"&lt;/p&gt;
+&lt;p&gt;Git-Flow&lt;/p&gt;
+&lt;p&gt;You need a working git installation as prerequisite. Git flow works on OSX, Linux and Windows.&lt;/p&gt;
+&lt;p&gt;OSX Homebrew:&lt;/p&gt;
+&lt;p&gt;$ brew install git-flow&lt;/p&gt;
+&lt;p&gt;OSX Macports:&lt;/p&gt;
+&lt;p&gt;$ port install git-flow&lt;/p&gt;
+&lt;p&gt;Linux (Debian-based):&lt;/p&gt;
+&lt;p&gt;$ apt-get install git-flow&lt;/p&gt;
+&lt;p&gt;Windows (Cygwin):&lt;/p&gt;
+&lt;p&gt;You need wget and util-linux to install git-flow.&lt;/p&gt;
+&lt;p&gt;$ wget -q -O - --no-check-certificate https://github.com/nvie/gitflow/raw/develop/contrib/gitflow-installer.sh | bash&lt;/p&gt;
+&lt;p&gt;Getting Started&lt;/p&gt;
+&lt;p&gt;Git flow needs to be initialized in order to customize your project setup. Start using git-flow by initializing it inside an existing git repository:&lt;/p&gt;
+&lt;p&gt;Initialize:&lt;/p&gt;
+&lt;p&gt;You'll have to answer a few questions regarding the naming conventions for your branches. It's recommended to use the default values.&lt;/p&gt;
+&lt;p&gt;git flow init&lt;/p&gt;
+&lt;p&gt;Features&lt;/p&gt;
+&lt;p&gt;Develop new features for upcoming releases. Typically exist in developers repos only.&lt;/p&gt;
+&lt;p&gt;Start a new feature:&lt;/p&gt;
+&lt;p&gt;This action creates a new feature branch based on 'develop' and switches to it.&lt;/p&gt;
+&lt;p&gt;git flow feature start MYFEATURE&lt;/p&gt;
+&lt;p&gt;Finish up a feature:&lt;/p&gt;
+&lt;p&gt;Finish the development of a feature. This action performs the following:&lt;/p&gt;
+&lt;p&gt;1)Merged MYFEATURE into 'develop'.&lt;/p&gt;
+&lt;p&gt;2)Removes the feature branch.&lt;/p&gt;
+&lt;p&gt;3)Switches back to 'develop' branch&lt;/p&gt;
+&lt;p&gt;git flow feature finish MYFEATURE
+Publish a feature:&lt;/p&gt;
+&lt;p&gt;Are you developing a feature in collaboration? Publish a feature to the remote server so it can be used by other users.&lt;/p&gt;
+&lt;p&gt;git flow feature publish MYFEATURE&lt;/p&gt;
+&lt;p&gt;Getting a published feature:&lt;/p&gt;
+&lt;p&gt;Get a feature published by another user.&lt;/p&gt;
+&lt;p&gt;git flow feature pull origin MYFEATURE&lt;/p&gt;
+&lt;p&gt;Tracking a origin feature:&lt;/p&gt;
+&lt;p&gt;You can track a feature on origin by using&lt;/p&gt;
+&lt;p&gt;git flow feature track MYFEATURE&lt;/p&gt;
+&lt;p&gt;Make a Release&lt;/p&gt;
+&lt;p&gt;Support preparation of a new production release. Allow for minor bug fixes and preparing meta-data for a release&lt;/p&gt;
+&lt;p&gt;Start a release:&lt;/p&gt;
+&lt;p&gt;To start a release, use the git flow release command. It creates a release branch created from the 'develop' branch. You can optionally supply a [BASE] commit sha-1 hash to start the release from. The commit must be on the 'develop' branch.&lt;/p&gt;
+&lt;p&gt;git flow release start RELEASE [BASE]&lt;/p&gt;
+&lt;p&gt;It's wise to publish the release branch after creating it to allow release commits by other developers. Do it similar to feature publishing with the command:&lt;/p&gt;
+&lt;p&gt;git flow release publish RELEASE&lt;/p&gt;
+&lt;p&gt;(You can track a remote release with the: git flow release track RELEASE command)&lt;/p&gt;
+&lt;p&gt;Finish up a release:&lt;/p&gt;
+&lt;p&gt;Finishing a release is one of the big steps in git branching. It performs several actions:&lt;/p&gt;
+&lt;p&gt;1)Merges the release branch back into 'master'&lt;/p&gt;
+&lt;p&gt;2)Tags the release with its name&lt;/p&gt;
+&lt;p&gt;3)Back-merges the release into 'develop'&lt;/p&gt;
+&lt;p&gt;4)Removes the release branch&lt;/p&gt;
+&lt;p&gt;git flow release finish RELEASE&lt;/p&gt;
+&lt;p&gt;Don't forget to push your tags with git push --tags&lt;/p&gt;
+&lt;p&gt;Hotfixes&lt;/p&gt;
+&lt;p&gt;Hotfixes arise from the necessity to act immediately upon an undesired state of a live production version. May be branched off from the corresponding tag on the master branch that marks the production version.&lt;/p&gt;
+&lt;p&gt;Git flow hotfix start:&lt;/p&gt;
+&lt;p&gt;Like the other git flow commands, a hotfix is started with&lt;/p&gt;
+&lt;p&gt;$ git flow hotfix start VERSION [BASENAME]&lt;/p&gt;
+&lt;p&gt;The version argument hereby marks the new hotfix release name. Optionally you can specify a basename to start from.&lt;/p&gt;
+&lt;p&gt;Finish a hotfix:&lt;/p&gt;
+&lt;p&gt;By finishing a hotfix it gets merged back into develop and master. Additionally the master merge is tagged with the hotfix version&lt;/p&gt;
+&lt;p&gt;git flow hotfix finish VERSION&lt;/p&gt;</summary><category term="Git"></category></entry><entry><title>Brython examples</title><link href="http://chiamingyen.github.io/kmolsite/blog/brython-examples.html" rel="alternate"></link><updated>2016-01-03T21:41:40+08:00</updated><author><name>kmol</name></author><id>tag:chiamingyen.github.io,2016-01-03:kmolsite/blog/brython-examples.html</id><summary type="html">&lt;p&gt;Brython 範例&lt;/p&gt;
+
+
+&lt;!-- 導入 brython_dist.js --&gt;
+
+&lt;script type="text/javascript" src="http://brython.info/src/brython_dist.js"&gt;&lt;/script&gt;
+
+&lt;!-- 啟動 brython() --&gt;
+
+&lt;script&gt;
+window.onload=function(){
+brython(1);
+}
+&lt;/script&gt;
+
+&lt;!-- 以下利用 Brython 程式執行繪圖 --&gt;
+
+&lt;canvas id="plotarea" width="600" height="400"&gt;&lt;/canvas&gt;
+
+&lt;script type="text/python3"&gt;
+# 導入 browser 模組中的 document, 並設為 doc 變數
+from browser import document as doc
+# 導入數學模組
+import math
+# 產生各小球的亂數速度用
+import random
+# 導入 browser 中的計時器, 建立動畫用
+import browser.timer
+
+# 準備繪圖畫布
+canvas = doc["plotarea"]
+ctx = canvas.getContext("2d")
+
+# 取畫布的寬與高度
+width = canvas.width
+height = canvas.height
+
+n = 20
+# 已知數列內容個數, 先分別與 None 對應
+x = [None]*n
+y = [None]*n
+vy = [None]*n
+vx = [None]*n
+# 重力加速度, Y 方向向下為正
+g = 0.05
+# 空氣的黏滯阻尼係數
+cor = 0.7 
+# 球的彈力係數
+fr = 0.95
+# 球的半徑
+r = 5
+
+for i in range(n):
+    x[i] = 300
+    y[i] = 100
+    # random.random() 將會產生介於 0 與 1 的浮點亂數
+    vx[i] = 2*(random.random()-.5)
+    vy[i] = 2*(random.random()-.5)
+
+# 更新第 i 球 Y 座標的運算邏輯
+def updateY(i):
+    if ((y[i]+r) &lt; height):
+        #y = height
+        vy[i] += g
+    else:
+        vy[i] = -vy[i]*cor
+        vx[i] *= fr
+    y[i] += vy[i]
+    if ((y[i]+r) &gt; height):
+        y[i] = height-r
+
+# 更新第 i 球 X 座標的運算邏輯
+def updateX(i):
+    if ((x[i]+r) &gt;= width or (x[i]-r) &lt;= 0):
+        vx[i] = -vx[i]*cor
+    x[i] += vx[i]
+    if ((x[i]+r) &gt; width):
+        x[i] = width-r
+    elif ((x[i]-r) &lt; 0):
+        x[i] = r
+
+# 畫圓函式
+def circle(x,y,r):
+    ctx.beginPath()
+    ctx.arc(x, y, r, 0, math.pi*2, True)
+    ctx.fill()
+
+# 寫字函式
+def text(s):
+    ctx.fillStyle = "#ff0000"
+    ctx.font = "30px sans-serif"
+    ctx.textBaseline = "bottom"
+    ctx.fillText(s,0,height)
+
+# 每隔特定時間, 進行動畫繪製
+def animate():
+    # 刷新畫布
+    ctx.clearRect(0, 0, width, height)
+    # 逐一重新繪製小球
+    ctx.fillStyle = "#000000"
+    for i in range(n):
+        updateY(i)
+        updateX(i)
+        circle(x[i],y[i],r)
+
+text("Click me!")
+
+# 畫布點擊後執行的函式
+def on_canvas_click(ev):
+    browser.timer.set_interval(animate,0)
+
+# 只要使用者點擊在畫布上任何地方, 即執行 on_canvas_click 函式
+canvas.bind('click', on_canvas_click, False)
+&lt;/script&gt;
+
+&lt;p&gt;上列繪圖的程式碼:&lt;/p&gt;
+&lt;table class="codehilitetable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;  1
+  2
+  3
+  4
+  5
+  6
+  7
+  8
+  9
+ 10
+ 11
+ 12
+ 13
+ 14
+ 15
+ 16
+ 17
+ 18
+ 19
+ 20
+ 21
+ 22
+ 23
+ 24
+ 25
+ 26
+ 27
+ 28
+ 29
+ 30
+ 31
+ 32
+ 33
+ 34
+ 35
+ 36
+ 37
+ 38
+ 39
+ 40
+ 41
+ 42
+ 43
+ 44
+ 45
+ 46
+ 47
+ 48
+ 49
+ 50
+ 51
+ 52
+ 53
+ 54
+ 55
+ 56
+ 57
+ 58
+ 59
+ 60
+ 61
+ 62
+ 63
+ 64
+ 65
+ 66
+ 67
+ 68
+ 69
+ 70
+ 71
+ 72
+ 73
+ 74
+ 75
+ 76
+ 77
+ 78
+ 79
+ 80
+ 81
+ 82
+ 83
+ 84
+ 85
+ 86
+ 87
+ 88
+ 89
+ 90
+ 91
+ 92
+ 93
+ 94
+ 95
+ 96
+ 97
+ 98
+ 99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="c"&gt;&amp;lt;!-- 導入 brython_dist.js --&amp;gt;&lt;/span&gt;
+
+&lt;span class="nt"&gt;&amp;lt;script &lt;/span&gt;&lt;span class="na"&gt;type=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;text/javascript&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;src=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;http://brython.info/src/brython_dist.js&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+
+&lt;span class="c"&gt;&amp;lt;!-- 啟動 brython() --&amp;gt;&lt;/span&gt;
+
+&lt;span class="nt"&gt;&amp;lt;script&amp;gt;&lt;/span&gt;
+&lt;span class="nb"&gt;window&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;onload&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="kd"&gt;function&lt;/span&gt;&lt;span class="p"&gt;(){&lt;/span&gt;
+&lt;span class="nx"&gt;brython&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+
+&lt;span class="c"&gt;&amp;lt;!-- 以下利用 Brython 程式執行繪圖 --&amp;gt;&lt;/span&gt;
+
+&lt;span class="nt"&gt;&amp;lt;canvas&lt;/span&gt; &lt;span class="na"&gt;id=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;plotarea&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;width=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;600&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;height=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;400&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&amp;lt;/canvas&amp;gt;&lt;/span&gt;
+
+&lt;span class="nt"&gt;&amp;lt;script &lt;/span&gt;&lt;span class="na"&gt;type=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;text/python3&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
+&lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="nx"&gt;導入&lt;/span&gt; &lt;span class="nx"&gt;browser&lt;/span&gt; &lt;span class="nx"&gt;模組中的&lt;/span&gt; &lt;span class="nb"&gt;document&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;並設為&lt;/span&gt; &lt;span class="nx"&gt;doc&lt;/span&gt; &lt;span class="nx"&gt;變數&lt;/span&gt;
+&lt;span class="nx"&gt;from&lt;/span&gt; &lt;span class="nx"&gt;browser&lt;/span&gt; &lt;span class="kr"&gt;import&lt;/span&gt; &lt;span class="nb"&gt;document&lt;/span&gt; &lt;span class="nx"&gt;as&lt;/span&gt; &lt;span class="nx"&gt;doc&lt;/span&gt;
+&lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="nx"&gt;導入數學模組&lt;/span&gt;
+&lt;span class="kr"&gt;import&lt;/span&gt; &lt;span class="nx"&gt;math&lt;/span&gt;
+&lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="nx"&gt;產生各小球的亂數速度用&lt;/span&gt;
+&lt;span class="kr"&gt;import&lt;/span&gt; &lt;span class="nx"&gt;random&lt;/span&gt;
+&lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="nx"&gt;導入&lt;/span&gt; &lt;span class="nx"&gt;browser&lt;/span&gt; &lt;span class="nx"&gt;中的計時器&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;建立動畫用&lt;/span&gt;
+&lt;span class="kr"&gt;import&lt;/span&gt; &lt;span class="nx"&gt;browser&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;timer&lt;/span&gt;
+
+&lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="nx"&gt;準備繪圖畫布&lt;/span&gt;
+&lt;span class="nx"&gt;canvas&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;doc&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;plotarea&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="nx"&gt;ctx&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;canvas&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;getContext&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;2d&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="nx"&gt;取畫布的寬與高度&lt;/span&gt;
+&lt;span class="nx"&gt;width&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;canvas&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;width&lt;/span&gt;
+&lt;span class="nx"&gt;height&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;canvas&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;height&lt;/span&gt;
+
+&lt;span class="nx"&gt;n&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;20&lt;/span&gt;
+&lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="nx"&gt;已知數列內容個數&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;先分別與&lt;/span&gt; &lt;span class="nx"&gt;None&lt;/span&gt; &lt;span class="nx"&gt;對應&lt;/span&gt;
+&lt;span class="nx"&gt;x&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nx"&gt;None&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="nx"&gt;n&lt;/span&gt;
+&lt;span class="nx"&gt;y&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nx"&gt;None&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="nx"&gt;n&lt;/span&gt;
+&lt;span class="nx"&gt;vy&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nx"&gt;None&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="nx"&gt;n&lt;/span&gt;
+&lt;span class="nx"&gt;vx&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nx"&gt;None&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="nx"&gt;n&lt;/span&gt;
+&lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="nx"&gt;重力加速度&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;Y&lt;/span&gt; &lt;span class="nx"&gt;方向向下為正&lt;/span&gt;
+&lt;span class="nx"&gt;g&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mf"&gt;0.05&lt;/span&gt;
+&lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="nx"&gt;空氣的黏滯阻尼係數&lt;/span&gt;
+&lt;span class="nx"&gt;cor&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mf"&gt;0.7&lt;/span&gt; 
+&lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="nx"&gt;球的彈力係數&lt;/span&gt;
+&lt;span class="nx"&gt;fr&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mf"&gt;0.95&lt;/span&gt;
+&lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="nx"&gt;球的半徑&lt;/span&gt;
+&lt;span class="nx"&gt;r&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;5&lt;/span&gt;
+
+&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="nx"&gt;i&lt;/span&gt; &lt;span class="k"&gt;in&lt;/span&gt; &lt;span class="nx"&gt;range&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;n&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+    &lt;span class="nx"&gt;x&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nx"&gt;i&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;300&lt;/span&gt;
+    &lt;span class="nx"&gt;y&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nx"&gt;i&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;100&lt;/span&gt;
+    &lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="nx"&gt;random&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;random&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="nx"&gt;將會產生介於&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt; &lt;span class="nx"&gt;與&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="nx"&gt;的浮點亂數&lt;/span&gt;
+    &lt;span class="nx"&gt;vx&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nx"&gt;i&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;random&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;random&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="nx"&gt;vy&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nx"&gt;i&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;random&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;random&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="nx"&gt;更新第&lt;/span&gt; &lt;span class="nx"&gt;i&lt;/span&gt; &lt;span class="nx"&gt;球&lt;/span&gt; &lt;span class="nx"&gt;Y&lt;/span&gt; &lt;span class="nx"&gt;座標的運算邏輯&lt;/span&gt;
+&lt;span class="nx"&gt;def&lt;/span&gt; &lt;span class="nx"&gt;updateY&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;i&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="nx"&gt;y&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nx"&gt;i&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="nx"&gt;r&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt; &lt;span class="nx"&gt;height&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+        &lt;span class="err"&gt;#&lt;/span&gt;&lt;span class="nx"&gt;y&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;height&lt;/span&gt;
+        &lt;span class="nx"&gt;vy&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nx"&gt;i&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;+=&lt;/span&gt; &lt;span class="nx"&gt;g&lt;/span&gt;
+    &lt;span class="k"&gt;else&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+        &lt;span class="nx"&gt;vy&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nx"&gt;i&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nx"&gt;vy&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nx"&gt;i&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="nx"&gt;cor&lt;/span&gt;
+        &lt;span class="nx"&gt;vx&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nx"&gt;i&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;*=&lt;/span&gt; &lt;span class="nx"&gt;fr&lt;/span&gt;
+    &lt;span class="nx"&gt;y&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nx"&gt;i&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;+=&lt;/span&gt; &lt;span class="nx"&gt;vy&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nx"&gt;i&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="nx"&gt;y&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nx"&gt;i&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="nx"&gt;r&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="nx"&gt;height&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+        &lt;span class="nx"&gt;y&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nx"&gt;i&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;height&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nx"&gt;r&lt;/span&gt;
+
+&lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="nx"&gt;更新第&lt;/span&gt; &lt;span class="nx"&gt;i&lt;/span&gt; &lt;span class="nx"&gt;球&lt;/span&gt; &lt;span class="nx"&gt;X&lt;/span&gt; &lt;span class="nx"&gt;座標的運算邏輯&lt;/span&gt;
+&lt;span class="nx"&gt;def&lt;/span&gt; &lt;span class="nx"&gt;updateX&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;i&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="nx"&gt;x&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nx"&gt;i&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="nx"&gt;r&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;=&lt;/span&gt; &lt;span class="nx"&gt;width&lt;/span&gt; &lt;span class="nx"&gt;or&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;x&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nx"&gt;i&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nx"&gt;r&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+        &lt;span class="nx"&gt;vx&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nx"&gt;i&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nx"&gt;vx&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nx"&gt;i&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="nx"&gt;cor&lt;/span&gt;
+    &lt;span class="nx"&gt;x&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nx"&gt;i&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;+=&lt;/span&gt; &lt;span class="nx"&gt;vx&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nx"&gt;i&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="nx"&gt;x&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nx"&gt;i&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="nx"&gt;r&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="nx"&gt;width&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+        &lt;span class="nx"&gt;x&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nx"&gt;i&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;width&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nx"&gt;r&lt;/span&gt;
+    &lt;span class="nx"&gt;elif&lt;/span&gt; &lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="nx"&gt;x&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nx"&gt;i&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nx"&gt;r&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+        &lt;span class="nx"&gt;x&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nx"&gt;i&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;r&lt;/span&gt;
+
+&lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="nx"&gt;畫圓函式&lt;/span&gt;
+&lt;span class="nx"&gt;def&lt;/span&gt; &lt;span class="nx"&gt;circle&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;x&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="nx"&gt;y&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="nx"&gt;r&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+    &lt;span class="nx"&gt;ctx&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;beginPath&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+    &lt;span class="nx"&gt;ctx&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;arc&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;x&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;y&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;r&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;math&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;pi&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;True&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="nx"&gt;ctx&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;fill&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+
+&lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="nx"&gt;寫字函式&lt;/span&gt;
+&lt;span class="nx"&gt;def&lt;/span&gt; &lt;span class="nx"&gt;text&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;s&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+    &lt;span class="nx"&gt;ctx&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;fillStyle&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;#ff0000&amp;quot;&lt;/span&gt;
+    &lt;span class="nx"&gt;ctx&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;font&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;30px sans-serif&amp;quot;&lt;/span&gt;
+    &lt;span class="nx"&gt;ctx&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;textBaseline&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;bottom&amp;quot;&lt;/span&gt;
+    &lt;span class="nx"&gt;ctx&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;fillText&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;s&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="nx"&gt;height&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="nx"&gt;每隔特定時間&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;進行動畫繪製&lt;/span&gt;
+&lt;span class="nx"&gt;def&lt;/span&gt; &lt;span class="nx"&gt;animate&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+    &lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="nx"&gt;刷新畫布&lt;/span&gt;
+    &lt;span class="nx"&gt;ctx&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;clearRect&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;width&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;height&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="nx"&gt;逐一重新繪製小球&lt;/span&gt;
+    &lt;span class="nx"&gt;ctx&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;fillStyle&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;#000000&amp;quot;&lt;/span&gt;
+    &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="nx"&gt;i&lt;/span&gt; &lt;span class="k"&gt;in&lt;/span&gt; &lt;span class="nx"&gt;range&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;n&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+        &lt;span class="nx"&gt;updateY&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;i&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="nx"&gt;updateX&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;i&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="nx"&gt;circle&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;x&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nx"&gt;i&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;&lt;span class="nx"&gt;y&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nx"&gt;i&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;&lt;span class="nx"&gt;r&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="nx"&gt;text&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Click me!&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="nx"&gt;畫布點擊後執行的函式&lt;/span&gt;
+&lt;span class="nx"&gt;def&lt;/span&gt; &lt;span class="nx"&gt;on_canvas_click&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;ev&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+    &lt;span class="nx"&gt;browser&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;timer&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;set_interval&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;animate&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="nx"&gt;只要使用者點擊在畫布上任何地方&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;即執行&lt;/span&gt; &lt;span class="nx"&gt;on_canvas_click&lt;/span&gt; &lt;span class="nx"&gt;函式&lt;/span&gt;
+&lt;span class="nx"&gt;canvas&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;bind&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;click&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;on_canvas_click&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;False&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</summary><category term="Mouse"></category></entry><entry><title>The 21st Century Universities</title><link href="http://chiamingyen.github.io/kmolsite/blog/the-21st-century-universities.html" rel="alternate"></link><updated>2016-01-01T23:23:47+08:00</updated><author><name>kmol</name></author><id>tag:chiamingyen.github.io,2016-01-01:kmolsite/blog/the-21st-century-universities.html</id><summary type="html">&lt;p&gt;型塑二十一世紀大學&lt;/p&gt;
+
+
+&lt;p&gt;二十一世紀, 在網路科技的推波助瀾下, 許多行業與組織都產生了本質上的變化, 大學, 這個經常被稱為象牙塔的最後防線, 也終於必須因應全球化知識經濟的快速發展, 而做出相當程度的進化, 否則難逃被淘汰的命運.&lt;/p&gt;
+&lt;p&gt;從許多文獻的觀察可以得知, 二十一世紀的大學, 必須讓團隊中特定比例的成員, 擁抱知識創業的趨勢.&lt;/p&gt;
+&lt;p&gt;在此, 我們認為, 至少 70% 的大學成員必須俱備知識創業的能力與作為, 其餘的成員則仍能一如既往, 按照本身的認知, 從事任何自己有興趣的教學與研究, 而無需受到是否真正達到所謂知識的精進或創業獲利的約束.&lt;/p&gt;
+&lt;p&gt;Intellectual Entrepreneurship (知識創業)&lt;/p&gt;
+&lt;p&gt;Intellectual Entrepreneurship is a philosophy and vision of education viewing academics as "innovators" and "agents of change." It focuses on creating cross-disciplinary and multi-institutional collaborations designed to produce intellectual advancements (知識進展) with a capacity to provide real solutions (真正的解決方案) to society's problems and needs. Intellectual Entrepreneurship is academic engagement for the purpose of changing lives.&lt;/p&gt;
+&lt;p&gt;Intellectual Entrepreneurship moves the mission of institutions of higher learning from "advancing the frontiers of knowledge" (推進知識前緣) and "preparing tomorrow's leaders" (培育未來領導人) to also "serving as engines of economic and social development." (成為經濟與社會發展的引擎) In the process, the role of faculty member and student evolves from that of "intellectual provocateur" (知識激發者)to becoming what might be called an "intellectual entrepreneur." (知識創業者) Intellectual Entrepreneurship includes a readiness to seek out opportunities, undertake the responsibility associated with each and tolerate the uncertainty that comes with initiating genuine innovation. Intellectual Entrepreneurship changes the model and metaphor of higher education from one of "apprenticeship-certification-entitlement" (學徒-認証-授權) to one of "discovery-ownership-accountability." (發現-擁有-負責)&lt;/p&gt;
+&lt;p&gt;Intellectual Entrepreneurship is premised on the belief that intellect is not limited to the academy and entrepreneurship is not restricted to or synonymous with business. Entrepreneurship is a process of cultural innovation. (創業是一種文化創新的過程) While the creation of material wealth is one expression of entrepreneurship, at a more profound level entrepreneurship is an attitude for engaging the world. Intellectual entrepreneurs, both inside and outside universities, take risks and seize opportunities (承擔風險並緊握機會), discover and create knowledge (發現並創造知識), innovate (創新) , collaborate (協同) and solve problems in any number of social realms (解決社會範疇上的問題): corporate, non-profit, government, and education (企業, 非營利, 政府與教育單位).&lt;/p&gt;
+&lt;p&gt;Intellectual entrepreneurs understand that genuine collaboration between universities and the public is tantamount to more than increased "access" to the academy's intellectual assets. It is more than "knowledge transfer"--the exportation of neatly wrapped solutions rolling off the campus conveyer belt. Collaboration demands mutual humility and respect, joint ownership of learning and co-creation of an unimagined potential for innovation--qualities that move universities well beyond the typical elitist sense of "service." Knowledge, after all, involves the integration of theory, practice and production (知識終究包括理論, 實踐與生產的整合).&lt;/p&gt;
+&lt;p&gt;參考資料:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://net.educause.edu/ir/library/pdf/ERM1010.pdf"&gt;https://net.educause.edu/ir/library/pdf/ERM1010.pdf&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.issues.org/16.2/duderstadt.htm"&gt;http://www.issues.org/16.2/duderstadt.htm&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.huffingtonpost.com/otto-scharmer/u-lab-reinventing-the-21s_b_5669425.html"&gt;http://www.huffingtonpost.com/otto-scharmer/u-lab-reinventing-the-21s_b_5669425.html&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.cambridgeassessment.org.uk/images/130437-21st-century-skills-ancient-ubiquitous-enigmatic-.pdf"&gt;http://www.cambridgeassessment.org.uk/images/130437-21st-century-skills-ancient-ubiquitous-enigmatic-.pdf&lt;/a&gt;
+*&lt;a href="http://upcommons.upc.edu/bitstream/handle/2099/5970/2006-01_eng_van_ginkel.pdf?sequence=6"&gt;http://upcommons.upc.edu/bitstream/handle/2099/5970/2006-01_eng_van_ginkel.pdf?sequence=6&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://agenda.weforum.org/2015/05/5-ways-universities-have-already-changed-in-the-21st-century/"&gt;https://agenda.weforum.org/2015/05/5-ways-universities-have-already-changed-in-the-21st-century/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.nie.edu.sg/files/spcs/TE21_Executive%20Summary_101109.pdf"&gt;http://www.nie.edu.sg/files/spcs/TE21_Executive%20Summary_101109.pdf&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.ut-ie.com/"&gt;http://www.ut-ie.com/&lt;/a&gt; (知識創業)&lt;/li&gt;
+&lt;/ul&gt;</summary><category term="University"></category></entry><entry><title>Right MCAD for the 21 century</title><link href="http://chiamingyen.github.io/kmolsite/blog/right-mcad-for-the-21-century.html" rel="alternate"></link><updated>2015-12-26T13:06:46+08:00</updated><author><name>kmol</name></author><id>tag:chiamingyen.github.io,2015-12-26:kmolsite/blog/right-mcad-for-the-21-century.html</id><summary type="html">&lt;p&gt;真正屬於二十一世紀的電腦輔助機械設計軟體: &lt;a href="http://www.onshape.com"&gt;http://www.onshape.com&lt;/a&gt;&lt;/p&gt;
 
 
 &lt;p&gt;西元 2000 年, 當時的 PTC 公司在著名的 Pro/Engineer 套件中加入 Pro/Web.Link, 當時的 Javascript 技術在 Java 強力橫掃程式界的時候, 還是得透過呼叫 Java 程式庫, 才能夠運行, 但是能夠在嵌入式 Internet Explorer 與 Firefox 瀏覽器中運行的半調子 Engineer to Engineer  二次開發技術, 仍然讓人眼睛為之一亮.&lt;/p&gt;
-&lt;p&gt;十幾年過去, 採用 Javascript 技術的 Pro/Web.Link 仍然停留在原地, 沒給隨後改名為 Creo Parametric 的參數化模組, 帶來令人振奮的應用, 但是 Javascript 技術自從 2009 年 node.js 發表以來, 就不斷在全球資訊網的前後端環境嚴密整合下, 持續發光發熱, 加上 HTML5 (2010)、WebGL (2009) 與 Git (2005) 技術的推波助瀾, 終於讓 Onshape 團隊決定自 2012 年開始, 利用這些相關技術 (結合 Javascript V8 與 NoSQL) 打造一套全瀏覽器的雲端電腦輔助機械設計軟體.&lt;/p&gt;
+&lt;p&gt;十幾年過去, 採用 Javascript 技術的 Pro/Web.Link 仍然停留在原地, 沒給隨後改名為 Creo Parametric 的參數化模組, 帶來令人振奮的應用, 但是 Javascript 技術自從 2009 年 node.js 發表以來, 就不斷在全球資訊網的前後端環境嚴密整合下, 持續發光發熱, 加上 HTML5 (2010)、WebGL (2009) 與 Git (2005) 技術的推波助瀾, 終於讓 Onshape: &lt;a href="http://www.onshape.com"&gt;http://www.onshape.com&lt;/a&gt; 團隊決定自 2012 年開始, 利用這些相關技術 (結合 Javascript V8 與 NoSQL) 打造一套全瀏覽器的雲端電腦輔助機械設計軟體.&lt;/p&gt;
 &lt;p&gt;Onshpae 的推出, 終於讓二十一世紀的機械設計工程師感受到平版與手機時代的到來, 面對全球無縫整合的產品開發流程, 任何人都可以隨時隨地在有網路連線的地方, 用任何裝置參與協同.&lt;/p&gt;
 &lt;p&gt;Onshape 的可貴, 不僅解決協同產品開發團隊間, 軟體版次分歧與維護的問題, 而且徹底改變過去產品生命週期管理上, MCAD (Mechanical Computer Aided Design) 軟體套件無法全雲端運作, 所帶來的簽出入時間差異困擾, 讓協同團隊人員, 能夠即時線上協同, 關注同一份設計資料 ,而且整個團隊, 在特定的產品設計專案上, 每個零件與組立圖, 在不同的工作屬性下, 保證只有一份資料.&lt;/p&gt;
 &lt;p&gt;在此同時, Onshape 團隊也意識到全球自造時代 (Self-manufacturing Era) 將會是二十一世紀最重要的產品設計開發模式之一, 因此套件公開推出時, 允許使用者透過免費方案, 將設計內容公開者, 就可以擁有 5GB 的容量空間, 相信此舉會讓過去數以百萬計的標準零件庫迅速納入旗下, 成為全球各方人員搭配組合新產品的重要來源之一.&lt;/p&gt;
 &lt;p&gt;尤有甚者, 全雲端全瀏覽器的 MCAD, 將會帶動隨後全球各類 CAX 應用的虛實整合與平行分散運算, 讓網路上閒置的運算資源降到最低.&lt;/p&gt;
-&lt;p&gt;總而言之, Onshape 的推出, 讓沉悶已久的電腦輔助機械設計界, 重新看到新的契機, 全球協同產品開發不再只是口號, 相信過去幾十年來作威作福的半調子 MCAD &amp;amp; PLM 套件開發者與代理商, 可以深刻記取教訓, 因為真正屬於二十一世紀的電腦輔助機械設計軟體, 已經來了.&lt;/p&gt;</summary><category term="MCAD"></category><category term="CAD"></category></entry><entry><title>Onshape Tutorial</title><link href="http://chiamingyen.github.io/kmolsite/blog/posts/2015/12/23/onshape-tutorial/" rel="alternate"></link><updated>2015-12-23T22:39:08+08:00</updated><author><name>kmol</name></author><id>tag:chiamingyen.github.io,2015-12-23:kmolsite/blog/posts/2015/12/23/onshape-tutorial/</id><summary type="html">&lt;p&gt;Onshape 導引&lt;/p&gt;
+&lt;p&gt;總而言之, Onshape 的推出, 讓沉悶已久的電腦輔助機械設計界, 重新看到新的契機, 全球協同產品開發不再只是口號, 相信過去幾十年來作威作福的半調子 MCAD &amp;amp; PLM 套件開發者與代理商, 可以深刻記取教訓, 因為真正屬於二十一世紀的電腦輔助機械設計軟體, 已經來了.&lt;/p&gt;</summary><category term="MCAD"></category><category term="CAD"></category></entry><entry><title>Onshape Tutorial</title><link href="http://chiamingyen.github.io/kmolsite/blog/onshape-tutorial.html" rel="alternate"></link><updated>2015-12-23T22:39:08+08:00</updated><author><name>kmol</name></author><id>tag:chiamingyen.github.io,2015-12-23:kmolsite/blog/onshape-tutorial.html</id><summary type="html">&lt;p&gt;Onshape 導引&lt;/p&gt;
 
 
 &lt;p&gt;Onshape: &lt;a href="http://www.onshape.com"&gt;http://www.onshape.com&lt;/a&gt; 是一套可以完全在瀏覽器, 平板與手機中操作的電腦輔助機械設計繪圖軟體 (Mechanical Computer Aided Design, MCAD).&lt;/p&gt;
@@ -41,7 +630,7 @@
 &lt;li&gt;進入特定 Workspace 的 Version 功能設定時 (或從 Version Manager 進入管理), 參與協同的設計者, 可以利用特定版本的最右方功能, 從先前所儲存的版本中, 選擇 Branch to create workspace, 建立"分支" 工作空間, 並且在這些"分支"空間中, 增加新的內容, 並且可以在隨後的時間點將分支合併到其他版本內容空間中, 這時建立分支的用戶便可以在不影響主要分支版本的進程中, 執行平行式的分支編輯 (branched editing).&lt;/li&gt;
 &lt;li&gt;因為 Onshape 提供工作空間切出分支的功能, 當兩個分支要執行合併時, 系統解決衝突的過程, 將以原始分支的內容為主(&lt;a href="https://www.onshape.com/cad-blog/merging-branches-in-onshape"&gt;ref1&lt;/a&gt;, &lt;a href="https://cad.onshape.com/help/Content/merge.htm"&gt;ref2&lt;/a&gt;).&lt;/li&gt;
 &lt;li&gt;Onshape 各版本的屬性設定, 包括名稱 (Name), 類別 (Type), 說明 (Description), 零件編號 (Part number), 版本 (Revision) 與狀態 (State), 而狀態可以包括進行中 (In progress), 待定 (Pending), 已發行 (Released) 以及已過時 (Obsolete), 換言之, 雲端協同模式下的 Onshape 先天已經俱備基本的 PDM 與 PLM 的功能, 相信隨後的 CAE, CAM, ERP 或 MRP 等對應功能, 將會透過 API 的架構逐一由第3方協力商釋放出來.&lt;/li&gt;
-&lt;/ul&gt;</summary><category term="CAD"></category></entry><entry><title>Develop Python Program in Leo Editor</title><link href="http://chiamingyen.github.io/kmolsite/blog/posts/2015/12/21/develop-python-program-in-leo-editor/" rel="alternate"></link><updated>2015-12-21T21:04:29+08:00</updated><author><name>kmol</name></author><id>tag:chiamingyen.github.io,2015-12-21:kmolsite/blog/posts/2015/12/21/develop-python-program-in-leo-editor/</id><summary type="html">&lt;p&gt;在 Leo Editor 環境開發並執行 Python 程式&lt;/p&gt;
+&lt;/ul&gt;</summary><category term="CAD"></category></entry><entry><title>Develop Python Program in Leo Editor</title><link href="http://chiamingyen.github.io/kmolsite/blog/develop-python-program-in-leo-editor.html" rel="alternate"></link><updated>2015-12-21T21:04:29+08:00</updated><author><name>kmol</name></author><id>tag:chiamingyen.github.io,2015-12-21:kmolsite/blog/develop-python-program-in-leo-editor.html</id><summary type="html">&lt;p&gt;在 Leo Editor 環境開發並執行 Python 程式&lt;/p&gt;
 
 
 &lt;p&gt;以下我們利用 Leo Editor 用來開發 CherryPy 網際程式, 首先開啟一個新的 Leo Editor 專案&lt;/p&gt;
@@ -89,7 +678,7 @@
 運用  @button 可以建立一個內容為 Python 程式的指令按鈕, 當使用者按下此一按鈕, Leo Editor 就會設法執行此一 Python 程式
 將與按鈕對應的程式透過 subprocess 模組, 讓程式在系統背景狀態下執行, 表示不要與 Leo Editor 執行中的 Python 程序有所瓜葛
 這樣的 CherryPy 程式開發模式, 當使用者更新程式內容時, 系統會自動關閉, 再啟動 CherryPy 程式, 而使用者也可以透過 Ctrl+C 關閉上面所開啟的 dos command 程式執行
-所完成的 leo 專案: &lt;a href="https://copy.com/GXuWZ6YwaaiPpZKd"&gt;https://copy.com/GXuWZ6YwaaiPpZKd&lt;/a&gt;&lt;/p&gt;</summary><category term="Python"></category><category term="Cherrypy"></category></entry><entry><title>2016kmol 測試</title><link href="http://chiamingyen.github.io/kmolsite/blog/posts/2015/12/21/2016kmol-ce-shi/" rel="alternate"></link><updated>2015-12-21T20:56:20+08:00</updated><author><name>kmol</name></author><id>tag:chiamingyen.github.io,2015-12-21:kmolsite/blog/posts/2015/12/21/2016kmol-ce-shi/</id><summary type="html">&lt;p&gt;在 Plican 靜態網頁系統中,Title 若使用中文, 而且不指定 Slug 的情況下, 系統會將中文字逐一轉為英文拼音來建立網誌檔案.&lt;/p&gt;
+所完成的 leo 專案: &lt;a href="https://copy.com/GXuWZ6YwaaiPpZKd"&gt;https://copy.com/GXuWZ6YwaaiPpZKd&lt;/a&gt;&lt;/p&gt;</summary><category term="Python"></category><category term="Cherrypy"></category></entry><entry><title>2016kmol 測試</title><link href="http://chiamingyen.github.io/kmolsite/blog/2016kmol-ce-shi.html" rel="alternate"></link><updated>2015-12-21T20:56:20+08:00</updated><author><name>kmol</name></author><id>tag:chiamingyen.github.io,2015-12-21:kmolsite/blog/2016kmol-ce-shi.html</id><summary type="html">&lt;p&gt;在 Plican 靜態網頁系統中,Title 若使用中文, 而且不指定 Slug 的情況下, 系統會將中文字逐一轉為英文拼音來建立網誌檔案.&lt;/p&gt;
 
 
 &lt;p&gt;以下利用 Brython 語法, 在網頁中繪圖:&lt;/p&gt;
@@ -756,7 +1345,7 @@ ctx.fill()
 &lt;span class="n"&gt;dataURL&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;canvas&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;toDataURL&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
 &lt;span class="n"&gt;doc&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;canvas_image&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;src&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;dataURL&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
-&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</summary><category term="平面繪圖"></category></entry><entry><title>Recursively import all python files into Leo Editor</title><link href="http://chiamingyen.github.io/kmolsite/blog/posts/2015/12/21/recursively-import-all-python-files-into-leo-editor/" rel="alternate"></link><updated>2015-12-21T20:53:12+08:00</updated><author><name>kmol</name></author><id>tag:chiamingyen.github.io,2015-12-21:kmolsite/blog/posts/2015/12/21/recursively-import-all-python-files-into-leo-editor/</id><summary type="html">&lt;p&gt;以遞迴方式導入 Python 程式碼.&lt;/p&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</summary><category term="平面繪圖"></category></entry><entry><title>Recursively import all python files into Leo Editor</title><link href="http://chiamingyen.github.io/kmolsite/blog/recursively-import-all-python-files-into-leo-editor.html" rel="alternate"></link><updated>2015-12-21T20:53:12+08:00</updated><author><name>kmol</name></author><id>tag:chiamingyen.github.io,2015-12-21:kmolsite/blog/recursively-import-all-python-files-into-leo-editor.html</id><summary type="html">&lt;p&gt;以遞迴方式導入 Python 程式碼.&lt;/p&gt;
 
 
 &lt;p&gt;此功能已經內建在 Leo Editor 的 scripts/scripts.leo 中, 程式碼如下:&lt;/p&gt;
@@ -787,13 +1376,13 @@ ctx.fill()
 2&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;leo.core.leoImport&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;leoImport&lt;/span&gt;
 &lt;span class="n"&gt;leoImport&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;importFiles&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;aDirectory&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;.py&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
-&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</summary><category term="importer"></category><category term="Python"></category></entry><entry><title>rattleCAD on Ubuntu</title><link href="http://chiamingyen.github.io/kmolsite/blog/posts/2015/12/20/rattlecad-on-ubuntu/" rel="alternate"></link><updated>2015-12-20T20:21:54+08:00</updated><author><name>kmol</name></author><id>tag:chiamingyen.github.io,2015-12-20:kmolsite/blog/posts/2015/12/20/rattlecad-on-ubuntu/</id><summary type="html">&lt;p&gt;在 Ubuntu 環境中執行 rattleCAD&lt;/p&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</summary><category term="importer"></category><category term="Python"></category></entry><entry><title>rattleCAD on Ubuntu</title><link href="http://chiamingyen.github.io/kmolsite/blog/rattlecad-on-ubuntu.html" rel="alternate"></link><updated>2015-12-20T20:21:54+08:00</updated><author><name>kmol</name></author><id>tag:chiamingyen.github.io,2015-12-20:kmolsite/blog/rattlecad-on-ubuntu.html</id><summary type="html">&lt;p&gt;在 Ubuntu 環境中執行 rattleCAD&lt;/p&gt;
 
 
 &lt;p&gt;&lt;a href="http://rattlecad.sourceforge.net/"&gt;http://rattlecad.sourceforge.net/&lt;/a&gt; 是以 TCL 編寫的, 在 Windows 下載 rattleCAD, 會有一個 rattlecad.exe, 可以直接執行, 但是在 Ubuntu 環境中, 就必須要透過 tclsh rattleCAD.tcl 才能執行, 只是在 Ubuntu 14.04 中缺少了 tdom 與 BWidget 模組, 必須補安裝後, rattleCAD 才能正確執行.&lt;/p&gt;
 &lt;table class="codehilitetable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="codehilite"&gt;&lt;pre&gt;sudo apt-get install tdom BWidget
 &lt;/pre&gt;&lt;/div&gt;
-&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</summary><category term="tclsh"></category><category term="rattlecad"></category></entry><entry><title>Use python script to check dictionary</title><link href="http://chiamingyen.github.io/kmolsite/blog/posts/2015/12/19/use-python-script-to-check-dictionary/" rel="alternate"></link><updated>2015-12-19T12:51:54+08:00</updated><author><name>kmol</name></author><id>tag:chiamingyen.github.io,2015-12-19:kmolsite/blog/posts/2015/12/19/use-python-script-to-check-dictionary/</id><summary type="html">&lt;p&gt;利用 Python 程式協助查英文單字&lt;/p&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</summary><category term="tclsh"></category><category term="rattlecad"></category></entry><entry><title>Use python script to check dictionary</title><link href="http://chiamingyen.github.io/kmolsite/blog/use-python-script-to-check-dictionary.html" rel="alternate"></link><updated>2015-12-19T12:51:54+08:00</updated><author><name>kmol</name></author><id>tag:chiamingyen.github.io,2015-12-19:kmolsite/blog/use-python-script-to-check-dictionary.html</id><summary type="html">&lt;p&gt;利用 Python 程式協助查英文單字&lt;/p&gt;
 
 
 &lt;p&gt;查單字程式碼:&lt;/p&gt;
@@ -1173,7 +1762,7 @@ ctx.fill()
 &lt;span class="err"&gt;檔案&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;write&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;all_text&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;done&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
-&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</summary><category term="查單字"></category></entry><entry><title>Leo Editor 教學(一)</title><link href="http://chiamingyen.github.io/kmolsite/blog/posts/2015/12/19/leo-editor-jiao-xue-yi/" rel="alternate"></link><updated>2015-12-19T11:17:54+08:00</updated><author><name>kmol</name></author><id>tag:chiamingyen.github.io,2015-12-19:kmolsite/blog/posts/2015/12/19/leo-editor-jiao-xue-yi/</id><summary type="html">&lt;p&gt;有人說, Leo 編輯器是程式開發歷程上的一項創新, 也有人說, 一旦用上手, 就再也回不去了.&lt;/p&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</summary><category term="查單字"></category></entry><entry><title>Leo Editor 教學(一)</title><link href="http://chiamingyen.github.io/kmolsite/blog/leo-editor-jiao-xue-yi.html" rel="alternate"></link><updated>2015-12-19T11:17:54+08:00</updated><author><name>kmol</name></author><id>tag:chiamingyen.github.io,2015-12-19:kmolsite/blog/leo-editor-jiao-xue-yi.html</id><summary type="html">&lt;p&gt;有人說, Leo 編輯器是程式開發歷程上的一項創新, 也有人說, 一旦用上手, 就再也回不去了.&lt;/p&gt;
 
 
 &lt;p&gt;但是, 這樣一套看似程式開發與資料編輯管理的神器級工具, 為何如此冷門, 好像受歡迎程式不如預期?&lt;/p&gt;
@@ -1385,7 +1974,7 @@ EXIT
 &lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 
 &lt;p&gt;&lt;br /&gt;
-當然也可以直接下載以 Python 3.3 建立的 Windows 可攜式 Leo Editor: &lt;a href="https://github.com/chiamingyen/portable_leoeditor"&gt;https://github.com/chiamingyen/portable_leoeditor&lt;/a&gt;&lt;/p&gt;</summary><category term="大綱編輯"></category><category term="Python"></category><category term="PyQt"></category></entry><entry><title>How to create a Pelican static site?</title><link href="http://chiamingyen.github.io/kmolsite/blog/posts/2015/12/16/how-to-create-a-pelican-static-site/" rel="alternate"></link><updated>2015-12-16T22:07:18+08:00</updated><author><name>kmol</name></author><id>tag:chiamingyen.github.io,2015-12-16:kmolsite/blog/posts/2015/12/16/how-to-create-a-pelican-static-site/</id><summary type="html">&lt;p&gt;如何在 Github page 建立靜態網誌系統?&lt;/p&gt;
+當然也可以直接下載以 Python 3.3 建立的 Windows 可攜式 Leo Editor: &lt;a href="https://github.com/chiamingyen/portable_leoeditor"&gt;https://github.com/chiamingyen/portable_leoeditor&lt;/a&gt;&lt;/p&gt;</summary><category term="大綱編輯"></category><category term="Python"></category><category term="PyQt"></category></entry><entry><title>How to create a Pelican static site?</title><link href="http://chiamingyen.github.io/kmolsite/blog/how-to-create-a-pelican-static-site.html" rel="alternate"></link><updated>2015-12-16T22:07:18+08:00</updated><author><name>kmol</name></author><id>tag:chiamingyen.github.io,2015-12-16:kmolsite/blog/how-to-create-a-pelican-static-site.html</id><summary type="html">&lt;p&gt;如何在 Github page 建立靜態網誌系統?&lt;/p&gt;
 
 
 &lt;p&gt;1994 年開始, 許多人用 html 建立功能陽春的網站, 二十一個年頭過去, 無論大家經歷過多麼令人讚嘆激賞的全球資訊網技術, 我們終於又回到當時的起點, 還是採用最陽春的 html 格式來建立網站, 唯一的差別是, 這一次我們真正感受到天涯若比鄰, 遠端與近端, 在分散式版本的最高運行模式下, 原來是同一端.&lt;/p&gt;
@@ -1409,7 +1998,7 @@ EXIT
 &lt;h1&gt;kmolsite 系統說明&lt;/h1&gt;
 &lt;p&gt;開啟 kmol2016.leo 後, 可以發現 @path content 以下的子節點, 就是 Pelican 網誌系統的原始 md 檔案, 只要透過 @button local pelican 指令的執行, 就可以在近端建立 Pelican 靜態網誌, 而 @button gh-pages pelican 則用來建立 Github pages 端的 Pelican 靜態網誌資料.&lt;/p&gt;
 &lt;p&gt;從"設定與開發"節點下, 可以發現 pelicanconf.py 為近端與遠端的共同設定檔, 而近端透過 Pelican 轉檔時, 則採用 local_publishconf.py, 而 Gihub pages 端則使用 publishconf.py.&lt;/p&gt;
-&lt;p&gt;其中因為採用 Tipue search plugin, 在近端使用 tipuesearch_content.js 而在遠端則使用 tipuesearch_content.json, 所以才會將 theme 目錄下區隔近端使用 pelican-bootstrap3_local, 而遠端則使用 pelican-bootstrap3 目錄, 其間的差異在於啟動 Tipue search 搜尋的模式設定, 近端為 static, 而遠端則為 json.&lt;/p&gt;</summary><category term="Python"></category><category term="Github pages"></category><category term="Leo Editor"></category></entry><entry><title>Ubuntu 14.04 執行 Python 網際程式</title><link href="http://chiamingyen.github.io/kmolsite/blog/posts/2015/12/16/ubuntu-1404-zhi-xing-python-wang-ji-cheng-shi/" rel="alternate"></link><updated>2015-12-16T21:14:38+08:00</updated><author><name>kmol</name></author><id>tag:chiamingyen.github.io,2015-12-16:kmolsite/blog/posts/2015/12/16/ubuntu-1404-zhi-xing-python-wang-ji-cheng-shi/</id><summary type="html">&lt;p&gt;Nginx 當前端, 在 Ubuntu 以 uwsgi 執行 Python 程式.&lt;/p&gt;
+&lt;p&gt;其中因為採用 Tipue search plugin, 在近端使用 tipuesearch_content.js 而在遠端則使用 tipuesearch_content.json, 所以才會將 theme 目錄下區隔近端使用 pelican-bootstrap3_local, 而遠端則使用 pelican-bootstrap3 目錄, 其間的差異在於啟動 Tipue search 搜尋的模式設定, 近端為 static, 而遠端則為 json.&lt;/p&gt;</summary><category term="Python"></category><category term="Github pages"></category><category term="Leo Editor"></category></entry><entry><title>Ubuntu 14.04 執行 Python 網際程式</title><link href="http://chiamingyen.github.io/kmolsite/blog/ubuntu-1404-zhi-xing-python-wang-ji-cheng-shi.html" rel="alternate"></link><updated>2015-12-16T21:14:38+08:00</updated><author><name>kmol</name></author><id>tag:chiamingyen.github.io,2015-12-16:kmolsite/blog/ubuntu-1404-zhi-xing-python-wang-ji-cheng-shi.html</id><summary type="html">&lt;p&gt;Nginx 當前端, 在 Ubuntu 以 uwsgi 執行 Python 程式.&lt;/p&gt;
 
 
 &lt;p&gt;nginx.conf 設定&lt;/p&gt;
@@ -1755,7 +2344,7 @@ else:
     #cherrypy.quickstart(root, config = application_conf)
     application = cherrypy.Application(root, config = application_conf)
 &lt;/pre&gt;&lt;/div&gt;
-&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</summary><category term="網際程式"></category><category term="Python"></category><category term="nginx"></category><category term="uwsgi"></category></entry><entry><title>Pelican 近端與遠端的設定</title><link href="http://chiamingyen.github.io/kmolsite/blog/posts/2015/12/16/pelican-jin-duan-yu-yuan-duan-de-she-ding/" rel="alternate"></link><updated>2015-12-16T21:11:10+08:00</updated><author><name>kmol</name></author><id>tag:chiamingyen.github.io,2015-12-16:kmolsite/blog/posts/2015/12/16/pelican-jin-duan-yu-yuan-duan-de-she-ding/</id><summary type="html">&lt;p&gt;Pelican 近端與遠端的設定.&lt;/p&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</summary><category term="網際程式"></category><category term="Python"></category><category term="nginx"></category><category term="uwsgi"></category></entry><entry><title>Pelican 近端與遠端的設定</title><link href="http://chiamingyen.github.io/kmolsite/blog/pelican-jin-duan-yu-yuan-duan-de-she-ding.html" rel="alternate"></link><updated>2015-12-16T21:11:10+08:00</updated><author><name>kmol</name></author><id>tag:chiamingyen.github.io,2015-12-16:kmolsite/blog/pelican-jin-duan-yu-yuan-duan-de-she-ding.html</id><summary type="html">&lt;p&gt;Pelican 近端與遠端的設定.&lt;/p&gt;
 
 
 &lt;p&gt;基本的概念是, 在近端時, 靜態網頁使用相對目錄, SITEURL 設為 "./", 而在 Github pages 時, 則採用制式的符號名稱加上 repository 名稱作為 SITEURL.&lt;/p&gt;
@@ -2309,7 +2898,7 @@ else:
     &lt;span class="k"&gt;color&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="m"&gt;#f99157&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;span class="p"&gt;}&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
-&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</summary><category term="Pelican 設定"></category></entry><entry><title>nginx 與 uwsgi 的結合</title><link href="http://chiamingyen.github.io/kmolsite/blog/posts/2015/12/16/nginx-yu-uwsgi-de-jie-he/" rel="alternate"></link><updated>2015-12-16T21:02:42+08:00</updated><author><name>kmol</name></author><id>tag:chiamingyen.github.io,2015-12-16:kmolsite/blog/posts/2015/12/16/nginx-yu-uwsgi-de-jie-he/</id><summary type="html">&lt;p&gt;最新版的 nginx 必須與 2.0 版以上的 uwsgi 配合, 否則無法啟動.&lt;/p&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</summary><category term="Pelican 設定"></category></entry><entry><title>nginx 與 uwsgi 的結合</title><link href="http://chiamingyen.github.io/kmolsite/blog/nginx-yu-uwsgi-de-jie-he.html" rel="alternate"></link><updated>2015-12-16T21:02:42+08:00</updated><author><name>kmol</name></author><id>tag:chiamingyen.github.io,2015-12-16:kmolsite/blog/nginx-yu-uwsgi-de-jie-he.html</id><summary type="html">&lt;p&gt;最新版的 nginx 必須與 2.0 版以上的 uwsgi 配合, 否則無法啟動.&lt;/p&gt;
 
 
 &lt;p&gt;這是發生在編號 103 HP 伺服器上的問題, 透過查驗, 才知道, 其實在各種協同合作模式中, 必須了解細節才能解決問題.&lt;/p&gt;
@@ -2367,7 +2956,7 @@ sudo ln -s /usr/local/bin/uwsgi uwsgi (將新的 /usr/local/bin/uwsgi 對應到 
 &lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 
 &lt;p&gt;&lt;br /&gt;
-就可順利啟動 nginx 中所對應設定的 CMSimply&lt;/p&gt;</summary><category term="uwsgi"></category><category term="nginx"></category><category term="網際程式"></category><category term="Python"></category></entry><entry><title>2016kmol initialized</title><link href="http://chiamingyen.github.io/kmolsite/blog/posts/2015/12/16/2016kmol-initialized/" rel="alternate"></link><updated>2015-12-16T15:33:24+08:00</updated><author><name>kmol</name></author><id>tag:chiamingyen.github.io,2015-12-16:kmolsite/blog/posts/2015/12/16/2016kmol-initialized/</id><summary type="html">&lt;p&gt;&lt;a href="https://github.com/chiamingyen/kmol2016"&gt;https://github.com/chiamingyen/kmol2016&lt;/a&gt; 是一個 Windows 64 位元環境下的可攜程式系統.&lt;/p&gt;
+就可順利啟動 nginx 中所對應設定的 CMSimply&lt;/p&gt;</summary><category term="uwsgi"></category><category term="nginx"></category><category term="網際程式"></category><category term="Python"></category></entry><entry><title>2016kmol initialized</title><link href="http://chiamingyen.github.io/kmolsite/blog/2016kmol-initialized.html" rel="alternate"></link><updated>2015-12-16T15:33:24+08:00</updated><author><name>kmol</name></author><id>tag:chiamingyen.github.io,2015-12-16:kmolsite/blog/2016kmol-initialized.html</id><summary type="html">&lt;p&gt;&lt;a href="https://github.com/chiamingyen/kmol2016"&gt;https://github.com/chiamingyen/kmol2016&lt;/a&gt; 是一個 Windows 64 位元環境下的可攜程式系統.&lt;/p&gt;
 
 
 &lt;p&gt;製作步驟如下:&lt;/p&gt;
@@ -2377,7 +2966,7 @@ sudo ln -s /usr/local/bin/uwsgi uwsgi (將新的 /usr/local/bin/uwsgi 對應到 
 &lt;li&gt;安裝 pip 後, 再利用 &lt;a href="http://leoeditor.com/"&gt;Leo Editor&lt;/a&gt; 原始碼安裝, 同時利用 pip 安裝 &lt;a href="https://github.com/getpelican/pelican"&gt;pelican&lt;/a&gt; Markdown &lt;a href="http://flask.pocoo.org/"&gt;Flask&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;為了要使用 &lt;a href="http://www.tipue.com/search/"&gt;Tipue Search&lt;/a&gt;, 再安裝 &lt;a href="http://www.crummy.com/software/BeautifulSoup/bs4/doc/"&gt;beautifulsoup4&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;為了要執行協同產品開發的設計運算分析, 還要安裝 &lt;a href="http://jupyter.org/"&gt;Jupyter&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;</summary><category term="啟動"></category></entry><entry><title>Remove local and remote branch</title><link href="http://chiamingyen.github.io/kmolsite/blog/posts/2015/12/16/remove-local-and-remote-branch/" rel="alternate"></link><updated>2015-12-16T15:33:24+08:00</updated><author><name>kmol</name></author><id>tag:chiamingyen.github.io,2015-12-16:kmolsite/blog/posts/2015/12/16/remove-local-and-remote-branch/</id><summary type="html">&lt;p&gt;刪除近端與遠端的 Git 分支.&lt;/p&gt;
+&lt;/ol&gt;</summary><category term="啟動"></category></entry><entry><title>Remove local and remote branch</title><link href="http://chiamingyen.github.io/kmolsite/blog/remove-local-and-remote-branch.html" rel="alternate"></link><updated>2015-12-16T15:33:24+08:00</updated><author><name>kmol</name></author><id>tag:chiamingyen.github.io,2015-12-16:kmolsite/blog/remove-local-and-remote-branch.html</id><summary type="html">&lt;p&gt;刪除近端與遠端的 Git 分支.&lt;/p&gt;
 
 
 &lt;p&gt;To delete a local branch&lt;/p&gt;
@@ -2385,7 +2974,7 @@ sudo ln -s /usr/local/bin/uwsgi uwsgi (將新的 /usr/local/bin/uwsgi 對應到 
 &lt;p&gt;To remove a remote branch&lt;/p&gt;
 &lt;p&gt;git push origin :the_remote_branch&lt;/p&gt;
 &lt;p&gt;or &lt;/p&gt;
-&lt;p&gt;git push origin --delete the_remote_branch&lt;/p&gt;</summary><category term="Git 指令"></category></entry><entry><title>Tipue Site Search for Pelican</title><link href="http://chiamingyen.github.io/kmolsite/blog/posts/2015/12/16/tipue-site-search-for-pelican/" rel="alternate"></link><updated>2015-12-16T15:33:24+08:00</updated><author><name>kmol</name></author><id>tag:chiamingyen.github.io,2015-12-16:kmolsite/blog/posts/2015/12/16/tipue-site-search-for-pelican/</id><summary type="html">&lt;p&gt;Pelican 靜態網站關鍵字搜尋.&lt;/p&gt;
+&lt;p&gt;git push origin --delete the_remote_branch&lt;/p&gt;</summary><category term="Git 指令"></category></entry><entry><title>Tipue Site Search for Pelican</title><link href="http://chiamingyen.github.io/kmolsite/blog/tipue-site-search-for-pelican.html" rel="alternate"></link><updated>2015-12-16T15:33:24+08:00</updated><author><name>kmol</name></author><id>tag:chiamingyen.github.io,2015-12-16:kmolsite/blog/tipue-site-search-for-pelican.html</id><summary type="html">&lt;p&gt;Pelican 靜態網站關鍵字搜尋.&lt;/p&gt;
 
 
 &lt;p&gt;在這個網站中, 我們使用 Tipue Search 來搜尋內容.&lt;/p&gt;
